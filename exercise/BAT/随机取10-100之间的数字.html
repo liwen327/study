@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<script>
+    //随机取10-100之间的10个数字，并排序
+    var result = [];
+    function getRandom(iStart,iEnd)
+    {
+        var iChoice = iEnd - iStart + 1;
+        return Math.floor(Math.random() * iChoice) + iStart;
+    }
+    for(var i =0; i<10; i++)
+    {
+        result.push(getRandom(10,100));
+    }
+    console.log(result);
+    console.log(result.sort());
+
+</script>
+<body>
+
+</body>
+</html>

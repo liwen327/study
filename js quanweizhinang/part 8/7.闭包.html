@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chartset="UTF-8">
+    <title></title>
+    <script>
+        /*var scope = "global scope";
+        function fun()
+        {
+            var scope = "local scope";
+            function f(){
+                return scope;
+            }
+            return f();
+        }
+        console.log(fun());  //local scope */
+
+        var scope = "global scope";
+        function fun()
+        {
+            var scope = "local scope";
+            function f()
+            {
+                return scope;
+            }
+            return f;
+        }
+        console.log(fun()()); //local scope
+    </script>
+</head>
+<body>
+
+</body>
+</html>

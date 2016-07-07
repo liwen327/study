@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        div{ padding:50px;}
+        #div1{background: red;}
+        #div2{ background: green;}
+        #div3{ background: purple;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oDiv3 = document.getElementById("div3");
+
+            oDiv1.addEventListener("click",function()
+            {
+                alert(3);
+            },false);
+            oDiv1.addEventListener("click",function()
+            {
+                alert(1);
+            },true);
+            oDiv3.addEventListener("click",function()
+            {
+                alert(2);
+            },false);
+            //弹出的顺序是1 2 3 因为弹3的那个事件是出去的时候再弹。弹1的是进来的时候，弹2是出去的时候再弹，而点击div3的时候，是事件先从个面进来，到div1的时候它有一个进来的事件，所以先弹出1，到div3的时候，div3没有进来的事件，然后事件又有一个反作用力，按原路返回，经过div3的时候，它有一个出去的事件，弹出2，然后事件再接着出去，经过div1的时候，它又有一个出去的事件弹出3.至此整个事件过程完成。
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</div>
+</body>
+</html>

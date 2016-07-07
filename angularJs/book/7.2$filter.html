@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script>
+        //var app = angular.module('myApp',[]);
+        angular.module('myApp.filters',[])
+            .filter('capitalize',function()
+            {
+                return function(input)
+                {
+                    //input是我们传入的字符串
+                    if(input)
+                    {
+                        return input[0].toUpperCase() + input.slice(1);
+                    }
+                }
+            })
+    </script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>{{'ginger loves dog treats' | lowercase | capitalize}}</p>
+</div>
+
+</body>
+</html>

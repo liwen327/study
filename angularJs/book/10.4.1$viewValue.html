@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <style>
+        .red{ background-color:red;}
+    </style>
+    <script>
+        angular.module('myApp',[])
+                .directive('myDirective',function(){
+                    return{
+                        require:'?ngModel',
+                        link:function(scope,ele,attrs,ngModel){
+                            if(!ngModel) return;
+                            $(function(){
+                                ele.datepicker({
+                                    onSelect:function(date){
+                                        //设置视图和调用apply
+                                        scope.$apply(function(){
+                                            ngModel.$setViewValue(date);
+                                        })
+                                    }
+                                })
+                            })
+                        }
+                    }
+                })
+    </script>
+</head>
+<body>
+<div my-directive></div>
+
+
+
+
+
+</body>
+</html>

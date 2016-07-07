@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/namesControllers.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="namesCtrl">
+    <table>
+        <tr ng-repeat="x in names | orderBy : 'country'">
+            <td>{{x.name}}</td>
+            <td>{{x.country}}</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

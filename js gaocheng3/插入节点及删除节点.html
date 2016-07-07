@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        //插入节点
+       /* window.onload = function()
+        {
+            var oBtn = document.getElementById("btn");
+            var ali = document.getElementsByTagName("li");
+            var oUl = document.getElementById("ul1");
+            var oInpt = document.getElementById("inpt");
+            oBtn.onclick = function()
+            {
+                var oLi = document.createElement("li");
+                oLi.innerHTML = oInpt.value;
+                //oUl.appendChild(oLi);       //在现有的元素的后面添加新元素
+                //oUl.insertBefore(oLi,oli[0]);//在现有的元素的前面添加新元素
+                if(ali.length > 0)
+                {
+                    oUl.insertBefore(oLi,ali[0]);
+                }
+                else
+                {
+                    oUl.appendChild(oLi);
+                }
+            }
+        }*/
+
+        //删除节点
+        window.onload = function()
+        {
+            var oUl = document.getElementById("ul2");
+            var aA = document.getElementsByTagName("a");
+            for(var i=0;i<aA.length; i++)
+            {
+                aA[i].onclick = function()
+                {
+                    oUl.removeChild(this.parentNode);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<!--<input type="text" id="inpt"><input type="button" value="点击添加元素" id="btn"/>
+<ul id="ul1">
+
+</ul>-->
+
+<ul id="ul2">
+    <li>节点1<a href="#">删除</a></li>
+    <li>节点2<a href="#">删除</a></li>
+    <li>节点3<a href="#">删除</a></li>
+    <li>节点4<a href="#">删除</a></li>
+</ul>
+</body>
+</html>

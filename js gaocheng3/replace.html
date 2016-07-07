@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>replace</title>
+    <script type="text/javascript" src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js"></script>
+    <script>
+        window.onload = function()
+        {
+           var text = "bat,cat,sat,dat";
+           /*var result = text.replace("at","ond");
+            alert(result);
+
+            var result01 = text.replace(/at/g,"ond");
+            alert(result01);*/
+
+            var result03 = text.replace(/(.at)/g,"word($1)")
+            alert(result03);
+
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

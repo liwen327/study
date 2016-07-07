@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ip地址</title>
+    <script>
+        //var str = '02.255.255.00';
+        var str = '02.255.255.256';     //true    为什么呢？？不应该超过255的
+        var re = /((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
+        var flag = re.test(str);
+        console.log(flag);
+        console.log(str);
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

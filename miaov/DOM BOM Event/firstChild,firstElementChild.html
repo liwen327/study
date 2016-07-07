@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        window.onload = function()
+        {
+            var oUl = document.getElementById("ul1");
+            //alert(oUl.firstElementChild);  //FF/chrome 弹出object HTMLLIElement   ie8以下弹出undefined
+            //alert(oUl.firstChild);//FF/chrome 弹出[object Text]    ie8c下弹出object  这样就不能用firstChild来判断了，需要用firstElementChild来做兼容性处理
+            /*if(oUl.firstElementChild)
+            {
+                oUl.firstElementChild.style.background = "red";
+            }
+            else
+            {
+                oUl.firstChild.style.background = "red";
+            }*/
+
+            //可以简写如下：
+            var oFirst = oUl.firstElementChild || oUl.firstChild;
+            oFirst.style.background = "red";
+
+            var oLast = oUl.lastElementChild || oUl.lastChild;
+            oLast.style.background = "yellow";
+
+            var oNext = oFirst.nextElementSibling || oFirst.nextSibling;
+            oNext.style.background = "blue";
+
+            var oPrev = oLast.previousElementSibling || oLast.previousSibling;
+            oPrev.style.background = "green";
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+
+</body>
+</html>

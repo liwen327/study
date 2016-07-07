@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        /*function aa($scope,$rootScope)
+        {
+            $scope.name = "hello";
+            $rootScope.age = "20";
+            //$scope.age = "40";
+        }
+        function bb($scope)
+        {
+            $scope.name = "Hi";
+            //$scope.age = "30";        //非常类似于js的局部变量和全局变量，如果局部中有这个变量，那就是局部变量，如果局部变量不存在的话，那就用全避变量
+        }*/
+    </script>
+</head>
+<body>
+<div ng-app="">
+    <p>在输入框中尝试输入：</p>
+    <p>姓名：<input type="text" ng-model="name"/> </p>
+    <p ng-bind="name"></p>
+</div>
+
+</body>
+</html>

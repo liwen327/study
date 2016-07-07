@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>添加、删除行</title>
+    <style>
+        #ul1{ background: green;}
+        #ul2{ background: yellow;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            oTab = document.getElementById("tab1");
+            oBtn = document.getElementById("btn1");
+
+            oBtn.onclick = function()
+            {
+                /*var aTr = oTab.tBodies[0].rows;
+                alert(aTr);*/
+                var arr = [];
+                for(var i=0; i<oTab.tBodies[0].rows.length; i++)
+                {
+                    arr[i] = oTab.tBodies[0].rows[i];
+                }
+                arr.sort(function(tr1,tr2)
+                {
+                    var n1 = parseInt(tr1.cells[0].innerHTML);
+                    var n2 = parseInt(tr2.cells[0].innerHTML);
+                    return n1 - n2;
+                })
+
+                for(var i=0; i<arr.length; i++)
+                {
+                    oTab.tBodies[0].appendChild(arr[i]);
+                    //alert(arr[i].innerHTML);
+                    alert(arr[i].innerHTML);
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="排序"/>
+    <table width="500" border="1" cellspacing="0" cellpadding="0" id="tab1">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3</td>
+                <td>张三</td>
+                <td>24</td>
+                <td>女</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>24</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>王五</td>
+                <td>24</td>
+                <td>女</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>24</td>
+                <td>女</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

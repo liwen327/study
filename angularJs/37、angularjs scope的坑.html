@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+<div ng-init="myProperty='haha'">
+    outside myProperty is:{{myProperty}}
+    <br>
+    <input type="text" ng-model="myProperty">
+    <div my-directive></div>
+</div>
+<script>
+    var myApp = angular.module('myApp',[]);
+    myApp.directive('myDirective', function(){
+        return {
+            restrict : 'A',
+            template : 'inside myDirective,myProperty is:{{myProperty}}'+
+                    '<input type="text" ng-model="myProperty">',
+            scope   : true
+        };
+    });
+</script>
+</body>
+</html>

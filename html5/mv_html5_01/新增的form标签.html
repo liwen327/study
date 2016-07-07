@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增的form元素的标签</title>
+    <script type="text/javascript" src="html5shiv.js"></script>
+</head>
+<body>
+
+<form>
+    <input type="email"/> <br/> <br/>
+    <input type="tel"/> <br/> <br/>
+    <input type="url"/> <br/> <br/>
+    <input type="search"/> <br/> <br/>
+    <input type="range" min="0" max="10" step="2" value="2"/> <br/> <br/>
+
+    <br/>
+    <input type="number"/> <br/> <br/>
+
+    <input type="color"/> <br/> <br/>
+    <input type="datetime"/> <br/> <br/>
+    <input type="datetime-local"/> <br/> <br/>
+    <input type="time"/> <br/> <br/>
+    <input type="date"/> <br/> <br/>
+    <input type="week"/> <br/> <br/>
+    <input type="month"/> <br/> <br/>
+
+    <input type="text" placeholder="请输入4-16个字符" name="user" autocomplete="off" />  <br/> <br/>  <!-- //autofocus 指定表单获取输入焦点-->
+    <input type="text" placeholder="请输入4-16个字符" name="user" required  pattern=\d{1,5}'/>  <br/> <br/>
+
+    <input type="submit" value="提交"/>
+    <input type="submit" value="保存至草稿箱" formaction="http://www.qq.com"/>
+</form>
+
+</body>
+</html>

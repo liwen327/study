@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        function MyController(s,t)
+        {
+            var updateTime = function()
+            {
+                s.clock = {
+                    time:new Date()
+                };
+                t(function()
+                {
+                    s.clock.time = new Date();
+                    updateTime();
+                },1000);
+            };
+            updateTime();
+        }
+        MyController["$inject"] = ["$scope","$timeout"];
+    </script>
+</head>
+<body>
+<div ng-app>
+    <div ng-controller="MyController">
+        <p ng-cloak>{{clock.time | date:"yyyy-MM-dd hh:mm:ss"}}</p>
+    </div>
+</div>
+
+</body>
+</html>

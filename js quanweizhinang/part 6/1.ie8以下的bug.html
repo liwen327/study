@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        var o= {
+            toString:function(){
+                return 'my Object'
+            }
+        }
+        for(var prop in o)
+        {
+            if(prop == 'toString'){
+                alert('Found toString');
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

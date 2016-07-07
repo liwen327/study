@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/juqery-1.11.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/personController.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="personCtrl">
+    名：<input type="text" ng-model="firstName"><br/>
+    姓：<input type="text" ng-model="lastName"><br/><br/>
+    姓名：{{fullName()}}     <!--数据的双向绑定-->
+
+</div>
+
+</body>
+</html>

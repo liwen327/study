@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>5模块化思想</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+       /* var a = [];
+        console.log(angular.isArray(a));*/
+        /*window.onload = function()
+        {
+            console.log(angular.isElement(document.body));
+            console.log(angular.isElement($(document.body)));
+        };
+*/
+        //console.log(angular.version);   //angular的版本
+        /*var a = NaN;
+        var b = NaN;
+        console.log(angular.equals(a,b));*/
+
+        values = {"name":"john","age":"20"};
+        var result = [];
+        angular.forEach(values,function(value,i)
+        {
+           //console.log(value);
+           //console.log(i);
+            //this.push(value);
+            this.push(i);
+        },result);
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var age = 28;
+        window.color = "red";
+        //delete window.age;    //在ie<9下报错，“对象不支持此操作”  ，且在其它标准 浏览器下，不可以删除全局变量，但是下面的window上面的color属性可以删除
+        //alert(window.age);   //28
+
+        delete window.color;  //在ie<9下报错，“对象不支持此操作”  且在其它标准浏览器下，可以删除window上面的color属性
+        alert(window.color);   //undefined
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

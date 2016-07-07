@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        /*
+        ie:attachEvent(事件名称，事件函数)
+        标准浏览器：obj.addEventListener(事件名称，事件函数，是否捕获)
+        */
+        function fn1()
+        {
+            alert(1);
+        }
+        function fn2()
+        {
+            alert(2);
+        }
+        //document.attachEvent("onclick",fn1);   //ie下弹出1
+        //document.attachEvent("onclick",fn2);   //ie8以下先弹出2，再弹出1，ie9以上先弹出1再弹出2   ,FF及Chrome等报错，没有attachEvent这个方法
+
+        document.addEventListener("click",fn1,false);
+        document.addEventListener("click",fn2,false);  //标准浏览器下先弹出1再弹出2
+    </script>
+</head>
+<body>
+
+</body>
+</html>

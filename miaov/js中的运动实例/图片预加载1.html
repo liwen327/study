@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //window.onload = function()
+        //{
+            function addImg(isrc)
+            {
+                var Img = new Image();
+                Img.onload = function()
+                {
+                    document.body.appendChild(Img);
+                }
+                Img.src = isrc;
+            }
+        //}
+    </script>
+</head>
+<body>
+<input type="button" name="" value="载入图片" onclick = "addImg('1.jpg')"/>
+
+</body>
+</html>

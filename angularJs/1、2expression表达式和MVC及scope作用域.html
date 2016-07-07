@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>根据用户输入的内容进行变化</title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        /*function aa($scope)
+        {
+            $scope.name = "hello";
+            $scope.age = "20";
+        }*/
+        function aa($scope,$rootScope)
+        {
+            $scope.name = "hello";
+            $rootScope.age = "20";
+            //$scope.age = "40";
+        }
+        function bb($scope)
+        {
+            $scope.name = "Hi";
+            //$scope.age = "30";        //非常类似于js的局部变量和全局变量，如果局部中有这个变量，那就是局部变量，如果局部变量不存在的话，那就用全避变量
+        }
+    </script>
+</head>
+<body>
+<div ng-controller = "aa">
+    <p>{{name}}</p>
+    <div ng-controller = "bb">
+        <p>{{name}}</p>
+        <p>{{age}}</p>
+    </div>
+</div>
+<!--<div ng-controller = "bb">
+    <p>{{name}}</p>
+    <p>{{age}}</p>
+</div>-->
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chartset="UTF-8">
+    <title></title>
+    <script>
+        /*var arr1 = [1,2,3];
+        var arr2 = [4,5,6];*/
+        var arr1 = new Array('1','2','3');
+        var arr2 = new Array('4,','5','6');
+        console.log(Array.prototype.push.apply(arr1,arr2));  //6   push()返回的是新数组的长度
+        //console.log(arr1.push.apply(null,arr2));  //报错：类型错误：Array.prototype.push called on null or undefined
+
+        //因为Math.max参数里面不支持Math.max([param1,param2])也就是数组，但它支持Math.max(param1,param2，param3,....)，所以利用apply可以接收数组，并把数组转化成参数列表这个特性来解决，var max = Math.max.apply(null,array),这样可以轻易的得到一个数组中最大的项， 利用apply()可以获得数组中最小（最大）的项：
+        /*var arr = [1,2,3,2,5,788];
+        //console.log(Math.max.apply(null,arr));   //788
+        console.log(Math.min.apply(null,arr));     //1*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cookie</title>
+    <script>
+        function setCookie(key,value,t)
+        {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate() + t);
+            document.cookie = key + "="+ value + ";expires=" + oDate.toGMTString();
+        }
+        function getCookie(key)
+        {
+            if(document.cookie.length>0)
+            {
+                c_start = document.cookie.indexOf(key + "=");
+                if(c_start !=-1)
+                {
+                    c_start = c_start + key.length +1;
+                    c_end = document.cookie.indexOf(";",c_start);
+                    if(c_end == -1) c_end = document.cookie.length;
+                    return unescape(document.cookie.substring(c_start,c_end));
+                }
+            }
+            return "";
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

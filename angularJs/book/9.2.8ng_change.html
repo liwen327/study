@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <style>
+        .odd{background-color:blue;}
+        .even{ background-color:red;}
+    </style>
+    <script>
+        //var app = angular.module('myApp',[]);
+        angular.module('myApp',[])
+                .controller('Controller',function($scope){
+                    $scope.equation={};
+                    $scope.change=function(){
+                        $scope.equation.output = parseInt($scope.equation.x) + 2;
+                    }
+                })
+    </script>
+</head>
+<body>
+<div ng-controller="Controller">
+    <input type="text" ng-model="equation.x" ng-change="change()"/>
+    <code>{{equation.output}}</code>
+</div>
+
+</body>
+</html>

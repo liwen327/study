@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+      body,p,div,ul,li{padding:0; margin:0;}
+      .content{width:200px; height: 1000px; border:solid 1px #ccc; padding:10px; margin:50px;}
+    </style>
+    <script>
+    window.onload = function()
+    {
+        var oContent  = document.getElementsByClassName("content")[0];
+        console.log(oContent.offsetHeight);    //offsetHeight不包含margin，包含的是height +  padding  + border
+        console.log(oContent.outerHeight);
+    }
+
+
+
+    </script>
+</head>
+<body>
+  <div id="wrap">
+    <div class="content" >
+      这里是内容
+    </div>
+  </div>
+</body>
+</html>

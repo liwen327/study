@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/customersControllers.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    <ul>
+        <li ng-repeat="x in names ">    <!--除了根据country的首字母进行排序，在输入框中输入筛选条件时，下面的内容也会相应的根据筛选条件进行改变-->
+            {{ x.name + ',' + x.country}}
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

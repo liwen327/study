@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('personController',function($scope)
+        {
+            $scope.master = {firstName:"John",lastName:"Doe"};
+            $scope.reset = function()
+            {
+                $scope.user = angular.copy($scope.master);
+            }
+        })
+    </script>
+
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="personController" >
+    <form novalidate>
+        enter first name :<input type="text" ng-model="user.firstName"><br/>
+        enter last name :<input type="text" ng-model="user.lastName"><br/>
+
+        <button ng-click="reset()">reset</button>
+    </form>
+    <p>form = {{user}}</p>
+    <p>master = {{master}}</p>
+
+    <!--full name:{{user.fullName()}}-->
+
+</div>
+
+
+</body>
+</html>

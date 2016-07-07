@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>iiFE模拟单例</title>
+</head>
+<script type="text/javascript">
+    var counter = (function()
+    {
+        var i=0;
+        return{
+            get:function(){
+                return i;
+            },
+            set:function(val){
+                i = val;
+                alert(i);   //添加了这一句下面的counter.set(3)就可以弹出3
+            },
+            increment:function(){
+                return ++i;
+            }
+        };
+    }());
+
+    alert(counter.get());    //0
+    counter.set(3);         // 3
+    alert(counter.increment());    //4
+    alert(counter.increment());    //5
+</script>
+<body>
+
+</body>
+</html>

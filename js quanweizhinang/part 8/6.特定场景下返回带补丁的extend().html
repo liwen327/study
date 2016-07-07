@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chartset="UTF-8">
+    <title></title>
+    <script>
+        var extend = (function()
+        {
+            for(var p in {toString:null})
+            {
+                return function extend(o)
+                {
+                    for(var i =0; i<arguments.length; i++)
+                    {
+                        var source = arguments[i];
+                        for(var prop in source) o[prop] = source[prop];
+                    }
+                    return o;
+                }
+            }
+            console.log(o);
+            //如果代码执行到这里，说明for/in循环不会枚举测试对象的toString属性，因此返回另一个版本的extend()函数，这个函数显式测试object.prototype中的不可枚举属性
+            return function patched_extend(o)
+            {
+                for(var i=0; i<arguments.length; i++){
+                    var source = arguments[i];
+                    //复制所有可枚举属性
+                    for(var prop in source) o[prop] = source[prop];
+
+                    //现在检查特殊属性
+                    for(var j = 0;j<protoprops.length; j++){
+                        prop = protoprops[j]
+                        if(source.hasOwnProperty(prop)) o[prop] = source[prop];
+                    }
+                }
+                return o;
+            };
+            //这个列表列出了需要检查的特殊属性
+            var protoprops = ["toString","valueOf","constructor","hasOwnProperty","isPrototypeOf","propertyIsEnumerable","toLocaleString"];
+        }());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

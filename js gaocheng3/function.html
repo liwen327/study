@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js练习</title>
+<script type="text/javascript">
+/*function sum(num1,num2)
+{
+  return num1 + num2;
+  alert("Hello world!");
+}
+alert(sum(5,10));
+
+function diff(num1,num2)
+{
+  if(num1<num2)
+  {
+    return num2-num1;
+  }
+  else
+  {
+    return num1 - num2;
+  }
+}
+alert(diff(10,2));*/
+//alert(0);
+
+
+//引用类型person是按照值进行传递的，而不是按照引用类型进行传递。
+/*
+    function setName(obj)
+    {
+        obj.name = "john";
+        var obj = new Object();
+        obj.name = "mike";
+    }
+    var person = new Object();
+    setName(person);
+    alert(person.name);  //弹出john    说明引用类型person是按照值进行传递的，而不是按照引用类型进行传递。
+*/
+
+//typeOf()与instanceOf()的用法
+/*var num = 12;
+var str = "aaaa";
+var tru = true;
+var nul = null;
+var un;
+var obj = new Object();
+    alert(typeof (num));
+    alert(typeof (str));
+    alert(typeof (tru));
+    alert(typeof (nul));
+    alert(typeof (un));
+    alert(typeof (obj));*/
+
+/*var person = new Object();
+var arr = new Array();
+    alert(person instanceof object); //变量person是object吗？
+    alert(arr instanceof Array)      //变量arr是Array吗？*/
+
+//对象字面量语法
+    function displayinfo(args)
+    {
+        var output = "";
+        if(typeof args.name == "string")
+        {
+            output += "Name:" + args.name + "\n";
+        }
+        if(typeof args.age == "number")
+        {
+            output += "Age:" + args.age + "\n";
+        }
+        alert(output);
+    }
+    displayinfo({
+        name:"mike",
+        age:29
+    })
+    displayinfo({
+        name:"john",
+        age:30
+    })
+
+//创建数组
+    var person = new Array(3);  //创建一个包含3项的数组即：person.length = 3
+    var bb = new Array("age");  //创建只包含一项的数组,即：bb.length = 1;
+
+//当然也可以省略new操作符
+    var person = Array(3);
+    var bb = Array("age");
+    //这里的代码和上面的完全一样
+</script>
+</head>
+
+<body>
+</body>
+</html>

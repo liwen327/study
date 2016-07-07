@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="http://csdnimg.cn/public/common/libs/bootstrap/css/bootstrap.css">
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('components', []).
+                directive('tabs', function() {
+                    return {
+                        restrict: 'E',    //element   指令是一个元素
+                        transclude: true,  //复制原始html内容
+                        scope: {},         //设置指令对于的scope
+                        controller: [ "$scope", function($scope) {
+                            var panes = $scope.panes = [];
+
+                            $scope.select = function(pane) {
+                                angular.forEach(panes, function(pane) {
+                                    pane.selected = false;
+                                });
+                                pane.selected = true;
+                            }
+
+                            this.addPane = function(pane) {
+                                if (panes.length == 0) $scope.select(pane);
+                                panes.push(pane);
+                            }
+                        }],
+                        template:
+                                '<div class="tabbable">' +
+                                        '<ul class="nav nav-tabs">' +
+                                        '<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">'+
+                                        '<a href="" ng-click="select(pane)">{{pane.title}}</a>' +
+                                        '</li>' +
+                                        '</ul>' +
+                                        '<div class="tab-content" ng-transclude></div>' +
+                                        '</div>',
+                        replace: true     //使用模板替换原始标记
+                    };
+                }).
+                directive('pane', function() {
+                    return {
+                        require: '^tabs',
+                        restrict: 'E',
+                        transclude: true,
+                        scope: { title: '@' },   //title值传递（字符串，单向绑定）
+                        link: function(scope, element, attrs, tabsCtrl) {     //link在指令中扮演重要的角色，它负责执行dom操作和注册事件监听器
+                            tabsCtrl.addPane(scope);
+                        },
+                        template:
+                                '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +
+                                        '</div>',
+                        replace: true
+                    };
+                })
+        //注意当调用link方法时，通过值传递（@）的scope变量将不会被初始化，它们将会在指令的生命周期中另一个时间点进行初始化，如果你需要监听这个事件，可能使用scope.$watch方法。
+    </script>
+</head>
+<body ng-app="components">
+<h3>BootStrap Tab Component</h3>
+<tabs>
+    <pane title="First Tab">
+        <div>This is the content of the first tab.</div>
+    </pane>
+    <pane title="Second Tab">
+        <div>This is the content of the second tab.</div>
+    </pane>
+</tabs>
+</body>
+</html>

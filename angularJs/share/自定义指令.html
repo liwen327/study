@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.directive('myDirective',function()
+        {
+            return {
+                restrict:'EAC',
+                replace:false,    //replace会用自定义元素取代指令声明
+                template:'<a href="http://www.baidu.com">点击我跳转到百度</a>'
+            }
+        })
+    </script>
+</head>
+<body>
+<!--<my-directive></my-directive>-->
+<div my-directive></div>
+
+</body>
+</html>

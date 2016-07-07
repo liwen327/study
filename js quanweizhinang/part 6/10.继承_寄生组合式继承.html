@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        /*function object(o){
+            var F = function(){};
+            F.prototype = o;
+            return new F();
+        }
+
+        function extend(c,p){
+            var prototype = object(p.prototype);   //创建对象
+            prototype.constructor = c;          //再把原型对象的构造函数指回其本身
+            c.prototype = prototype;          //把原型赋给子类型
+        }*/
+
+        //上面两个函数可以合并成一个函数，利用一个空函数来节省内存
+        function extend(c,p){
+            var F = function(){};
+            F.prototype = p.prototype;
+            c.prototype = new F();
+            c.prototype.constructor = c;
+            c.uber = p.prototype;
+        }
+
+        function superType(name,friends){
+            this.name = name;
+            this.friends = ['john','lily','lucy'];
+        }
+        superType.prototype.sayName = function(){
+            console.log(this.name);
+        }
+        function subType(name,age){
+            superType.apply(this,arguments);
+            this.age = age;
+        }
+        extend(subType,superType);
+
+        console.log(superType.prototype.constructor);   //superType
+        console.log(subType.prototype.constructor);    //superType
+
+        var instance = new subType('Mike',28);
+        instance.sayName();
+        instance.friends.push('LiLei');
+        console.log(instance.friends);
+
+        var instance1 = new subType('John',29);
+        console.log(instance1.friends);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

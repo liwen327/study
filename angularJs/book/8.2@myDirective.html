@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script>
+        //var app = angular.module('myApp',[]);
+        angular.module('myApp',[])
+            .directive('myDirective',function()
+            {
+                return {
+                    restrict:'A',
+                    replace:false,
+                    scope:{
+                        myUrl:"@someAttr",
+                        myLinkText:'@'
+                    },
+                    template:'<a href="{{myUrl}}">' + '{{myLinkText}}</a>'
+                };
+            });
+    </script>
+</head>
+<body>
+    <div my-directive some-attr="http://wwww.baidu.com" my-link-text="click me to baidu.">
+
+
+</body>
+</html>

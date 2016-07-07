@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #div1{ width: 100px; height: 100px; background: red; position:absolute;}
+    </style>
+    <script>
+        /*
+        *cookie:
+         1、不同浏览器存放的cookie的位置不一样，也是不能通用的。
+         2、cookie的存储是以域名形式进行区分的。
+         3、cookie的数据可以设置名字
+         4、一个域名下存放的cookie的个数是有限的。不同浏览器下的个数也是不一样的。
+         5、每个cookie存放的内容大小也是有限制的。不同浏览器存放的大小也不一样。
+
+         我们在通过document.cookie来获取当前网站下面的cookie的时候，它获取的是当前网站下面所有的cookie，它会把cookie通过一个分号+空格的形式串联起来。
+
+         如果我们想长时间存放一个cookie时，必须给它设置一个过期的时间。
+         设置过期时间：document.cookie = "username = 'leo';expires=" + 字符串形式的时间;  这里这个时间是字符串形式的，不能是一个日期对象。
+        * */
+
+        var oDate = new Date();
+        oDate.setDate(oDate.getDate() + 5);
+        //document.cookie = "username = 'leo';expires = " + oDate;   //这样是错误的，后面的过期时间必须是一个字符串形式
+
+        //内容最好经过编码：encodeURI();
+        //alert(encodeURI("你好"));
+        //alert(decodeURI("%E4%BD%A0%E5%A5%BD"));
+        document.cookie = "username =" +  encodeURI('leo\n你好') +" ;expires = " + oDate.toGMTString();
+        document.cookie = "age = 28";
+        alert(decodeURI(document.cookie));
+     </script>
+</head>
+<body>
+
+
+
+</body>
+</html>

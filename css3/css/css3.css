@@ -1,0 +1,140 @@
+
+
+.wrap{ width: 600px; border:solid 10px #ccc; padding:20px; overflow:hidden;}
+.box{ width: 50%; border:solid 10px #ff0000; box-sizing:border-box;--webkit-box-sizing: border-box; float: left;}
+.box_01{ width: 45%; border:solid 10px #ff0000; box-sizing:content-box;--webkit-box-sizing: content-box; float: left;}
+
+.appearance_01{margin-top:40px; width: 100px;  height: 40px; appearance: button; -webkit-appearance:button;}
+.appearance_02{ margin-top:40px; width: 200px; height: 30px; appearance:icon; -webkit-appearance:icon;}
+.resize{ width: 200px; height: 200px; border:solid 1px #ff0000; resize:both; overflow: auto;}
+
+.outline{ width: 200px; height: 200px; border:solid 1px #ff0000; outline:solid 1px #000000; outline-offset: 30px;}
+
+.animation{ width: 200px; height: 200px; background: #ff0000; margin-top:50px;
+  animation:margin 2s .5s ease alternate both infinite;
+  -webkit-animation:margin 2s .5s ease alternate both infinite;}
+@-webkit-keyframes margin{
+  0%
+  {
+  margin-left:100px; background: red;
+  }
+  40%
+  {
+  margin-left:550px; background: orange;
+  }
+  70%
+  {
+  margin-left:250px; background: blue;
+  }
+  100%
+  {
+  margin-left:100px; background: red;
+  }
+}
+
+
+/*发光的按钮*/
+a.btn{ display: block; width: 150px; height: 35px; text-align: center; line-height: 35px;
+border-radius:5px; text-decoration:none;
+box-shadow: 0 0 5px rgba(255,255,255,0.6) inset, 0 0 3px rgba(220,120,200,0.8);
+animation:shine 2s .5s ease both infinite;
+-webkit-animation:shine 2s .5s ease both infinite;}
+@-webkit-keyframes shine
+{
+  0%
+  {
+    background:rgba(96,203,27,0.5);
+    -webkit-box-shadow: 0 0 5px rgba(255,255,255,0.3) inset, 0 0 3px rgba(220,120,200,0.5);
+    color:red;
+  }
+  25%
+  {
+    background:rgba(96,203,27,0.8);
+    -webkit-box-shadow: 0 0 5px rgba(255,155,255,0.5) inset, 0 0 8px rgba(120,120,200,0.8);
+    color:blue;
+  }
+  50%
+  {
+    background:rgba(96,203,127,1);
+    -webkit-box-shadow: 0 0 5px rgba(255,155,255,0.5) inset, 0 0 8px rgba(120,120,200,1);
+    color:orange;
+  }
+  75%
+  {
+    background:rgba(96,23,127,0.8);
+    -webkit-box-shadow: 0 0 5px rgba(255,155,255,0.8) inset, 0 0 8px rgba(120,120,200,0.8);
+    color:black;
+  }
+  100%
+  {
+    background:rgba(96,23,127,1);
+    -webkit-box-shadow: 0 0 5px rgba(255,155,255,1) inset, 0 0 8px rgba(120,120,200,0.8);
+    color:black;
+  }
+}
+/*旋转放大缩小动画*/
+.scale
+{
+  width: 200px;
+  height: 200px;
+  background: red;
+  margin-top: 100px;
+  animation:scale 2s .5s ease alternate infinite both;
+  -webkit-animation:scale 2s .5s ease alternate infinite both;
+}
+@-webkit-keyframes scale
+{
+  0%,50%
+  {
+    transform:scale(1) rotate(0deg);
+  }
+  100%
+  {
+    transform:scale(1) rotate(360deg);
+  }
+}
+/*偏移*/
+.translate
+{
+  width: 100px;
+  height:100px;
+  background:#4f95cc;
+  margin:20px auto;
+  animation:translate 1s .1s ease normal 1 both;
+  -webkit-animation:translate 1s .1s ease normal 1 both;
+}
+@-webkit-keyframes translate
+{
+  0%
+  {
+    opacity:1;
+    transform:translateX(-2000px);
+  }
+  60%
+  {
+    opacity:1;
+    transform:translateX(20px);
+  }
+  80%
+  {
+    opacity:1;
+    transform:translateX(-20px);
+  }
+  100%
+  {
+    opacity:1;
+    transform:translateX(0px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

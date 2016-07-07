@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<script>
+    //第一种方法：
+    Object.prototype.clone = function()
+    {
+        var o = this.constructor === Array ? [] : {};
+        for(var e in this){
+            o[e] = typeof this[e] === "Object" ? this[e].clone() : this[e];
+        }
+        return o;
+    }
+
+
+    //第二种方法：
+    /*function clone(obj)
+    {
+        var buf ;
+        if(obj instanceof Array)
+        {
+            buf = [];
+            var i = obj.length;
+            while(i--)
+            {
+                buf[i] = clone(obj[i]);
+            }
+            return buf;
+        }else if(obj instanceof Object)
+        {
+            buf = {};
+            for(var k in obj)
+            {
+                buf[k] = clone(obj[k]);
+            }
+            return buf;
+        }
+        else{
+            return obj;
+        }
+    }*/
+
+    var obj = {"name":"mike","age":28};
+    console.log(clone(obj));
+
+
+
+</script>
+<body>
+
+</body>
+</html>

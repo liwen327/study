@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>原型继承</title>
+  <script type="text/javascript">
+      function superType()
+      {
+          this.colors = ["blue","red","black"];
+      }
+      function subType()
+      {
+          superType.call(this);
+      }
+      subType.prototype = new superType();
+
+      var obj1 = new subType();
+      obj1.colors.push("green");
+      console.log(obj1.colors);   //["blue", "red", "black", "green"]
+
+      var obj2 = new subType();
+      console.log(obj2.colors);  //["blue", "red", "black"]
+
+      //借用构造函数模式，通过使用call或apply方法，我们实际上是在新创建的subType实例的环境下调用了superType构造函数。这样一来，就会在新subType对象上执行superType()函数中定义 的所有方法初始化代码。结果，subType的每个实例 都会具有自己的colors属性的副本了。
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

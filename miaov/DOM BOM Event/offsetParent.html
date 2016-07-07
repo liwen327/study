@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #div1{background: #ccc;}
+        #div2{background: #666; zoom:1;}
+        #div3{ background: #999;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            /*
+            * offsetParent   指向最近的具有相对定位的父级，如果其父级都没有设置相对定位，则指向body
+            *
+            * 如果自身有定位，父级元素都没有定位，则标准浏览器下，指向body，但是ie7以下指向html
+            * haslayout:如果祖先级元素有设置zoom:1（触发layout），则指向触发了layout的元素，但是在标准浏览器中则不受影响
+            * */
+            alert(document.getElementById("div3").offsetParent.id);
+        }
+    </script>
+</head>
+<body id="body1">
+<div id="div1">
+    div1
+    <div id="div2">
+        div2
+        <div id="div3">div3</div>
+    </div>
+</div>
+</body>
+</html>

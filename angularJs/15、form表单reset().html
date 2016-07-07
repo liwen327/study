@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/juqery-1.11.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        function startUpController($scope)
+        {
+            //$scope.funding = {startingEstimate:10};
+            $scope.computeNeeded = function()
+            {
+                $scope.needed = $scope.startingEstimate * 10;
+            };
+            $scope.requestFunding = function()
+            {
+                window.alert('Sorry,please get more customers first.')
+            };
+            $scope.reset = function()
+            {
+                $scope.startingEstimate = 0;
+            }
+        }
+    </script>
+
+</head>
+<body>
+<form ng-submit="requestFunding()" ng-controller="startUpController">
+    Starting:<input ng-change="computeNeeded()" ng-model="startingEstimate">
+    Recommendation:{{needed}}
+    <button>Fund my startup!</button>
+    <button ng-click="reset()">reset</button>
+</form>
+
+</body>
+</html>

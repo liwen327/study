@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>表格</title>
+
+</head>
+<body>
+
+<input id="inp1" type="text" value="1234567890">
+<input id="inp2" type="text" value="9876543210">
+<input type="button" onclick="test()" value="确定">
+<script language="javascript">
+function test()
+{
+var o=document.getElementById("inp1")
+var r = document.selection.createRange();
+if(o.createTextRange().inRange(r))
+alert(r.text);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/juqery-1.11.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        function startUpController($scope)
+        {
+            $scope.funding = {startingEstimate:10};
+            $scope.computeNeeded = function()
+            {
+                $scope.funding.needed = $scope.funding.startingEstimate * 10;
+            };
+            $scope.$watch('funding.startingEstimate',computeNeeded);    //$watch函数不希望用户输入的内容立即在页面上显示出来，比如正在付款时，输入信息还没发送出去时都是不需要立即更新的
+        }
+    </script>
+
+</head>
+<body>
+<form ng-controller="startUpController">
+    Starting:<input ng-change="computeNeeded()" ng-model="funding.startingEstimate">
+    Recommendation:{{funding.needed}}
+</form>
+
+</body>
+</html>

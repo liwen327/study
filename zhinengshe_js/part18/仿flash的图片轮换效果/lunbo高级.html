@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>仿FLASH的图片轮换效果</title>
+    <link rel="stylesheet" type="text/css" href="zns_style.css">
+    <script src="js/move.js"></script>
+    <script>
+        function getByClass(oParent,sClass)
+        {
+            var aEle = oParent.getElementsByTagName("*");
+            var aResult = [];
+            for(var i=0; i<aEle.length; i++)
+            {
+                if(aEle[i].className == sClass)
+                {
+                    aResult.push(aEle[i]);
+                }
+            }
+            return aResult;
+        }
+
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("playimages");
+            var oPrev = getByClass(oDiv,"prev")[0];
+            var oNext = getByClass(oDiv,"next")[0];
+            var oMarkLeft = getByClass(oDiv,"mark_left")[0];
+            var oMarkRight = getByClass(oDiv,"mark_right")[0];
+
+            var oDivSmall = getByClass(oDiv,"small_pic")[0];
+            var aLiSmall = oDivSmall.getElementsByTagName("li");
+            var oUlSmall = oDivSmall.getElementsByTagName("ul")[0];
+
+            oUlSmall.style.width = aLiSmall.length * aLiSmall[0].offsetWidth + "px";
+
+            var oUlBig = getByClass(oDiv,"big_pic")[0];
+            var aLiBig = oUlBig.getElementsByTagName("li");
+            var nowZIndex = 2;
+            var now = 0;
+
+
+            //鼠标移上左半边向左按钮显示，移上右半边向右按钮显示
+            oPrev.onmouseover = oMarkLeft.onmouseover = function()
+            {
+                startMove(oPrev,"opacity",100);
+            }
+            oPrev.onmouseout = oMarkLeft.onmouseout = function()
+            {
+                startMove(oPrev,"opacity",0);
+            }
+
+            oNext.onmouseover = oMarkRight.onmouseover = function()
+            {
+                startMove(oNext,"opacity",100);
+            }
+            oNext.onmouseout = oMarkRight.onmouseout = function()
+            {
+                startMove(oNext,"opacity",0);
+            }
+
+            //大图切换
+            for(var i=0; i<aLiSmall.length; i++)
+            {
+                aLiSmall[i].index = i;
+                aLiSmall[i].onclick = function()
+                {
+                    if(this.index == now)
+                    {
+                        return;
+                    }
+                    now = this.index;
+                    tab();
+                }
+                //鼠标移上下面小图时由半透明变成不透明
+                aLiSmall[i].onmouseover = function()
+                {
+                    startMove(this,"opacity",100);
+                }
+                aLiSmall[i].onmouseout = function()
+                {
+                    if(this.index != now)
+                    {
+                        startMove(this,"opacity",60);
+                    }
+                }
+            }
+            function tab()
+            {
+                aLiBig[now].style.zIndex = nowZIndex++;
+                for(var i=0; i<aLiSmall.length; i++)
+                {
+                    startMove(aLiSmall[i],"opacity",60);    //跟选项卡是一样的，都是让它的透明度为60,之后再用startMove来使其opacity变化
+                }
+                startMove(aLiSmall[now],"opacity",100);
+                aLiBig[now].style.height = 0;
+                startMove(aLiBig[now],"height",320);
+
+                if(now == 0)
+                {
+                    startMove(oUlSmall,"left",0);
+                }
+                else if(now == aLiSmall.length-1)
+                {
+                    startMove(oUlSmall,"left",-(now - 2)*aLiSmall[0].offsetWidth);
+                }
+                else
+                {
+                    startMove(oUlSmall,"left",-(now - 1)*aLiSmall[0].offsetWidth);
+                }
+            }
+
+            //点击向左向右按钮变换图片
+            oNext.onclick = function()
+            {
+                now++;
+                if(now == aLiSmall.length)
+                {
+                    now=0;
+                }
+                tab();
+            }
+            oPrev.onclick = function()
+            {
+                now--;
+                if(now == -1)
+                {
+                    now=aLiSmall.length - 1;
+                }
+                tab();
+            }
+            //自动播放
+            var timer = setInterval(oNext.onclick,2000);
+            oDiv.onmouseover=function()
+            {
+                clearInterval(timer);
+            }
+            oDiv.onmouseout=function()
+            {
+                timer = setInterval(oNext.onclick,2000);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<div id="playimages" class="play">
+    <ul class="big_pic">
+
+        <div class="prev"></div>
+        <div class="next"></div>
+
+        <div class="text">加载图片说明……</div>
+        <div class="length">计算图片数量……</div>
+
+        <a class="mark_left" href="javascript:;"></a>
+        <a class="mark_right" href="javascript:;"></a>
+        <div class="bg"></div>
+
+        <li style="z-index:1;"><img src="images/1.jpg" /></li>
+        <li><img src="images/2.jpg" /></li>
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/4.jpg" /></li>
+        <li><img src="images/5.jpg" /></li>
+        <li><img src="images/6.jpg" /></li>
+    </ul>
+    <div class="small_pic">
+        <ul style="width:390px;">
+            <li style="filter: 100; opacity: 1;"><img src="images/1.jpg" /></li>
+            <li><img src="images/2.jpg" /></li>
+            <li><img src="images/3.jpg" /></li>
+            <li><img src="images/4.jpg" /></li>
+            <li><img src="images/5.jpg" /></li>
+            <li><img src="images/6.jpg" /></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

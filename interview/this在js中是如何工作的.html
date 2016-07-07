@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var name = 'Jhon';
+        var obj = {
+            name:'lilei',
+            prop:{
+                name:'mike',
+                getName:function()
+                {
+                    return this.name;
+                }
+            }
+        }
+        console.log(obj.prop.getName());   //mike
+        var n1 = obj.prop.getName;
+        console.log(n1());        //Jhon   n1是一个全局变量，那getName那个函数就是window.来调用的，则name就是指的全局作用域上面的name值即Jhon
+        console.log(n1.call(obj.prop));   //mike
+    </script>
+</head>
+<body>
+
+</body>
+</html>

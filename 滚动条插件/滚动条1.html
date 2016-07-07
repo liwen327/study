@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自制滚动条</title>
+    <link rel="stylesheet" href="jquery.mCustomScrollbar.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        (function($){
+            $(window).load(function(){
+                $(".content").mCustomScrollbar();
+            });
+        })(jQuery);
+        $(".content").mCustomScrollbar({
+            axis:"x" // horizontal scrollbar
+        });
+        $(".content").mCustomScrollbar({
+            axis:"yx" // vertical and horizontal scrollbar
+        });
+        $(".content").mCustomScrollbar({
+            theme:"dark"
+        });
+    </script>
+</head>
+<body>
+<div class="mCustomScrollbar" data-mcs-theme="dark">
+    <!-- your content -->
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+    <p>aaaaaaaaaaaa</p>
+</div>
+</body>
+</html>

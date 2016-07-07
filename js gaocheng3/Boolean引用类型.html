@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Boolean引用类型</title>
+    <script type="text/javascript" src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js"></script>
+    <script>
+        window.onload = function()
+        {
+            /*var falseObj = new Boolean(false);
+            var result = falseObj && true;
+            alert(result);          //true   因为falseObj是一个Boolean对象，Boolean表达式中的所能对象都会转化成ture  ,因此true && ture  就得到true
+
+            var falsevalue = false;
+            var result1 = falsevalue && false;
+            alert(result1);    //false     布尔值false 与上false当然会得到false*/
+
+            //toFixed()方法
+            /*var num = 0.93;
+            alert(num.toFixed(0));*/
+
+            //toExponential()方法返回以指数形式表示的数值。
+            /*var num = 123;
+            alert(num.toExponential(4));*/
+
+            //substring()、substr() 、 slice() 方法及区别
+           /* var str = "hello world";
+//            alert(str.substr(-3));     //rld
+//            alert(str.slice(-3));     //rld
+//            alert(str.substring(-3)); //hello world
+
+            alert(str.substr(3,-4));    //""    即alert(str.substr(3,0))  ,由于第二个参数表示返回的字符串的长度，字符串的长度为0，则返回的就是一个空字符串
+            alert(str.slice(3,-4));     //即alert(str.substr(3,7))  ,弹出lo w
+            alert(str.substring(3,-4));//substring()方法也会把第二个参数设置为0 ，即substring(3,0),由于substring()会将较小的值估为开始位置，将较大的值做为结束位置。相当于是substring(0,3),所以最后弹出 hel
+*/
+            //indexOf()与lastIndexOf()方法
+            /*var str = "hello world";
+            //alert(str.indexOf("l"));   //2
+            //alert(str.lastIndexOf("l"));  //9
+            alert(str.indexOf("l",4));    //9
+            alert(str.lastIndexOf("l",4)); //3*/
+
+            //遍历字符串中的子字符串
+            var str = "we do this is fei chang gao xing";
+            var positions = [];
+            var pos = str.indexOf("i");
+
+            while(pos > -1)
+            {
+                positions.push(pos);
+                pos = str.indexOf("i",pos + 1);
+            }
+            alert(positions);   //8,11,16,29
+
+            var i = 0;
+            while(i<10)
+            {
+                i +=2;
+                alert(i);
+            }
+
+
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+</body>
+</html>

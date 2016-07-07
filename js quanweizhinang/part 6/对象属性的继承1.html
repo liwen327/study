@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        /*function Person(name)
+        {
+            this.name = name;
+        }
+        function Student(name,id)
+        {
+            this.id = id;
+        }
+        Student.prototype = new Person(this.name);
+        console.log(Student("mike",2));    //undefined*/
+
+        function Person()
+        {
+            this.name = "Mike";
+            this.sayGoodbye = function(){ alert("Goodbye!")};
+        }
+
+        Person.prototype.sayHello = function(){ alert("Hello!")};
+        function student(){};
+        student.prototype = new Person();   //弹出 Hello!
+        console.log(student.prototype.sayHello());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #div1{ width: 100px; height: 100px; background: red; position:absolute;}
+    </style>
+    <script>
+        /*
+        * ie和chrome下：onmousewheel
+        *   向下滚动：-120
+        *   向上滚动：120
+        * FF下：DOMMouseScroll   必须用addEventListener
+        *   向下滚动：3
+        *   向上滚动：-3
+        *
+        *   阻止事件的默认行为：
+        *   return false ：阻止 的是obj.on事件名称 = fn;这种绑定事件的默认行为
+        *   而通过addEventListener绑定的事件，则需要通过event的preventDefault()方法来阻止其默认行为
+        * */
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            oDiv.onmousewheel = fn1;//ie和chrome
+            if(oDiv.addEventListener)
+            {
+                oDiv.addEventListener('DOMMouseScroll',fn1,false);   //FF
+            }
+            function fn1(ev)
+            {
+                //alert(2);
+                var b = true;   //设置一个中间变量
+
+                var ev = ev || event;
+                if(ev.wheelDelta)
+                {
+                    //alert(ev.wheelDelta);
+                    b = ev.wheelDelta > 0 ? true : false;     //向上b= true ,向下b = false
+                }
+                else
+                {
+                    //alert(ev.detail);
+                    b = ev.detail < 0 ? true : false;
+                }
+                if(b)
+                {
+                    oDiv.style.height = oDiv.offsetHeight - 10 + "px";   //如果向上滚动，则div高度减小
+                }
+                else
+                {
+                    oDiv.style.height = oDiv.offsetHeight + 10 + "px"; //如果向下滚动 ，则div高度增大
+                }
+                if(ev.preventDefault)
+                {
+                    ev.preventDefault();   //FF下面阻止默认行为
+                }
+                return false;   //ie和chrome下阻止默认行为
+            }
+        }
+    </script>
+</head>
+<body style="height: 2000px;">
+<div id="div1"></div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>右下角悬浮框</title>
+    <style>
+        #div1{ width:150px; height: 150px; background: red; position: absolute; right:0; bottom:0;}
+    </style>
+    <script>
+
+        window.onscroll = function()
+        {
+            var oDiv = document.getElementById("div1");
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            //oDiv.style.top = document.documentElement.clientHeight - oDiv.offsetHeight + scrollTop + "px";  //document.documentElement.clientHeight为网页可视内容的高度
+
+            startMove((document.documentElement.clientHeight - oDiv.offsetHeight)/2 + scrollTop);
+        }
+         var timer = null;
+        function startMove(iTarget)
+        {
+            var oDiv = document.getElementById("div1");
+            //alert(oDiv);
+            clearInterval(timer);
+            timer = setInterval(function(){
+
+                var speed = (iTarget - oDiv.offsetTop)/4;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(iTarget == oDiv.offsetTop)
+                {
+                    clearInterval(timer);
+                }
+                else
+                {
+                    oDiv.style.top = oDiv.offsetTop + speed + "px";
+                    document.title = oDiv.style.top;
+
+                }
+            },30)
+        }
+
+    </script>
+</head>
+<body style="height: 10000px;">
+<div id="div1"></div>
+
+</body>
+</html>

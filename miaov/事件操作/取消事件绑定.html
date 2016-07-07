@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        /*
+        * 取消第一种事件的绑定方式：obj.onclick = null
+        * 取消第二种绑定事件的方式：分两种情况 ，一种是ie下的,一种是标准浏览器下的：
+        * ie下：detachEvent(事件名称，事件函数)
+        * */
+        window.onload = function()
+        {
+            function fn1()
+            {
+                alert(1);
+            }
+            function fn2()
+            {
+                alert(2);
+            }
+            /*document.onclick = fn1;   //1
+            document.onclick = null;   //不再弹出1，因为点击事件等于null，点击了不再作操作了。*/
+            //ie下：
+            /*document.attachEvent("onclick",fn1);
+            document.attachEvent("onclick",fn2);
+            document.detachEvent("onclick",fn1);    //取消了之后只弹出2*/
+
+            //FF/chrome下
+            document.addEventListener("click",fn1,false);
+            document.addEventListener("click",fn1,true);
+            document.addEventListener("click",fn1,false);
+            document.removeEventListener("click",fn1,false);//这里只取消了冒泡事件的fn1，另一个为true的事件还没取消，因此弹出1  2
+
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

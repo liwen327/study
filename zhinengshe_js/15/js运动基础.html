@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>添加、删除行</title>
+    <style>
+        #div1{ width:200px; height: 200px; background: purple; position: absolute; margin-top:20px;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            var oBtn = document.getElementById("btn1");
+            var timer = null;
+            oBtn.onclick = function()
+            {
+                var speed = 1;
+                clearInterval(timer);   //先把定时器清除，因为如果在运动的过程中一直点击，那div运动的速度就会越来越快，先把其余的定时器清除，保证在运动的过程中只有一个定时器在工作
+                timer = setInterval(function()
+                {
+                    if(oDiv.offsetLeft >= 300)
+                    {
+                        clearInterval(timer);
+                    }
+                    else
+                    {
+                        oDiv.style.left = oDiv.offsetLeft + speed + "px";
+                    }
+                },30)
+
+            }
+        };
+
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="运动"/>
+    <div id="div1" ></div>
+</body>
+</html>
+
+
+
+

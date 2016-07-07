@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>3</title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        function aa($scope,$timeout)
+        {
+            $scope.name = "hello";
+            /*setTimeout(function()
+            {
+                $scope.name = "Hi";
+            },1000);*/
+            /*$timeout(function()      //必须用angular提供的这样一个定时的方法而不能用setTimeout这个js原生的方法
+            {
+                $scope.name = "Hi";
+            },1000);*/
+
+            //除了可以用ng-click的点击事件来使数据发生改变也可以用函数的方法：
+            $scope.show = function()
+            {
+                $scope.name = "Hi";
+            };
+        }
+    </script>
+</head>
+<body>
+<div ng-controller = "aa" ng-click = "show()">
+    <p>{{name}}</p>
+</div>
+<!--<div ng-controller = "bb">
+    <p>{{name}}</p>
+    <p>{{age}}</p>
+</div>-->
+
+</body>
+</html>

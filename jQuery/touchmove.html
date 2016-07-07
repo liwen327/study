@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>zepto实现手机网站焦点图触屏划动效果</title>
+
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <style>
+
+        *{margin:0; padding:0;}
+
+        .focus{width:300px; overflow:hidden;}
+
+        .focus .con{width:1500px;overflow:hidden;}
+
+        .focus .con li{font-style:normal;width:300px;height:200px;background:#ccc;text-align:center;float:left;}
+
+        .focus .tit li{width:20%;float:left;}
+
+        .focus .tit li.on{background:#ccc;}
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="focus">
+
+    <ul class="con">
+
+        <li>1111</li>
+
+        <li>2222</li>
+
+        <li>3333</li>
+
+        <li>4444</li>
+
+        <li>5555</li>
+
+    </ul>
+
+    <ul class="tit">
+
+        <li class="on">1111</li>
+
+        <li>2222</li>
+
+        <li>3333</li>
+
+        <li>4444</li>
+
+        <li>5555</li>
+
+    </ul>
+
+</div>
+
+<script>
+
+    var touch={};
+
+    touch.current=0;
+
+    touch.lenght=4;
+
+    var touchElem=$(".focus ul")[0];
+
+    function move(elem,targetW,current){
+
+        elem.animate({
+
+            translate3d: targetW *current + "px,0,0"
+
+        },300,'steps',function(){
+
+        });
+
+    }
+
+    function moveli(current){
+
+//alert(elem.find("li"));
+
+        $(".tit > li").each(function(){
+
+            $(this).removeClass("on");
+
+        })
+
+        $(".tit > li").eq(current).addClass("on");
+
+    }
+
+    $(touchElem).unbind().bind("touchstart",function( e ){
+
+        touch.x1 = e.touches[0].pageX;
+
+    }).bind("touchmove",function( e ){
+
+                touch.x2 = e.touches[0].pageX;
+
+                touch.x3 = touch.endx+(touch.x2-touch.x1);
+
+                document.title=touch.x2-touch.x1;
+
+                $(this).css("-webkit-transform","translate3d("+touch.x3+"px, 0px, 0px)");
+
+                e.preventDefault();
+
+            }).bind("touchend",function( e ){
+
+                if(Math.abs(touch.x2 - touch.x1) >=30){
+
+                    touch.i = touch.x2 - touch.x1 > 0 ? -1 : 1;
+
+                    touch.current=touch.current+touch.i;
+
+                    if(touch.current==-1){touch.current=0}else if (touch.current>=touch.lenght){touch.current=touch.lenght;}
+
+                }
+
+                document.title=touch.current;
+
+                touch.endx=touch.current*-300;
+
+                move($(this),-300,touch.current);
+
+                moveli(touch.current);
+
+            }).bind('touchcancel', function(){
+
+            })
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        /*
+        ie:attachEvent(事件名称，事件函数)
+        标准浏览器：obj.addEventListener(事件名称，事件函数，是否捕获)
+        */
+        /*function fn1()
+        {
+            alert(this);
+        }
+        function fn2()
+        {
+            alert(this);
+        }*/
+        //document.attachEvent("onclick",fn1);
+        //document.attachEvent("onclick",fn2);   //ie7及以下弹出两次[object]，ie8及以上弹出两次[object Window]   ,FF及Chrome等报错，没有attachEvent这个方法
+
+        //document.addEventListener("click",fn1,false);
+        //document.addEventListener("click",fn2,false);  //弹出两次[object HTMLDocument]
+
+        //把这个方法封装一下：
+        function fn1()
+        {
+            alert(this);
+        }
+        function fn2()
+        {
+            alert(2);
+        }
+        function bind(obj,evename,fn)
+        {
+            if(obj.addEventListener)
+            {
+                obj.addEventListener(evename,fn,false);
+            }
+            else
+            {
+                obj.attachEvent("on" + evename,function()
+                {
+                    fn.call(obj);
+                });
+            }
+        }
+        bind(document,'click',fn1);
+        bind(document,'click',fn2);//一个元素可以绑定多个事件，在ie8及以下浏览器下：第一次弹出2，第二次弹出object，ie9以上及FF/Chrome等浏览器下弹出html和2
+    </script>
+</head>
+<body>
+
+</body>
+</html>

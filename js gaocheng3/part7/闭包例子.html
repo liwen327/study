@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>闭包中的this对象</title>
+</head>
+<script type="text/javascript">
+    /*function f1()
+    {
+        var n = 10;
+        alert("f1执行");
+        function f2()
+        {
+            alert("f2执行" + n);
+        }
+        f2();   //这里执行会弹出“f2执行10”，如果把这里注释了，单纯调用了f1()，则只会弹出“f1执行”
+    }
+    f1();  //在这里调用 f1只会弹出"f1执行"*/
+
+    /*function f1()
+    {
+        var n = 10;
+        //alert("f1执行");
+        function f2()
+        {
+            alert("f2执行" + n);
+        }
+        return f2;   //f2可以访问f1中的局部变量，那么只要把f2作为返回值 ，那我们不就可以在f1外部读取它的内部变量了吗，事实证明这是可以的
+    }
+
+    var result = f1();
+    result();    //f2执行10*/
+
+    //闭包的用途：
+    function f1()
+    {
+        var n = 999;
+        nAdd = function(){ n+=1};
+        function f2()
+        {
+            alert(n);
+        }
+        return f2;
+    }
+    var result = f1();
+    result();   //999
+    nAdd();
+    result();   //1000
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        ul {
+            list-style : none;
+            clear      : both;
+        }
+        ul > li {
+            list-style  : none;
+            float       : left;
+            margin-left : 15px;
+            display     : block;
+        }
+        .active {
+            background : #1f292e;
+            color      : #FFFFFF;
+        }
+        a {
+            color : #000066;
+        }
+        .active > a {
+            color : #FFFFFF;
+        }
+        /*[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}.ng-animate-start{border-spacing:1px 1px;-ms-zoom:1.0001;}.ng-animate-active{border-spacing:0px 0px;-ms-zoom:1;}*/
+    </style>
+</head>
+<body ng-cloak>
+<div ng-controller="testCtrl">
+    <ul>
+        <li ng-class="{'active':currentMenu == 'menu1'}"><a href="javascript:;" ng-click="selectMenu('menu1')">菜单1</a>
+        </li>
+        <li ng-class="{'active':currentMenu == 'menu2'}"><a href="javascript:;" ng-click="selectMenu('menu2')">菜单2</a>
+        </li>
+    </ul>
+    <br><br>
+
+    <div ng-if="currentMenu == 'menu1'">
+        我是菜单1里面的内容
+    </div>
+    <div ng-if="currentMenu == 'menu2'">
+        我是菜单2里面的内容
+    </div>
+
+</div>
+<script src="http://ngnice.com/lib/angular/1.2.16/angular.js"></script>
+<script>
+    angular.module("app", []);
+    angular.module("app").controller("testCtrl", ["$scope", function ($scope) {
+        $scope.currentMenu = "menu1";
+        $scope.selectMenu = function (menu) {
+            $scope.currentMenu = menu;
+        }
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>5模块化思想</title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        //angular.bind()方法 ——改this的指向 类似于jQuery中的$.proxy()
+        /*function show()
+         {
+         alert(this);
+         }
+         show(); //指向window*/
+
+        /*function show()
+        {
+            alert(this);
+        }
+        angular.bind(document,show)();  //改变了this的指向，此时this指向了HTMLdocument*/
+
+        //angular.bind(document.show,3,4)(),还可以传参数，3和4就是所传的参数
+        /*function show(n1,n2)
+        {
+            alert(this);
+            alert(n1);
+            alert(n2);
+        }
+        //angular.bind(document,show)(3,4);  //下面这三种写法结果都是一样的，实参可以在左边的括号中也可以在右边的括号中
+        //angular.bind(document,show,3)(4);
+        angular.bind(document,show,3,4)();*/
+
+        //angular.copy()对象的拷贝
+        var a = {
+            name:"hello"
+        };
+        var b = {
+            age:"20"
+        };
+        var c = angular.copy(a,b);
+        console.log(c);     //boject{name="hello"}
+        console.log(a);    //boject{name="hello"}
+        console.log(b);   //boject{name="hello"}  b也是对象hello，所以a覆盖了b
+
+        /*//angular.extend()对象继承
+        var a = {
+            name:"hello"
+        };
+        var b = {
+            age:20
+        };
+        var c = angular.extend(a,b);
+        console.log(c);    //object{name="hello",age=20}
+        console.log(a);   //object{name="hello",age=20}
+        console.log(b);   //object{age=20}    b还是原来的值，表明a继承了b*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

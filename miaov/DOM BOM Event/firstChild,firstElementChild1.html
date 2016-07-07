@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        window.onload = function()
+        {
+            var oUl = document.getElementById("ul1");
+            //alert(oUl.firstElementChild);  //FF/chrome 弹出object HTMLLIElement   ie8以下弹出undefined
+            //alert(oUl.firstChild);//FF/chrome 弹出[object Text]    ie8c下弹出object  这样就不能用firstChild来判断了，需要用firstElementChild来做兼容性处理
+            /*if(oUl.firstElementChild)
+            {
+                oUl.firstElementChild.style.background = "red";
+            }
+            else
+            {
+                oUl.firstChild.style.background = "red";
+            }*/
+
+            //可以简写如下：
+            /*var oFirst = oUl.firstElementChild || oUl.firstChild;
+            oFirst.style.background = "red";
+
+            var oLast = oUl.lastElementChild || oUl.lastChild;
+            oLast.style.background = "yellow";
+
+            var oNext = oFirst.nextElementSibling || oFirst.nextSibling;
+            oNext.style.background = "blue";
+
+            var oPrev = oLast.previousElementSibling || oLast.previousSibling;
+            oPrev.style.background = "green";*/
+
+            //如上面那样写可能会有一个问题，就是当oUl中没有子节点时可能会出问题
+            /*var oFirst = oUl.firstElementChild || oUl.firstChild;   //因此这里就会出问题，标准浏览器时，oUl.firstElementChild是存在的，即第一个空白节点，那下面给空白节点设置背景色显然就会出错。所以这种兼容写法还是存在问题的
+            alert(oFirst);   //标准浏览器：[object Text]  空白节点    非标准浏览器：null
+            oFirst.style.background = "red";*/
+
+            //如果没有子节点，使用下面这种兼容写法
+            if(oUl.children[0])
+            {
+                oUl.children[0].style.background= "red";
+            }
+            else
+            {
+                alert("没有子节点可设置");
+            }
+
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+</ul>
+
+</body>
+</html>

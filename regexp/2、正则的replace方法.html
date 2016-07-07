@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1、replace()方法</title>
+    <script>
+
+        var str = "aaa";
+
+        /*var re = /a/;
+        var newStr = str.replace(re,'b');
+        alert(newStr);     //baa    正则的匹配规则是一旦第一个匹配成功了，就不再往下匹配了，如果想继续往下匹配刚在后面加上全局匹配g  即 var re = /a/g;*/
+
+        /*var re = /a/g;
+        var newStr = str.replace(re,'b');
+        alert(newStr);     //bbb*/
+
+        var re = /a+/;
+        var newStr = str.replace(re,'b');
+        alert(newStr);     //b    a+代表的意思就是任意多个a相连就只匹配一个b,把aaa看作一个整体
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var json = {
+            name:"blue",
+            qq:"3245567",
+            showName: function(){
+            alert("我的名字是："+ this.name);
+                },
+            showQQ: function(){
+                alert("我的QQ是："+this.qq);
+            }
+        }
+        json.showName();
+        json.showQQ();
+        //但是用json来写面向对象，不适合多个对象，只适合像整个页面只有一个对象的情况，比如ajax对象。所以一般用它来写单体。
+    </script>
+</head>
+<body>
+
+</body>
+</html>

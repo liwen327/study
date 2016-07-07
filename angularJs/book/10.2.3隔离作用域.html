@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <style>
+        .red{ background-color:red;}
+    </style>
+    <script>
+        angular.module('myApp',[])
+                .directive('myDirective',function(){
+                    return{
+                        restrict:'A',
+                        scope:true,
+                        template:'Inside myDirective,isolate scope:{{myProperty}}'
+                    }
+                })
+                .directive('myInheritScopeDirective',function(){
+                    return{
+                        restrict:'A',
+                        scope:{},
+                        template:'Inside myDirective,isolate scope:{{myProperty}}'
+                    }
+                })
+    </script>
+</head>
+<body>
+
+<div ng-init="myProperty='wow,this is cool'">
+    Surrounding scope:{{myProperty}}
+    <div my-inherit-scope-directive></div>
+    <div my-directive></div>
+</div>
+
+</body>
+</html>

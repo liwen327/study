@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script>
+        //var app = angular.module('myApp',[]);
+        angular.module('myApp',[])
+                .controller('SomeController',function($scope)
+                {
+                    $scope.someModule ={
+                        someProperty : 'hello computer'
+                    };
+                    $scope.someAction = function()
+                    {
+                        $scope.someModule.someProperty = 'hello human';
+                    }
+                })
+    </script>
+</head>
+<body>
+<div ng-controller="SomeController">
+    {{someModule.someProperty}}
+    <button ng-click="someAction()" type="submit" value="点击">点击</button>
+</div>
+
+</body>
+</html>

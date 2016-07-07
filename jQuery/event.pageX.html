@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>eve.pageX  eve.pageY</title>
+    <style>body{ background-color: #eef; }div{ padding: 20px; }</style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<div id="log"></div>
+<script>
+    $(document).bind('mousemove',function(e){
+        $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        window.color = "red";
+        var o = {color:"blue"};
+        function saycolor()
+        {
+            alert(this.color);
+        }
+        saycolor();
+        var o.saycolor = saycolor;
+        o.saycolor();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

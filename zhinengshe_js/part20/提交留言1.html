@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>键盘控制div移动</title>
+    <style>
+        #div1{width:200px; height: 200px; background: #ccc; position: absolute;}
+        textarea{margin-top:30px;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            var oTxt1 = document.getElementById("txt1");
+            var oTxt2 = document.getElementById("txt2");
+
+            oTxt1.onkeydown = function(ev)
+            {
+                var oEvent = ev || event;
+                if(oEvent.keyCode == 13 && oEvent.ctrlKey)
+                {
+                    oTxt2.value += oTxt1.value + "\n";
+                    oTxt1.value = "";
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+<input type="text" id="txt1" placeholder="请输入相应内容"/> <br/>
+<textarea cols="30" id="txt2" rows="10"></textarea>
+
+
+</body>
+</html>

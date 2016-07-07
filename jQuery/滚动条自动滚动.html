@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>each()方法</title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script>
+        /*$(window).scrollTop(0);
+        var T = 200;
+        window.onscroll = function()
+        {
+            $(window).scrollTop(T);
+        };*/
+
+
+        var T=200;
+        var t=setInterval(function()
+        {
+            if(T==0)
+            {
+                clearInterval(t);
+            }
+            else
+            {
+                //T-=3;
+                $(window).scrollTop(500);
+            }
+            console.log(T);
+        },10);
+    </script>
+</head>
+<body style="height: 2000px;">
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+</html>

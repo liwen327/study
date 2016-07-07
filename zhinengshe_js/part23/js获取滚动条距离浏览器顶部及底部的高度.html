@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计数</title>
+    <script>
+        /*function getScrollTop()
+        {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            alert(scrollTop);
+        }
+        getScrollTop();*/
+
+        /*window.onscroll = function()
+        {
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            alert(scrollTop);
+        }*/
+
+        window.onscroll = function()
+        {
+            alert(getScrollTop());
+        }
+
+        /**
+         * 获取滚动条距离顶端的距离
+         * @return {}支持IE6
+         */
+        function getScrollTop() {
+            var scrollPos;
+            if (window.pageYOffset) {
+                scrollPos = window.pageYOffset; }
+            else if (document.compatMode && document.compatMode != 'BackCompat')
+            { scrollPos = document.documentElement.scrollTop; }
+            else if (document.body) { scrollPos = document.body.scrollTop; }
+            return scrollPos;
+        }
+
+    </script>
+</head>
+
+<body style="height: 2000px;">
+
+</div>
+</body>
+</html>

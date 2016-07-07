@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("myApp",[]);
+        app.controller('MyController','$scope','$timeout',function(s,t){
+            s.updateTime = function()
+            {
+                s.clock = {
+                    time:new Date()
+                };
+                t(function()
+                {
+                    s.clock.time = new Date();
+                    updateTime();
+                },1000);
+            }
+            updateTime();
+        })
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+    <div ng-controller="MyController">
+        <p ng-cloak>{{clock.time | date:"yyyy-MM-dd hh:mm:ss"}}</p>
+    </div>
+</div>
+
+</body>
+</html>

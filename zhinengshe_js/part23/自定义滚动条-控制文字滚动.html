@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自定义横向滚动条</title>
+    <style>
+        *{margin:0;padding:0;}
+        #div1{width: 20px;  height: 400px; background: #ccc; position: absolute; right:0; top: 0;}
+        #div2{width: 20px; height: 100px; background: red; position: absolute;}
+        #div3{width: 400px; height: 400px; border:solid 1px #000; position: relative; overflow: hidden; margin:50px auto;}
+        #div4{position:absolute; padding:20px;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oDiv3 = document.getElementById("div3");
+            var oDiv4 = document.getElementById("div4");
+            var disX = 0;
+            var disY = 0;
+            oDiv1.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+                disX = oEvent.clientX - oDiv2.offsetLeft;
+                disY = oEvent.clientY - oDiv2.offsetTop;
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX - disX;
+                    var t = oEvent.clientY - disY;
+                    if(l<0)
+                    {
+                        l = 0;
+                    }
+                    else if(l>oDiv1.offsetWidth - oDiv2.offsetWidth)
+                    {
+                        l = oDiv1.offsetWidth - oDiv2.offsetWidth;
+                    }
+                    if(t<0)
+                    {
+                        t = 0;
+                    }
+                    else if(t>oDiv1.offsetHeight - oDiv2.offsetHeight)
+                    {
+                        t = oDiv1.offsetHeight - oDiv2.offsetHeight;
+                    }
+                    oDiv2.style.left = l + "px";
+                    oDiv2.style.top = t + "px";
+
+                    var scale = t/(oDiv1.offsetHeight - oDiv2.offsetHeight);    //scale从0-1开始变化
+                    document.title = scale;
+                    oDiv4.style.top = -scale*(oDiv4.offsetHeight - oDiv3.offsetHeight) + "px";   //oDiv4的高度减去oDiv3的高度再乘以一个从0到1的数字，到最后正好到达oDiv4的文字底部
+                    console.log(oDiv4.style.top);
+                }
+                document.onmouseup = function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                return false;
+            }
+
+            //滚动
+            addWheel(oDiv3,function(down){
+                var t=oDiv2.offsetTop;
+
+                if(down){   //down为true时，t是增大的，t即是scrollbar距上面的top值
+                    t+=10;
+                }else{
+                    t-=10;
+                }
+                setTop(oDiv4,t);
+            });
+
+            function setTop(obj,t)
+            {
+                t<0 && (t=0);
+                t>scrollbottom && (t=scrollbottom);
+                scrollbar.style.top= t + 'px';
+                obj.style.top = -(scrollH-seth)*(t/scrollbottom) + 'px';      //scrollbottom=seth-barH即整个表达式为-(scrollH - seth)*(t/(seth - barH))即拖拽的表达式
+            }
+            function addWheel(obj,fn){
+                function fnWheel(ev){
+                    var oEvent=ev || event;
+                    var down=false;
+                    if(oEvent.wheelDelta)
+                    {
+                        if(oEvent.wheelDelta<0){    //向后滚动滚轮，wheelDelta是-120的倍数
+                            down=true;             //down=true时向下滚动，t增加
+                        }else{
+                            down=false;           //否则，t减小
+                        }
+                    }
+                    else
+                    {
+                        if(oEvent.detail>0){
+                            down=true;
+                        }else{
+                            down=false;
+                        }
+                    }
+                    fn(down);
+
+                    if(scrollH>seth)
+                    {
+                        if(oEvent.preventDefault){
+                            oEvent.preventDefault();
+                        }
+                        return false;
+                    }
+
+                }
+                if(window.navigator.userAgent.toLowerCase().indexOf('firefox')!=-1){
+                    obj.addEventListener('DOMMouseScroll',fnWheel,false);
+                }else{
+                    obj.onmousewheel=fnWheel;
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+
+<div id="div3">
+    <div id="div4">新浪科技讯 北京时间8月10日早间消息，苹果CEO蒂姆-库克(Tim Cook)对于这家消费电子巨头而言显然十分重要，但该公司去年花费70万美元保护其个人安全的消息还是引发了很多关注。不过，倘若将这一巨额资金放到相应的背景中去看待，或许并没有那么令人侧目。
+
+        　　苹果是在今年3月10日提交给美国证券交易委员会(SEC)的Schedule 14A文件中披露这项数据的。其中有一条名为库克的“所有其他补偿”的项目，金额为774176美元，而明确用于库克的安全开支为699133美元。
+
+        　　苹果还在文件中表示，之所以为库克提供家庭和个人安保，是因为他的个人安全对公司及其股东至关重要。该公司认为这些安全措施是合理而必要的开支，符合公司利益。
+
+        　　与其他大型企业的顶尖CEO相比，苹果的这项支出并不算多。2014年，亚马逊用于该公司CEO杰夫-贝佐斯(Jeff Bezos)的安全开支为160万美元，甲骨文为该公司前CEO拉里-埃里森(Larry Ellison)投入的安全开支为150万美元，迪士尼为CEO鲍勃-伊戈尔(Bob Iger)投入的安全开支也达到58万美元。(书聿)新浪科技讯 北京时间8月10日早间消息，苹果CEO蒂姆-库克(Tim Cook)对于这家消费电子巨头而言显然十分重要，但该公司去年花费70万美元保护其个人安全的消息还是引发了很多关注。不过，倘若将这一巨额资金放到相应的背景中去看待，或许并没有那么令人侧目。
+
+        　　苹果是在今年3月10日提交给美国证券交易委员会(SEC)的Schedule 14A文件中披露这项数据的。其中有一条名为库克的“所有其他补偿”的项目，金额为774176美元，而明确用于库克的安全开支为699133美元。
+
+        　　苹果还在文件中表示，之所以为库克提供家庭和个人安保，是因为他的个人安全对公司及其股东至关重要。该公司认为这些安全措施是合理而必要的开支，符合公司利益。
+
+        　　与其他大型企业的顶尖CEO相比，苹果的这项支出并不算多。2014年，亚马逊用于该公司CEO杰夫-贝佐斯(Jeff Bezos)的安全开支为160万美元，甲骨文为该公司前CEO拉里-埃里森(Larry Ellison)投入的安全开支为150万美元，迪士尼为CEO鲍勃-伊戈尔(Bob Iger)投入的安全开支也达到58万美元。(书聿)新浪科技讯 北京时间8月10日早间消息，苹果CEO蒂姆-库克(Tim Cook)对于这家消费电子巨头而言显然十分重要，但该公司去年花费70万美元保护其个人安全的消息还是引发了很多关注。不过，倘若将这一巨额资金放到相应的背景中去看待，或许并没有那么令人侧目。
+
+        　　苹果是在今年3月10日提交给美国证券交易委员会(SEC)的Schedule 14A文件中披露这项数据的。其中有一条名为库克的“所有其他补偿”的项目，金额为774176美元，而明确用于库克的安全开支为699133美元。
+
+        　　苹果还在文件中表示，之所以为库克提供家庭和个人安保，是因为他的个人安全对公司及其股东至关重要。该公司认为这些安全措施是合理而必要的开支，符合公司利益。
+
+        　　与其他大型企业的顶尖CEO相比，苹果的这项支出并不算多。2014年，亚马逊用于该公司CEO杰夫-贝佐斯(Jeff Bezos)的安全开支为160万美元，甲骨文为该公司前CEO拉里-埃里森(Larry Ellison)投入的安全开支为150万美元，迪士尼为CEO鲍勃-伊戈尔(Bob Iger)投入的安全开支也达到58万美元。(书聿)新浪科技讯 北京时间8月10日早间消息，苹果CEO蒂姆-库克(Tim Cook)对于这家消费电子巨头而言显然十分重要，但该公司去年花费70万美元保护其个人安全的消息还是引发了很多关注。不过，倘若将这一巨额资金放到相应的背景中去看待，或许并没有那么令人侧目。
+
+        　　苹果是在今年3月10日提交给美国证券交易委员会(SEC)的Schedule 14A文件中披露这项数据的。其中有一条名为库克的“所有其他补偿”的项目，金额为774176美元，而明确用于库克的安全开支为699133美元。
+
+        　　苹果还在文件中表示，之所以为库克提供家庭和个人安保，是因为他的个人安全对公司及其股东至关重要。该公司认为这些安全措施是合理而必要的开支，符合公司利益。
+
+        　　与其他大型企业的顶尖CEO相比，苹果的这项支出并不算多。2014年，亚马逊用于该公司CEO杰夫-贝佐斯(Jeff Bezos)的安全开支为160万美元，甲骨文为该公司前CEO拉里-埃里森(Larry Ellison)投入的安全开支为150万美元，迪士尼为CEO鲍勃-伊戈尔(Bob Iger)投入的安全开支也达到58万美元。(书聿)
+    </div>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+</div>
+</body>
+</html>

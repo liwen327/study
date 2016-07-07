@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新选择器</title>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            var oInpt = document.getElementById("inpt");
+
+            oInpt.onclick = function()
+            {
+                var arr = getRandom(35,7);
+                history.pushState(arr,'',arr);     //历史管理的pushState()方法只能在服务器环境下才能运行，而且也不能刷新页面，一旦刷新就是会报404错误，因为这本来就是虚假的网址
+                oDiv.innerHTML = arr;
+            }
+
+            window.onpopstate = function(ev)      //些事件自动获取到数据。浏览器都帮忙处理了
+            {
+                oDiv.innerHTML = ev.state;
+            }
+
+
+            function getRandom(iAll,iNum)
+            {
+                var arr = [];
+                var arrNew = [];
+                for(var i=1; i<=iAll; i++)
+                {
+                    arr.push(i);
+                }
+                for(var i=1; i<=iNum; i++)
+                {
+                    arrNew.push(arr.splice(Math.floor(Math.random()*arr.length),1));
+                    //console.log(arr.splice(Math.floor(Math.random()*arr.length),1));
+                }
+                return arrNew;
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="点击选取" id="inpt"/>
+<div id="div1"></div>
+
+
+</body>
+</html>

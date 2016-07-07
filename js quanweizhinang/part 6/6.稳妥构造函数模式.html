@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        function Person(name,age){
+            var o = new Object();
+            //在这里定义私有的方法
+            o.sayName = function(){
+                console.log(name);
+            }
+            return o;
+        }
+
+        var person1 = new Person('Mike',28);
+        person1.sayName();   //Mike
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

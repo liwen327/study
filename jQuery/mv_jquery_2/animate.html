@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+    <style>
+        #div1{width:100px; height: 100px; background: red;}
+        #div2{width:100px; height: 100px; background: red;margin-top:20px;}
+    </style>
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+    <script>
+        $(function()
+        {
+            $("#div1").click(function()
+            {
+                /*$(this).animate({width:300,height:300},1000,function()
+                {
+                    alert(123);
+                });*/
+                /*$(this).animate({width:300},1000,function()
+                {
+                    $(this).animate({height:300},1000);
+                })*/
+                $(this).animate({width:300},1000).delay(1000).animate({height:300},1000);//delay(1000)是走完宽度的变化后停顿1s再走高度的变化
+            });
+            $("#div2").click(function()
+            {
+                //$("#div1").stop();   //stop()只会阻止当前运动
+                //$("#div1").stop(true);   //stop()中第一个参数为true时会阻止后续运动
+                //$("#div1").stop(true,true);  //stop()中第二个参数为true,会使当前运动运动到指定的目标点
+                $("#div1").finish();  //立即停止到所有的目标点
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

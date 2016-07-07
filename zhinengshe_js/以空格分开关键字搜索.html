@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>以空格分开关键字搜索</title>
+    <script>
+        window.onload = function()
+        {
+            var oTab = document.getElementById("tab1");
+
+            var oText = document.getElementById("txt");
+            var oBtn = document.getElementById("btn");
+
+            oBtn.onclick = function()
+            {
+                for(var i = 0; i<oTab.tBodies[0].rows.length; i++)
+                {
+                    var sTab = oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+                    var sTxt = oText.value.toLowerCase();
+                    var arr = sTxt.split(" ");
+                    oTab.tBodies[0].rows[i].style.background = "";
+                    for(var j=0; j<arr.length; i++)
+                    {
+                        if(sTab.search(arr[j]) != -1)
+                        {
+                            oTab.tBodies[0].rows[i].style.background = "yellow";
+                        }
+                        else
+                        {
+                            oTab.tBodies[0].rows[i].style.background = "";
+                        }
+                    }
+
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+姓名：<input type="text" id="txt" />
+
+<input type="button" id="btn" value="搜索"/>
+<table border="1" width="500" id="tab1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>操作</th>
+    </tr>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Blue</td>
+            <td>23</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>23</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>24</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>王五</td>
+            <td>26</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>赵六</td>
+            <td>24</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>张六</td>
+            <td>24</td>
+            <td></td>
+        </tr>
+    </tbody>
+    </thead>
+</table>
+
+</body>
+</html>

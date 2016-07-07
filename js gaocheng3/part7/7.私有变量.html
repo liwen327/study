@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function myObject(){
+            var privateVar = 10;
+            function privateFn(){
+                return false;
+            }
+            this.publicFn = function(){
+                privateVar++;
+                return privateFn();
+            }
+        }
+        var myObject1 = new myObject();
+        console.log(myObject1.publicFn());
+        //console.log(privateVar);   //privateVar is not defined
+
+        //私有变量的实例
+        function person(name){
+            this.getName = function (){
+                return name;
+            }
+            this.setName = function (value){
+                name = value;
+            }
+        }
+        var person1 = new person("Mike");
+        console.log(person1.getName());
+        person1.setName("John");
+        console.log(person1.getName());
+
+        /**
+         * 这种构造函数的方式的问题是：每声明一个实例时都会重新生成一个新的方法和属性，所以接下来使用原型模式
+         * */
+
+     </script>
+</head>
+<body>
+<div id="box">
+    <ul id="ul1">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+
+</html>

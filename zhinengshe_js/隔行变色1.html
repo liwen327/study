@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>隔行变色</title>
+    <script>
+        window.onload = function()
+        {
+            var oUl = document.getElementById("ul1");
+            var aLi = oUl.getElementsByTagName("li");
+            for(var i=0; i<aLi.length; i++)
+            {
+                if(i%2 == 1)
+                {
+                    aLi[i].style.background = "#eee";
+                }
+                else
+                {
+                    aLi[i].style.background = "#fff";
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+</ul>
+
+</body>
+</html>

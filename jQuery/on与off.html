@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>filter has   not</title>
+    <style>
+    </style>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script>
+        $(function()
+        {
+            /*$("div").on("click",function()
+            {
+                alert(123);
+            })*/
+
+           /* $("div").on("click mouseout",function()
+             {
+             alert(123);
+             })*/
+
+            $("div").on({
+                    "click":function()
+                    {
+                        alert(123);
+                    },
+                    "mouseout":function()
+                    {
+                        alert(456);
+                    }
+            });   //运行的结果是先弹456，再弹123
+
+            $("div").off("click");
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+<div class="box">aa</div>
+
+</body>
+</html>

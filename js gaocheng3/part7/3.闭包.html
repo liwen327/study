@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        /*function create(){
+            var result = [];
+            for(var i=0; i<10; i++){
+                result[i] = function(){
+                    //return i;
+                    console.log(i);
+                }
+            }
+            return result;
+        }
+        console.log(create());*/
+
+        //如果是给一组li加上点击事件，看会不会产生闭包
+        /*window.onload = function(){
+            var oUl = document.getElementById("ul1");
+            var aLi = oUl.getElementsByTagName("li");
+            function create(){
+                var result = [];
+                for(var i=0; i<aLi.length; i++){
+                    aLi[i].onclick = function(){
+                        //console.log(i);  //点击哪个都会输出4，产生闭包了
+                        console.log(this.innerHTML); //只要在函数中不用到i,就不会产生闭包，还照样会弹出各自的标签内容
+                    }
+                }
+                return result;
+            }
+            create();
+        }*/
+
+        //如上所示，确实产生闭包了，下面利用匿名函数来解决这个闭包的问题
+        window.onload = function(){
+            var oUl = document.getElementById("ul1");
+            var aLi = oUl.getElementsByTagName("li");
+            function create(){
+                for(var i=0; i<aLi.length; i++){
+                    aLi[i].onclick = (function(n){
+                        return function(){
+                            console.log(n);    //这样是输出0，1，2，3
+                        }
+                    })(i);
+                }
+            }
+            create();
+        }
+
+     </script>
+</head>
+<body>
+<div id="box">
+    <ul id="ul1">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+
+</html>

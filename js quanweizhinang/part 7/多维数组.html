@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        /*var table = new Array(10);
+        for(var i= 0;i<table.length; i++)
+        {
+            table[i] = new Array(10);
+        }
+        for(var row = 0; row < table.length; row++)
+        {
+            for(col = 0; col < table[row].length; col++)
+            {
+                table[row][col] = row*col;
+            }
+        }
+        var product = table[5][9];
+        console.log(product);*/
+        var oDiv = document.getElementById("box");
+        function table(row,num)
+        {
+            for(var i =0; i<row; i++)
+            {
+                for(var j = 0; j< num; j++)
+                {
+                    //return i*j;
+                    oDiv.innerText = i*j;
+                }
+            }
+        }
+        document.write(table(3,5));
+
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #div1{ width: 100px; height: 200px; border:solid 1px #ccc; display: none;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oBtn = document.getElementById("btn");
+            var oDiv = document.getElementById("div1");
+            /*oBtn.onclick = function(ev)
+            {
+                var ev = ev || event;
+                oDiv.style.display = "block";
+                ev.cancelBubble = true;   //给当前对象的当前事件阻止冒泡
+            }
+            document.onclick = function()
+            {
+                *//*setTimeout(function()
+                {
+                    oDiv.style.display = "none";
+                },1000)*//*
+                oDiv.style.display = "none";
+            }*/
+
+            oBtn.onmouseover = function(ev)     //这里不应该是在按钮上面设置鼠标移入移出事件，应该再在按钮和oDiv的外面再加一个div，给新加的div增加鼠标 移入移出事件，这样在oDiv上移去时，oDiv也不会隐藏
+            {
+                var ev = ev || event;
+                oDiv.style.display = "block";
+                ev.cancelBubble = true;   //给当前对象的当前事件阻止冒泡
+            }
+            oBtn.onmouseout = function()
+            {
+                oDiv.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<div id="div1">显示的内容</div>
+
+</body>
+</html>

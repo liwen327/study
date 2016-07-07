@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        *{margin:0;padding:0;}
+        #div1{width: 200px; height: 200px; background: red; position: absolute;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            var disX = 0;
+            var disY = 0;
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+                disX = oEvent.clientX - oDiv.offsetLeft;
+                disY = oEvent.clientY - oDiv.offsetTop;
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX - disX;    //为了判断不让div拖出屏幕可见区域
+                    var t = oEvent.clientY - disY;
+                    if(l < 0)
+                    {
+                        l = 0;
+                    }
+                    else if(l> document.documentElement.clientWidth - oDiv.offsetWidth)   //屏幕可见宽度 - oDiv的自身宽度，一旦拖的超出右边屏幕，则把l置为屏幕可见宽度减去oDiv自身宽度，即不能超出右边区域
+                    {
+                        l = document.documentElement.clientWidth - oDiv.offsetWidth;
+                    }
+                    if(t < 0)
+                    {
+                        t = 0;
+                    }
+                    else if(t > document.documentElement.clientHeight - oDiv.offsetHeight)
+                    {
+                        t = document.documentElement.clientHeight - oDiv.offsetHeight;
+                    }
+
+                    oDiv.style.left = l + "px";
+                    oDiv.style.top = t + "px";
+                }
+                document.onmouseup = function()
+                {
+                    document.onmousemove = null;   //当鼠标抬起时，把onmousemove事件置为空
+                    document.onmouseup = null;     //当鼠标抬起之后，onmouseup事件也没什么用了，也置为空即可，不留垃圾代码
+                }
+                return false;   //这里是为了解决firefox的移动空div时第一次按下之后抬起，然后再按下去移动div时，会复制出一个div的bug,return false 阻止掉火狐的默认事件
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div id="div1"></div>
+
+</body>
+</html>

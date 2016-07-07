@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        String.prototype.repeatify = String.prototype.repeatify || function(times)
+        {
+            var str = '';
+            for(var i=0; i<times; i++)
+            {
+                str +=this;
+            }
+            return str;
+        }
+        console.log('holle'.repeatify(3));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#btn").click(function(k) {
+                //...
+                var j = $("form").serializeArray();//序列化name/value
+                $.ajax({
+                    type: 'GET',  //这里用GET
+                    url: 'ajax.php',
+                    dataType: 'jsonp',  //类型
+                    data: j,
+                    jsonp: 'callback', //jsonp回调参数，必需
+                    async: false,
+                    success: function(result) {//返回的json数据
+                        alert(result.message); //回调输出
+
+                        result = result || {};
+                        if (result.msg=='err'){
+                            alert(result.info);
+                        }else if (result.msg=="ok"){
+                            alert('提交成功');
+                        }else{
+                            alert('提交失败');
+                        }
+
+                    },
+                    timeout: 3000
+                })
+                //...
+            });
+        })
+    </script>
+</head>
+<body>
+<form name="form">
+    <input type="text" name="sex">
+    <input type="text" name="age">
+    <input type="button" id="btn" value="button" />
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope)
+        {
+            $scope.name = "angular";
+            $scope.updated = 0;
+            $scope.$watch('name',function(newVal,oldVal)
+            {
+                if(newVal === oldVal){return;};
+                //$watch的第二个参数接受两个参数，一个新值，一个旧值，用这个判断来略过第一次执行
+                $scope.updated++;
+            });
+        })
+    </script>
+</head>
+<body>
+<!--使用$watch()来监视你自己的东西-->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <input type="text" ng-model="name"/>
+    <h2>name updated:{{updated}} times.</h2>
+</div>
+
+</body>
+</html>
