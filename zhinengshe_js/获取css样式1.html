@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>隔行变色</title>
+    <script>
+        window.onload = function(obj,name,value)
+        {
+            var oDiv = document.getElementById("div1");
+            function css()
+            {
+
+                if(arguments.length == 2)
+                {
+                   return obj.style[name];
+                }
+                else
+                {
+                    obj.style[name] = value;
+                }
+            }
+            alert(css(oDiv,"width"));
+            css(oDiv,"background","green");
+        }
+
+    </script>
+</head>
+<body>
+<div id="div1" style="width:200px; height: 200px; border: solid 1px #ccc; background: red;"></div>
+
+</body>
+</html>

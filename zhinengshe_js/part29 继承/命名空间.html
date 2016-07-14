@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var json = {};
+        json.common = {};
+        json.xr = {};
+        json.aa = {};
+        json.common.show = function()
+        {
+            alert("a");
+        }
+        json.xr.show = function()
+        {
+            alert("b");
+        }
+        json.aa.show = function()
+        {
+            alert("c");
+        }
+
+        json.common.show();  //a     //这三个函数名相同，但是是同一个json对象不同属性的相同名字的方法，这样不会覆盖
+        json.xr.show();    //b
+        json.aa.show();   //c
+    </script>
+</head>
+<body>
+
+</body>
+</html>

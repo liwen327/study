@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.11.1.min.js"></script>
+    <script>
+        var chinese = {
+            nation:'中国',
+            birthPlaces:['北京','上海','成都']
+        };
+        function extendCopy(p)
+        {
+            var c = {};
+            for(var i in p)
+            {
+                c[i] = p[i];
+            }
+            c.uber = p;
+            return c;
+        }
+
+        var doctor = extendCopy(chinese);
+        doctor.career = '医生';
+        //doctor.birthPlaces = ['北京','上海','成都','天津'];    //重新赋值不会改变chinese的birthPlaces
+        doctor.birthPlaces.push('天津');
+        console.log(doctor.birthPlaces);     //["北京", "上海", "成都", "天津"]
+        console.log(chinese.birthPlaces);    //["北京", "上海", "成都", "天津"]
+
+
+    </script>
+</head>
+
+<body>
+<ul id="oul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>多个div淡入淡出</title>
+    <style>
+        div{ width:100px; height: 100px; background: red; float: left; margin-left:10px; }
+        #div3{filter:alpha(opacity:30); opacity:0.3;}
+        #div4{border:solid 10px #ccc;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oDiv3 = document.getElementById("div3");
+            var oDiv4 = document.getElementById("div4");
+            oDiv1.onmouseover = function()
+            {
+                startMove(this,"width",400);
+            };
+            oDiv1.onmouseout = function()
+            {
+                startMove(this,"width",100);
+            };
+            oDiv3.onmouseover = function()
+            {
+                startMove(this,"opacity",100);
+            };
+            oDiv3.onmouseout = function()
+            {
+                startMove(this,"opacity",30);
+            };
+        };
+        function getStyle(obj,name)
+        {
+            if(obj.currentStyle)
+            {
+                return obj.currentStyle[name];
+            }
+            else
+            {
+                return getComputedStyle(obj,false)[name];
+            }
+        }
+        function startMove(obj,item,itarget)
+        {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function()
+            {
+                var cur=0;
+                if(item == "opacity")
+                {
+                    cur = Math.round(parseFloat(getStyle(obj,item))*100);
+                }
+                else
+                {
+                    cur = parseInt(getStyle(obj,item));
+                }
+                var speed = (itarget - cur)/5;
+                console.log(cur);
+                speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+                if(cur == itarget)
+                {
+                    clearInterval(obj.timer);
+                }
+                else
+                {
+                    if(item == "opacity")
+                    {
+                        obj.style.filter = 'alpha(opacity:'+cur + speed+')';
+                        obj.style[item] = (cur + speed)/100;
+                    }
+                    else
+                    {
+                        obj.style[item] = cur + speed + "px";
+                    }
+                }
+            },30)
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div id="div4"></div>
+
+</body>
+</html>

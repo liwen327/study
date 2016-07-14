@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>隔行变色</title>
+    <script>
+        window.onload = function()
+        {
+            var oTab = document.getElementById("tab1");
+            //var otd = document.getElementsByTagName("tbody")[0].getElementsByTagName("tr")[0].getElementsByTagName("td")[1].innerHTML;
+            var otd = oTab.tBodies[0].rows[0].cells[1].innerHTML;   //表格特有的tBodies   rows   及  cells方法，只有表格有，div和li这些都没有，因为90年代那时表格正盛兴，还没出现div
+            var oldColor = "";
+
+
+            //alert(otd);
+            for(var i=0; i<oTab.tBodies[0].rows.length; i++)
+            {
+                oTab.tBodies[0].rows[i].onmouseover = function()
+                {
+                    oldColor = this.style.background;
+                    this.style.background = "green";
+                }
+                oTab.tBodies[0].rows[i].onmouseout = function()
+                {
+                    this.style.background = oldColor;
+                }
+                if(i%2 == 0)
+                {
+                    oTab.tBodies[0].rows[i].style.background = "";
+                }
+                else
+                {
+                    oTab.tBodies[0].rows[i].style.background = "#ccc";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table border="1" width="500" id="tab1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+    </tr>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>王五</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>赵六</td>
+            <td>24</td>
+        </tr>
+    </tbody>
+    </thead>
+</table>
+
+</body>
+</html>

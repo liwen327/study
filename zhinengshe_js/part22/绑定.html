@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>绑定</title>
+    <script>
+        window.onload = function()
+        {
+            var oBtn = document.getElementById("btn1");
+            //IE  attachEvent(事件名，函数)，此方法只有ie支持，FF和Chrome均不支持
+            /*oBtn.attachEvent("onclick",function()
+            {
+                alert("a");
+            });
+            oBtn.attachEvent("onclick",function()
+            {
+                alert("b");
+            })*/
+
+            //FF和Chrome  addEventListener(事件名，函数)，此方法ie不支持
+            /*oBtn.addEventListener("click",function()
+            {
+                alert("a");
+            });
+            oBtn.addEventListener("click",function()
+            {
+                alert("b");
+            })*/
+
+            //兼容写法：if/else判断
+            /*if(oBtn.attachEvent)
+            {
+                oBtn.attachEvent("onclick",function()
+                {
+                    alert("a");
+                });
+                oBtn.attachEvent("onclick",function()
+                {
+                    alert("b");
+                })
+            }
+            else
+            {
+                oBtn.addEventListener("click",function()
+                {
+                    alert("a");
+                },false);
+                oBtn.addEventListener("click",function()
+                {
+                    alert("b");
+                },false)
+            }*/
+
+            //另外，还可以把这个兼容写法封装成一个函数，这样就不用每次绑定事件时都要判断一下
+            function myAddEvent(obj,ev,fn)    //obj为要绑定事件的元素，ev为要绑定的事件，fn为绑定事件的函数
+            {
+                if(obj.attachEvent)
+                {
+                    obj.attachEvent("on" + ev,fn);
+                }
+                else
+                {
+                    obj.addEventListener(ev,fn,false);
+                }
+            }
+
+            myAddEvent(oBtn,"click",function()
+            {
+                alert("a");
+            })
+            myAddEvent(oBtn,"click",function()
+            {
+                alert("b");
+            })
+        }
+
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="按钮"/>
+
+</body>
+</html>

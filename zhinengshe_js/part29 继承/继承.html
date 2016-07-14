@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function A()
+        {
+            this.name = "blue";
+        }
+        A.prototype.show=function()
+        {
+            alert(this.name);
+        }
+        function B()
+        {
+            A.call(this);      //B继承A   ，this指向的是B
+        }
+        B.prototype = A.prototype;
+        B.prototype.showFn = function()
+        {
+            alert(123);
+        }
+        var objB = new B();
+        var objA = new A();
+        //alert(objB.name);   //弹出blue
+        //objB.show();    //可以弹出blue  即this.name
+        objA.showFn();   //可以弹出123,但是A原本是没有showFn() 这个方法的,因为B.prototype = A.prototype;这句代码使A和B指向同个地址,并不是把A的原型对象复制一份给B,所以给B增加原型对象方法就等于也给A增加了原型对象方法,因此这里才会弹出123
+    </script>
+</head>
+<body>
+
+</body>
+</html>

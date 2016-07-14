@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>一个一个运动</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul,li{list-style: none;}
+        .slideWrap{width: 840px; padding:20px; border: solid 1px #ccc; margin: 50px auto; position: relative;}
+        .slide{ width: 840px; height: 200px; position: relative; overflow: hidden;}
+        .slide_list{position: absolute; left: 0; top: 0; margin-right:-10px; overflow: hidden;}
+        .slide_list li{ float:left; width: 200px; height: 200px;padding:0 5px;}
+
+        .left,.right{ position: absolute; width: 50px; cursor: pointer; top:90px; text-align: center;}
+        .left{left:-70px;}
+        .right{right:-70px;}
+    </style>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script>
+        $(function()
+        {
+            var oParent = $("#slideWrap");
+            var oSlide = oParent.children("#slide");
+            var oSlideW = oSlide.width();
+            var oUl = oParent.find(".slide_list");
+            var aLi = oUl.children("li");
+            var aDot = $(".dot").children();
+            var oLeft = $(".left");
+            var oRight = $(".right");
+            var len = aLi.length;
+            oUl.width(len*aLi[0].offsetWidth);
+
+            var page = 1;
+
+            var timer = null;
+            oRight.on("click",function()
+            {
+                toRight();
+            });
+            oLeft.on("click",function()
+            {
+                if(!oUl.is(":animated"))
+                {
+                    if(page == 1)
+                    {
+                        oUl.animate({left:-(len-1)*aLi[0].offsetWidth},300);
+                        page = len;
+                    }
+                    else
+                    {
+                        oUl.animate({left:'+='+aLi[0].offsetWidth},300);
+                        page--;
+                    }
+                }
+            });
+            function toRight()
+            {
+                if(!oUl.is(":animated"))
+                {
+                    if(page == len)
+                    {
+                        page = 1;
+                        oUl.animate({left:0},300);
+                    }
+                    else
+                    {
+                        oUl.animate({left:'-='+aLi[0].offsetWidth},300);
+                        page++;
+                    }
+                }
+            }
+            function autoPlay()
+            {
+                timer = setInterval(function()
+                {
+                    toRight();
+                },3000);
+                oSlide.hover(function()
+                {
+                    clearInterval(timer);
+                },function()
+                {
+                    timer = setInterval(function()
+                    {
+                        toRight();
+                    },3000);
+                })
+            }
+            autoPlay();
+        });
+    </script>
+</head>
+<body>
+<div class="slideWrap" id="slideWrap">
+    <div class="slide" id="slide">
+        <ul class="slide_list">
+            <li><a href="#"><img src="images/1.jpg"/></a></li>
+            <li><a href="#"><img src="images/2.jpg"/></a></li>
+            <li><a href="#"><img src="images/3.jpg"/></a></li>
+            <li><a href="#"><img src="images/4.jpg"/></a></li>
+            <li><a href="#"><img src="images/1.jpg"/></a></li>
+            <li><a href="#"><img src="images/2.jpg"/></a></li>
+            <li><a href="#"><img src="images/3.jpg"/></a></li>
+            <li><a href="#"><img src="images/4.jpg"/></a></li>
+            <li><a href="#"><img src="images/1.jpg"/></a></li>
+            <li><a href="#"><img src="images/2.jpg"/></a></li>
+        </ul>
+    </div>
+
+    <div class="left">向左</div>
+    <div class="right">向右</div>
+</div>
+</body>
+</html>

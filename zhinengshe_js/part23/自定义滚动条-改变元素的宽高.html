@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自定义横向滚动条</title>
+    <style>
+        *{margin:0;padding:0;}
+        #div1{width: 600px; height: 20px; background: #ccc; position: relative; margin:10px auto;}
+        #div2{width: 20px; height: 100px; background: red; position: absolute;}
+        #div3{width: 0; height: 0; background: #999;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            var oDiv1 = document.getElementById("div2");
+            var oDiv3 = document.getElementById("div3");
+            var disX = 0;
+            var disY = 0;
+            oDiv1.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+                disX = oEvent.clientX - oDiv1.offsetLeft;
+                disY = oEvent.clientY - oDiv1.offsetTop;
+                document.onmousemove = function(ev)
+                {
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX - disX;
+                    var t = oEvent.clientY - disY;
+                    if(l<0)
+                    {
+                        l = 0;
+                    }
+                    else if(l>oDiv.offsetWidth - oDiv1.offsetWidth)
+                    {
+                        l = oDiv.offsetWidth - oDiv1.offsetWidth;
+                    }
+                    if(t<0)
+                    {
+                        t = 0;
+                    }
+                    else if(t>oDiv.offsetHeight - oDiv1.offsetHeight)
+                    {
+                        t = oDiv.offsetHeight - oDiv1.offsetHeight;
+                    }
+                    oDiv1.style.left = l + "px";
+                    oDiv1.style.top = t + "px";
+
+                    var scale = l/(oDiv.offsetWidth - oDiv1.offsetWidth);    //scale从0-1开始变化
+                    document.title = scale;
+                    oDiv3.style.width = scale*400 + "px";
+                    oDiv3.style.height = scale*400 + "px";
+                }
+                document.onmouseup = function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div id="div1">
+    <div id="div2"></div>
+</div>
+<div id="div3"></div>
+</body>
+</html>

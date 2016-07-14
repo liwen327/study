@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>添加、删除行</title>
+    <script>
+        /*window.onload = function()
+        {
+            var oUl = document.getElementById("ul1");
+            var oBtn = document.getElementById("btn");
+            var oTxt = document.getElementById("txt");
+            oBtn.onclick = function()
+            {
+                var oLi = document.createElement("li");
+                *//*oUl.appendChild(oLi);*//*
+                oLi.innerHTML = oTxt.value;
+
+                var arrLi = document.getElementsByTagName("li");
+                if(arrLi.length > 0)
+                {
+                    oUl.insertBefore(oLi,arrLi[0]);
+                }
+                else
+                {
+                    oUl.appendChild(oLi);
+                }
+            }
+        }*/
+
+        //删除节点
+        window.onload = function()
+        {
+            var oUl = document.getElementById("ul1");
+            var oBtn = document.getElementById("btn");
+            var oA = document.getElementsByTagName("a");
+
+            for(var i=0; i<oA.length; i++)
+            {
+                oA[i].onclick = function()
+                {
+                    oUl.removeChild(this.parentNode);
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="txt" />
+<input type="button" value="删除"  id="btn"/>
+<ul id="ul1">
+    <li><a href="javascript:;">删除1</a> </li>
+    <li><a href="javascript:;">删除2</a> </li>
+    <li><a href="javascript:;">删除3</a> </li>
+    <li><a href="javascript:;">删除4</a> </li>
+    <li><a href="javascript:;">删除5</a> </li>
+</ul>
+
+</body>
+</html>

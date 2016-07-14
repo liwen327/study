@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用面向对象写选项卡</title>
+    <script>
+        function person(id)
+        {
+            var oDiv = document.getElementById(id);
+            this.aDiv = oDiv.getElementsByClassName("div1")[0];
+            this.show();
+        }
+        person.prototype.show=function()
+        {
+            var _this = this;
+            this.aDiv.onclick = function()
+            {
+                _this.fnClick(this.innerHTML);
+            };
+        }
+        person.prototype.fnClick = function(id)
+        {
+            alert(id);
+        }
+
+        function personChild(id)
+        {
+            person.call(this,id);
+            this.showChild();
+        }
+        for(var i in person.prototype)
+        {
+            personChild.prototype[i] = person.prototype[i];
+        }
+
+        personChild.prototype.showChild=function()
+        {
+            var _this = this;
+            this.aDiv.onmouseover = function()
+            {
+                _this.fnClick(this.innerHTML);
+            };
+        }
+        /*var p1 = new person("mike");
+        alert(p1.name);
+        p1.sayName();
+        new personChild("lilei");*/
+        window.onload = function()
+        {
+            new person("div1");
+            new personChild("div2");
+        }
+    </script>
+</head>
+<body>
+<!--鼠标点击切换-->
+<div id="div1">
+    <div class="div1">111111111111</div>
+</div>
+
+<div id="div2">
+    <div class="div1">22222222222</div>
+</div>
+
+</body>
+</html>

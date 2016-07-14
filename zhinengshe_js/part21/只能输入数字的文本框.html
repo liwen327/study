@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>只能输入数字的文本框</title>
+</head>
+<script>
+    window.onload = function()
+    {
+        var oText = document.getElementById("text1");
+        oText.onkeydown = function(ev)
+        {
+            var oEvent = ev || event;
+            //alert(oEvent.keyCode);
+
+            //0-9  的keyCode是48-57
+            //0-9可以输入，其它不可输入，并且可以输入退格键，即删除内容
+            //向左向右方向键的keyCode值分别为37和39
+            if(oEvent.keyCode != 37 && oEvent.keyCode != 39 && oEvent.keyCode != 8 && (oEvent.keyCode < 48 || oEvent.keyCode > 57))
+            {
+                return false;
+            }//这样这个程序就达到了除了向左向右方向键、退格键以及数字可以输入，其它的都不可以输入
+        }
+    }
+
+</script>
+<body>
+<input type="text" placeholder="只能输入数字" id="text1"/>
+
+</body>
+</html>

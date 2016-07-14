@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>子节点</title>
+    <script>
+        window.onload = function()
+        {
+            var oUl = document.getElementById("ul1");
+            //alert(oUl.childNodes.length);
+            /*for(var i=0; i<oUl.childNodes.length; i++)
+            {
+                if(oUl.childNodes[i].nodeType == 1)
+                {
+                    oUl.childNodes[i].style.background= "#ccc";
+                }
+                //alert(oUl.childNodes[i].nodeType);  //3和1交替出现，当等于1时，表示这个节点是元素节点，如果等于3，表示这个节点是文本节点。
+            }*/
+            alert(oUl.children.length);
+
+        }
+
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+</html>

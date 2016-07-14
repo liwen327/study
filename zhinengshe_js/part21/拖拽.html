@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        *{margin:0;padding:0;}
+        #div1{width: 200px; height: 200px; background: red; position: absolute;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            var disX = 0;
+            var disY = 0;
+
+            oDiv.onmousedown = function(ev)
+            {
+                var oEvent = ev || event;
+
+                disX = oEvent.clientX - oDiv.offsetLeft;
+                disY = oEvent.clientY - oDiv.offsetTop;
+                document.onmousemove = function(ev)     //如果放到onmousedown的外面的话，则鼠标还没按下，div就会跟着鼠标移动，且移动的一顿一顿的
+                {
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX - disX;
+                    var t = oEvent.clientY - disY;
+                    if(l < 0)
+                    {
+                        l = 0;
+                    }
+                    else if(l> document.documentElement.clientWidth - oDiv.offsetWidth)
+                    {
+                        l = document.documentElement.clientWidth - oDiv.offsetWidth;
+                    }
+                    if(t<0)
+                    {
+                        t = 0;
+                    }
+                    else if(t> document.documentElement.clientHeight - oDiv.offsetHeight)
+                    {
+                        t = document.documentElement.clientHeight - oDiv.offsetHeight;
+                    }
+                    oDiv.style.left = l + "px";   //鼠标的x轴位置减去鼠标与oDiv的距离就等于oDiv的left值
+                    oDiv.style.top = t + "px";
+                }
+                document.onmouseup = function()
+                {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<div id="div1"></div>
+
+</body>
+</html>

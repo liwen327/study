@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>event对象及其兼容处理</title>
+    <script type="text/javascript">
+        document.onclick = function(ev)
+        {
+            var oEvent = ev || event;
+            alert(oEvent.clientX + "," + oEvent.clientY);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

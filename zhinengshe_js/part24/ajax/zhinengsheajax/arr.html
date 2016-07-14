@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.2.min.js"></script>
+    <script>
+        $(function()
+        {
+            var oBtn = document.getElementById("btn1");
+            var oUl = document.getElementById("ul1");
+            oBtn.onclick = function()
+            {
+                $.ajax({
+                    type:"get",
+                    dataType:"json",
+                    url:"arr.txt?t=" + new Date().getTime(),
+                    success:function(data)
+                    {
+                        console.log(data);
+                        for(var i=0; i<data.length; i++)
+                        {
+                            var oLi = document.createElement("li");   //每次循环都创建一个li，然后后值赋给它，接着把li插入到ul中
+                            oLi.innerHTML = '<li>用户名：<strong>'+data[i].user+'</strong> 密码：<span>'+data[i].password+'</span></li>';
+                            oUl.appendChild(oLi);
+                        }
+                    },
+                    error:function()
+                    {
+                        alert("失败");
+                    }
+                })
+            }
+        })
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="获取数据"/>
+<ul id="ul1">
+</ul>
+
+</body>
+</html>

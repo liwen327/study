@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        *{margin:0; padding:0;}
+        #div1{ width: 100px;  height: 100px; background: #5d93ed; position: absolute; left: 0; top: 0;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+            var disX = 0;
+            var disY = 0;
+            oDiv.onmousedown = function(ev)
+            {
+                var ev = ev || event;
+                disX = ev.clientX - oDiv.offsetLeft;
+                disY = ev.clientY - oDiv.offsetTop;
+                if(oDiv.setCapture)
+                {
+                    oDiv.onmousemove = fnMove;
+                    oDiv.onmouseup = fnUp;
+                    oDiv.setCapture();
+                }
+                else
+                {
+                    document.onmousemove = fnMove;
+                    document.onmouseup = fnUp;
+                }
+                return false;
+
+                function fnMove(ev)
+                {
+                    var ev = ev || event;
+                    var l = ev.clientX - disX;
+                    var t = ev.clientY - disY;
+                    if(l<0)
+                    {
+                        l = 0;
+                    }
+                    else if(l>document.documentElement.clientWidth - oDiv.offsetWidth)
+                    {
+                        l = document.documentElement.clientWidth - oDiv.offsetWidth;
+                    }
+                    if(t < 0)
+                    {
+                        t = 0;
+                    }
+                    else if(t > document.documentElement.clientHeight - oDiv.offsetHeight)
+                    {
+                        t = document.documentElement.clientHeight - oDiv.offsetHeight;
+                    }
+
+                    oDiv.style.left = l + "px";
+                    oDiv.style.top = t + "px";
+                    //return false;
+                }
+                function fnUp()
+                {
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+                    if(oDiv.releaseCapture)
+                    {
+                        oDiv.releaseCapture();
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+aadfdferefdgdgdsfdser
+<div id="div1">这是一个拖拽</div>
+
+</body>
+</html>

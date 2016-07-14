@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>百度分享运动</title>
+    <style>
+        *{margin:0; padding:0;}
+        #div1{ width:200px; height: 200px; background: purple; position: absolute; margin-top:20px; left: -200px;}
+        #div1 span{ display: block; position: absolute; width: 20px; height: 40px; background: blue; right:-20px; top:60px; cursor: pointer; color: #fff;}
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var oDiv = document.getElementById("div1");
+
+            oDiv.onmouseover = function()
+            {
+                startMove(0);
+            };
+            oDiv.onmouseout = function()
+            {
+                startMove(-200);
+            };
+
+            var timer = null;
+            function startMove(iTarget)
+            {
+                clearInterval(timer);
+                timer = setInterval(function()
+                {
+                    var speed = 0;
+                    if(oDiv.offsetLeft > iTarget)
+                    {
+                        speed = -10;
+                    }
+                    else
+                    {
+                        speed = 10;
+                    }
+                    if(oDiv.offsetLeft == iTarget)
+                    {
+                        clearInterval(timer);
+                    }
+                    else
+                    {
+                        oDiv.style.left = oDiv.offsetLeft + speed + "px";
+                    }
+                },30)
+            }
+        };
+
+
+
+    </script>
+</head>
+<body>
+<div id="div1"><span>分享</span></div>
+</body>
+</html>
+
+
+
+
