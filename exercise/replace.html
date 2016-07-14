@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>replace</title>
+    <style>
+    </style>
+    <script type="text/javascript" src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function()
+        {
+            var oHtml = $("#content").html();
+            console.log(oHtml);
+
+            $.ajax({
+                type: 'get',
+                url: 'http://test.lib.csdn.net:3333/public/api/words',
+                async: false,
+                //dataType: 'jsonp',
+                success: function (resobj) {
+                    //callback(getData.FormatData(resobj));
+                    var data = resobj.data;
+
+                    if(resobj.msg == 'ok')
+                    {
+                        for(var i=0; i<data.length; i++)
+                        {
+                            if(oHtml.indexOf(data[i].word) !== -1)
+                            {
+
+                            }
+                        }
+                    }
+                },
+                error: function () {
+                    console.log("Send Ajax error ...")
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+
+<div id="content">
+    <div class="box">这是第一个div</div>
+    <div class="box">java</div>
+    <div class="box">javascript</div>
+    <div class="box">php</div>
+
+    <div class="box1">java</div>
+    <div class="box2">java</div>
+    <div class="box2">测试</div>
+
+
+    <pre class="code">这里是code的代码。</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <style type="text/css">
+        #preview, .img, img
+        {
+            width:200px;
+            height:200px;
+        }
+        #preview
+        {
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div id="preview"></div>
+<input type="file" onchange="preview(this)" />
+<script type="text/javascript">
+    function preview(file)
+    {
+        var prevDiv = document.getElementById('preview');
+        if (file.files && file.files[0])
+        {
+            var reader = new FileReader();
+            reader.onload = function(evt){
+                prevDiv.innerHTML = '<img src="' + evt.target.result + '" />';
+            }
+            reader.readAsDataURL(file.files[0]);
+        }
+        else
+        {
+            console.log(file.value);
+            //prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';
+            prevDiv.innerHTML = '<img src="file.value"/>';
+        }
+    }
+</script>
+</body>
+</html>

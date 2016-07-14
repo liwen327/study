@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>本地缓存</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        var strKey = "strKey";
+        var storage = window.localStorage;
+
+        function onStart(){
+            if(storage.getItem(strKey)!=null){
+                alert(storage.getItem(strKey)+'localStorage');
+            }else if(Cookie.read(strKey)!=null){
+                alert(Cookie.read(strKey)+'cookie');
+            }
+        }
+        function bendihuancun(){
+            var strValue = document.getElementById("username").value;
+            if (storage) {
+                storage.setItem(strKey, strValue);
+            } else {
+                Cookie.write(strKey, strValue);
+            }
+        }
+    </script>
+</head>
+<body onload="onStart()">
+<input type="text" id="username" value="123">
+<input type="button" value="保存缓存" onclick="bendihuancun()">
+</body>
+</html> 

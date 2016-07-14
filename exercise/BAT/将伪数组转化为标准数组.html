@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.11.1.min.js"></script>
+    <script>
+        function log(){
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift('app:');
+            console.log.apply(console,args);
+        }
+        log('hello world!');   //app:hello world!
+    </script>
+</head>
+
+<body>
+</body>
+</html>

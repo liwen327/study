@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.11.1.min.js"></script>
+    <script>
+        var User = {
+            count: 1,
+
+            getCount: function() {
+                return this.count;
+            }
+        };
+
+        console.log(User.getCount());  // what?
+
+        var func = User.getCount;
+        console.log(func());   //what?
+        console.log(func.call(User));    //what?
+
+        Function.prototype.bind = Function.prototype.bind || function(context){
+            var self = this;
+            return function(){
+                return self.apply(context,arguments);
+            };
+        }
+        var func = User.getCount.bind(User);
+        console.log(func());   //what?
+    </script>
+</head>
+
+<body>
+</body>
+</html>

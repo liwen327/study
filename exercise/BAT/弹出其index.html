@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.11.1.min.js"></script>
+    <script>
+        //jquery的方法：
+        /*$(function()
+        {
+            var aLi = $("#oul li");
+            aLi.on('click',function()
+            {
+                var index = aLi.index(this) + 1;
+                console.log(index);
+            })
+        })*/
+
+        //原生js
+        /*window.onload = function()
+        {
+            var oUl = document.getElementById("oul");
+            var aLi = oUl.getElementsByTagName("li");
+            for(var i=0; i<aLi.length; i++)
+            {
+                aLi[i].index = i;
+                aLi[i].onclick = function()
+                {
+                    console.log(this.index);
+                }
+            }
+        }*/
+
+        //解决闭包产生的问题：立即执行函数表达式
+        window.onload = function()
+        {
+            var oUl = document.getElementById("oul");
+            var aLi = oUl.getElementsByTagName("li");
+            for(var i=0; i<aLi.length; i++)
+            {
+                aLi[i].index = i;
+                aLi[i].onclick = (function(a)
+                {
+                    return function()
+                    {
+                        console.log(a);
+                    }
+                    //console.log(a);
+                })(i)
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+<ul id="oul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+</body>
+</html>

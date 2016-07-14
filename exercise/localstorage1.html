@@ -1,0 +1,18 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>本地缓存</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        var storage = window.localStorage;
+        var details = [{author:"isaac"},{"description":"fresheggs"},{"rating":100}];
+        storage.setItem("details",JSON.stringify(details));
+        details = JSON.parse(storage.getItem("details"));
+        console.log(details);
+    </script>
+</head>
+<body>
+<input type="text" id="username" value="123">
+<input type="button" value="保存缓存">
+</body>
+</html>
