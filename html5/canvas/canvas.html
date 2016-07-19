@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        *{margin: 0; padding:0;}
+        #myCanvas{ width:200px;  height: 100px; border:solid 1px #ccc; margin:50px 0 0 50px;}
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">your browser does not support the canvas tag</canvas>
+<script type="text/javascript">
+    /*//绘制有红色填充的矩形
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#0000FF";
+    ctx.fillRect(0,0,150,100);*/
+
+    /*//绘制斜线
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.moveTo(10,10);
+    ctx.lineTo(150,50);
+    ctx.lineTo(10,50);
+    ctx.stroke(); //画线*/
+
+    //绘制实心圆
+    var canvas = document.getElementById("myCanvas");
+    var cxt = canvas.getContext("2d");
+    var grd = cxt.createLinearGradient(0,0,175,50);
+    grd.addColorStop(0,"#FF0000");
+    grd.addColorStop(1,"#00FF00");
+    cxt.fillStyle = grd;
+    cxt.fillRect(0,0,175,50);
+
+</script>
+</body>
+</html>

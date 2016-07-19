@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script type="text/javascript">
+        var myscroll;
+        function loaded(){
+            setTimeout(function(){
+                myscroll=new iScroll("wrapper",{hScrollbar:false, vScrollbar:false});
+            },100);
+        }
+        window.addEventListener("load",loaded,false);
+        document.body.addEventListener('touchmove',function(ev)
+        {
+            var ev = ev || event;
+            ev.preventDefault();
+        })
+    </script>
+    <style>
+        #wrapper{height:400px;overflow: hidden;}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="scroller">
+        <ul>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+            <li>aaaa</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

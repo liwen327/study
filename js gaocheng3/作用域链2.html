@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>作用域链</title>
+    <script>
+        function test(o)
+        {
+            var i=0;
+            if(typeof o == 'object')
+            {
+                var j = 0;
+                for(var k=0; k<10; k++)
+                {
+                    console.log(k);
+                }
+                console.log(k);
+            }
+            console.log(j);
+        }
+        var obj = {name:'mike'};
+        test(obj);
+    </script>
+</head>
+<body>
+<ul id="ul1"></ul>
+</body>
+</html>

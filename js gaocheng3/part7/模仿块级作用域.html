@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript">
+    (function counter()
+    {
+        //用匿名函数来模仿块级作用域
+        (function()
+        {
+            for(var i=0; i<5; i++)
+            {
+                alert(i);
+            }
+        })();   //在匿名函数中定义的变量，都会在执行结束时被销毁
+        alert(i);   //会报错，i is undefined
+    })();
+    //counter();
+</script>
+<body>
+
+</body>
+</html>

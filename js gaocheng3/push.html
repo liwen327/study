@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>push and pop</title>
+    <script type="text/javascript">
+        /*var arr1 = ["1","ss","00"];
+         var count = arr1.push("22","33")
+        alert(count);         //5,返回新改变的数组的长度，在后面新增了两项，所以返回值 5
+        var reduce = arr1.pop();   //取得最后一项并删除
+        alert(reduce);
+        alert(arr1.length);*/
+        /*var arr2 = ["aa","bb","cc"]
+        //alert(arr2.join(","));
+       // alert(arr2.join(" || "));
+        alert(arr2.join())      //不给join()方法传入任何值，则默认用逗号作为分隔符*/
+
+        /*var arr1 = new Array();
+        arr1.push("red","blue","green");
+        alert(arr1.length);
+
+        var item = arr1.shift();
+        alert(item);
+        alert(arr1.length);*/
+
+        //unshift()方法 ，从数组的前端添加数组项，并返回数组的长度，shift()是从数组的前端删除项，并返回删除的项。
+        /*var arr1 = new Array();
+        var count = arr1.unshift("red","blue");
+        alert(count);
+        alert(arr1);*/
+
+        //reverse()  对数组进行倒序排列
+        /*var arr1 = [1,2,3,4,5];
+        var arr2 = arr1.reverse();
+        alert(arr2);*/
+
+        //sort()方法
+        /*var arr1 = [0,1,5,10,15]
+        arr1.sort();
+        alert(arr1);*/
+
+        /*function compare(value1,value2)
+        {
+            if(value1<value2)
+            {
+                return -1;
+            }
+            if(value1>value2)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        var arr1 = [0,1,'5','a',15];
+        arr1.sort(compare);
+        alert(arr1);*/
+
+        function compare(value1,value2)
+        {
+            return value1 - value2;
+        }
+        var arr1 = [0,1,5,10,15];
+        arr1.sort(compare);
+        alert(arr1);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

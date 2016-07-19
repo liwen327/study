@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>apply与call方法</title>
+    <script>
+        //call()方法：它能劫持另外一个对象的方法，继承另外一个对象的属性。
+       /* window.onload = function()
+        {
+           function add(a,b)
+           {
+               return a + b;
+           }
+            function sub(a,b)
+            {
+                return a - b;
+            }
+            alert(sub.call(add,2,3));
+        }*/
+        //apply()方法：与call()方法一样，只不过参数列表不一样。
+        /*function person(name,age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+        function student(name,age,grade)
+        {
+            person.apply(this,arguments)
+            this.grade = grade;
+        }
+        var student = new student("li",22,"一年级");
+        //alert(student);
+        alert("name:" + student.name + "\n" + "age:" + student.age + "\n" + "grade:" + student.grade);*/
+
+        //call()方法 2014-11-16
+        /*function person(name,age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+        function student(name,age,grade)
+        {
+            person.call(this,name,age,grade);
+            this.grade = grade;
+        }
+        var student = new student("li",22,"一年级");
+        alert("name: " + student.name + "\n" + "age: " + student.age + "\n" + "grade: " + student.grade);*/
+
+        //call()和apply()可以扩大函数的作用域，下面这个例子是没有运用call()或apply()方法：
+        /*window.color = "red";
+        var o = {color:"blue"};
+        function sayColor()
+        {
+            alert(this.color);
+        }
+
+        function SayColor(name,age){
+            this.name =name;
+            this.sayHelllo= function(){
+
+            }
+
+        }
+        var objectMy = new SayColor("yang",78);
+        objectMy.sayHelllo();
+        var a = window.SayColor();
+
+
+        //sayColor();
+        var say = sayColor();
+        alert(say);
+        //alert(o.color);
+
+        *//*o.sayColor = sayColor;
+        o.sayColor();*/
+
+      //巧妙的使用apply()和call()
+      /*var arr1 = [1,2,3,4,5]
+      var arr2 = [5,6,7]
+      Array.prototype.push.apply(arr1,arr2);
+      alert(arr1);*/
+
+      //使用apply()来轻松的获取一个数组中的最大值及最小值。
+      var arr1 = [1,2,1,4,6];
+      var oMax = Math.max.apply(null,arr1);
+      var oMin = Math.min.apply(null,arr1);
+      console.log(oMax);
+      console.log(oMin);
+
+
+    </script>
+</head>
+<body>
+<ul id="ul1"></ul>
+</body>
+</html>

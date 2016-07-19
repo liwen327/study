@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>match与exec方法</title>
+    <script type="text/javascript" src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js"></script>
+    <script>
+        window.onload = function()
+        {
+            var text = "sat,bat,cat,fat"
+            var pattern = /.at/;
+
+            //与pattern.exec(text)相同
+            var matchs = text.match(pattern);
+            alert(matchs[0]);         //sat
+            alert(matchs.index);      //0
+            alert(pattern.lastIndex); //0
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

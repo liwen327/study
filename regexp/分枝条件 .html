@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1、replace()方法</title>
+    <script>
+
+        //var str = "aaa";
+
+        /*var re = /a/;
+        var newStr = str.replace(re,'b');
+        alert(newStr);     //baa    正则的匹配规则是一旦第一个匹配成功了，就不再往下匹配了，如果想继续往下匹配刚在后面加上全局匹配g  即 var re = /a/g;*/
+
+        /*var re = /a/g;
+        var newStr = str.replace(re,'b');
+        alert(newStr);     //bbb*/
+
+        //var re = /a+/;
+        //var newStr = str.replace(re,'b');
+        //alert(newStr);     //b    a+代表的意思就是任意多个a相连就只匹配一个b,把aaa看作一个整体
+
+        /*var str1 = "010-345567687769";
+        var re1 = /\(?0\d{2}\)?[- ]?\d{8}|0\d{2}[- ]?\d{8}/;
+        alert(re1.test(str1));*/
+
+        /*var str2 = "45678-145";
+        var re2 = /\d{5}-\d{4}|\d{5}/;    //d{5} 不是正好5个数字吗？可结果是只要是大于等于5个数字的都可以弹出true
+        alert(re2.test(str2));*/
+
+        var str3 = "192.168.3.678";   //奇怪的是，这个ip地址最后也弹出true，难道是正则表达式有问题？
+        var re3 = /((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
+        alert(re3.test(str3));
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

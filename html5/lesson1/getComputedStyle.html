@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>demo1</title>
+    <style>
+        body,ul,ol,li{ margin: 0; padding:0; list-style: none;}
+        #test{}
+    </style>
+    <script>
+        window.onload = function ()
+        {
+            var dom = document.getElementById("test");
+            if(dom.currentStyle)
+            {
+                var style = dom.currentStyle;
+            }
+            else
+            {
+                var style = window.getComputedStyle(dom,":after");
+            }
+
+            alert(style);
+
+        }
+    </script>
+</head>
+<body>
+<div id="test">aaaa</div>
+<p></p>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>递归</title>
+</head>
+<script type="text/javascript">
+    /*function ff(num)
+    {
+        if(num<=1)
+        {
+            return num;
+        }
+        else
+        {
+            return num * ff(num - 1);
+        }
+    }
+    alert(ff(5));*/
+
+    //使用arguments.callee，但是在严格模式下，访问arguments.callee属性会报错
+    /*function ff(num)
+    {
+        if(num <= 1)
+        {
+            return num;
+        }
+        else
+        {
+            return num * arguments.callee(num - 1);
+        }
+    }
+    alert(ff(5));*/
+
+    //可以使用命名函数表达式来达到和使用arguments.callee相同的结果
+    var ff = (function f(num)
+    {
+        if(num <=1)
+        {
+            return 1;
+        }
+        else
+        {
+            return num * f(num -1);
+        }
+    })
+    alert(ff(5));
+
+</script>
+<body>
+
+</body>
+</html>

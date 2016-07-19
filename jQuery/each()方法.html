@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>each()方法</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function()
+        {
+            /*$("li").each(function(i,elem)
+            {
+                $(elem).html(i);
+            })*/
+            //$("li").addClass("bar");
+            $("li").each(function(i)
+            {
+                $(this).click(function()
+                {
+                    //alert(i);   //点击li弹出它的索引
+                    $(this).html(i);
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+</html>

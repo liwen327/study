@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>原型继承</title>
+  <script type="text/javascript">
+      //this = new Object();  //系统偷偷的去帮你做的，你自己看不到
+    /*function superType(){
+        this.superValue = true;
+    }
+      superType.prototype.sayValue = function()
+      {
+          return this.superValue;
+      }
+      function subType()
+      {
+          this.subValue = false;
+      }
+      subType.prototype = new superType();
+      subType.prototype.subValue = function()
+      {
+          return this.subValue;
+      }
+      var instance = new subType();
+      //alert(instance.superValue);   //true
+      //alert(instance.sayValue());   //true
+      alert(instance.constructor);    //function superType(){this.superValue = true;}   因为修改了subType的原型，即它指向了superType的原型，构造函数自然就是superType，需要再在下面再把subType的构造函数再写回subType
+*/
+
+
+      //this = new Object();  //系统偷偷的去帮你做的，你自己看不到
+      function superType(){
+          this.superValue = true;
+      }
+      superType.prototype.sayValue = function()
+      {
+          return this.superValue;
+      }
+      function subType()
+      {
+          this.subValue = false;
+      }
+      subType.prototype = new superType();
+      subType.prototype.constructor = subType;   //再把subType.prototype的构造函数再设回subType
+      subType.prototype.subValue = function()
+      {
+          return this.subValue;
+      }
+      var instance = new subType();
+      //alert(instance.superValue);   //true
+      //alert(instance.sayValue());   //true
+      alert(instance.constructor);    //function superType(){this.superValue = true;}   因为修改了subType的原型，即它指向了superType的原型，构造函数自然就是superType，需要再在下面再把subType的构造函数再写回subType
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

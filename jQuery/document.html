@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>each()方法</title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <style>
+        .highlight{ background: red;}
+    </style>
+    <script>
+        $(function()
+        {
+            $(document).on('click','span',function(ev)
+            {
+                $(ev.target).closest(".div1").toggleClass("highlight");
+                console.log($(ev.target).closest(".div1").length);
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li><b>Click me!</b></li>
+    <li>You can also <b>Click me!</b></li>
+    <li>
+        <a href="javascript:;"><span>133322113343</span></a>
+        <div class="div1" >455667788899</div>
+    </li>
+</ul>
+
+</body>
+</html>

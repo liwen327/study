@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>filter has   not</title>
+    <style>
+    div{width:100px; height: 100px; background: red;}
+    </style>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function()
+        {
+            alert($("div").width());      //width
+            alert($("div").innerWidth());    //width + padding
+            alert($("div").outerWidth());    //width + padding + border
+            alert($("div").outerWidth(true));    //width + padding + border  + margin
+
+
+        })
+    </script>
+</head>
+<body>
+<div class="box">aa</div>
+
+</body>
+</html>

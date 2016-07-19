@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /*function person(){
+            var name = 'my object';
+            return{
+                getName:function(){
+                    return name;
+                },setName:function(value){
+                    name = value
+                }
+            }
+        }*/
+        function person(){
+            var name = 'my object';
+            this.getName=function(){
+                return name;
+            }
+            this.setName=function(value){
+                name = value
+            }
+        }
+        var person1 = new person();
+        console.log(person1.getName());
+        person1.setName("Mike");
+        console.log(person1.getName());
+
+        var person2 = new person();
+        person2.setName("John");
+        console.log(person1.getName());
+        console.log(person2.getName());
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

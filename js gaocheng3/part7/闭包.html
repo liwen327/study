@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<script type="text/javascript">
+
+    var name = "the window";
+    var object = {
+        name:"mike",
+        getName:function()
+        {
+            return function(){
+                //console.log(this);
+                return this.name;
+            };
+        }
+    };
+
+    alert(object.getName()());     //the window
+
+
+    /*var name = "the window";
+     var object = {
+     name:"mike",
+     getName:function()
+     {
+     var that = this;
+     return function(){
+     return that.name;
+     };
+     }
+     };
+
+     alert(object.getName()());*/
+
+    /*function f1()
+    {
+        var num = 5;
+        function f2()
+        {
+            alert(num);
+        }
+        return f2;
+    }
+    //f1();
+    var fn = f1();
+    fn();*/
+
+    /*function aa()
+    {
+        var a = 1;
+        function bb()
+        {
+            a++;
+            alert(a);
+        }
+        return bb;
+    }
+    aa()();*/
+    //aa();   //这里不知道为会么这样不行，必须用下面把aa()赋值给cc才可以。因为这里aa()之后是返回的函数bb，然而必须再运行一下bb才能弹出值，如果是aa()();运行之后就会弹出2;但是这样的话就只是运行函数了，一般都会把aa()赋值给一个变量（如cc），然后再去运行cc（即cc()）才会弹出值
+    /*var cc = aa();
+    cc();
+    cc();*/
+
+    /*function aa()
+    {
+        console.log(111);
+        //return true;
+    }
+
+
+    console.log(aa());  //函数运行之后，如果没有return语句返回值 ，默认的返回值都是undefined。*/
+
+</script>
+<body>
+
+</body>
+</html>

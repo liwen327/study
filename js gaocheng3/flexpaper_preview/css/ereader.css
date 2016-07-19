@@ -1,0 +1,57 @@
+.flexpaper-reflow-expandingpanel{
+    position:absolute;
+    height:100%;
+    width:20%;
+    min-width:150px;
+    float:left;
+    background-color:#262626;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.flipjs-item {
+    background: #fff;
+}
+
+.flipjs-inner {
+    background: #fff;
+}
+
+.flexpaper-reflow-tocitem{
+    font-size:0.9em;color:#cccccc;cursor:pointer;
+    line-height:1.7em;
+    padding-left:3px;
+    position:absolute;
+    white-space: nowrap;
+    width:100%;
+    overflow:hidden;
+}
+
+.flexpaper-reflow-tocitem:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 1.7em;
+    background-image: -moz-linear-gradient(left, rgba(26, 26, 26, 0) 0%, #262626 80%, #262626 100%);
+    background-image: -webkit-linear-gradient(left, rgba(26, 26, 26, 0) 0%, #262626 80%, #262626 100%);
+    background-image: linear-gradient(to right, rgba(26, 26, 26, 0) 0%, #262626 80%, #262626 100%);
+    pointer-events: none;
+}
+
+.flexpaper-reflow-tocitem-listitem{
+    min-height:1.7em;
+    list-style:none;
+    position:relative;
+}
+
+.flexpaper-reflow-tocitem-pct{
+    height:85%;
+    background-color:#3f3f3f;
+    position:absolute
+}
+
+.tocheader{
+    color:#ffffff;
+}

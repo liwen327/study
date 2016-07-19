@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>6、匹配子项</title>
+    <script>
+        var str = '2015-06-1';
+        var re = /(\d+)(-)/g;
+
+        str = str.replace(re,function($0,$1,$2)
+        {
+            //第一个参数是母亲，是一个整体，第二个参数 ：第一个子项；第三个参数：第二个子项
+            //alert($0);
+
+            //return $0;
+            return $1;
+            //return $2;
+            //return $1 + '.';       //使用第二个参数为母亲的第一个子项来做就显得简单
+
+            //return $0.substring(0,$0.length-1) + '.';    //只单纯的使用$0这个母亲来做
+        })
+
+        alert(str);   //2015-06-1
+       //alert(str);   //2015061
+        //alert(str);    //--1
+
+        //alert(str);    //2015.06.1    这就很好的=利用了replace()的回调函数中第二个参数是整体的第一个子项，如果单纯的用$0也可以做只不过需要截取字符串
+
+    </script>
+</head>
+<body>
+</body>
+</html>

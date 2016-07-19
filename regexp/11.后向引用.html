@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>反义</title>
+    <script>
+        var str = 'go go';
+        //var re = /\b(\w+)\b\s+\1\b/;
+        var re = /\b(?<Word>\w+)\b\s+\K<Word>\b/;
+        //var re = /\b(\w+)\b\s+\1\b/;
+        var flag = re.test(str);
+        console.log(flag);
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

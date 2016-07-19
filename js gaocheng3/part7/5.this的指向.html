@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var name = 'The window';
+        var object = {
+            name:'my object',
+            getName:function(){
+                return function(){
+                    return this.name;
+                }
+            }
+        }
+        console.log(object.getName()());    //The window
+        var f = object.getName();
+        object.z = f;
+        console.log(object.z());    //my object
+
+        //改版一下，把object的this存到一个变量里面，这样里面的闭包可以访问到它，这样就可取到object的name属性值
+        var name = 'The window';
+        var object = {
+            name:'my object',
+            getName:function(){
+                var that = this;
+                return function(){
+                    return that.name;
+                }
+            }
+        }
+        console.log(object.getName()());    //my object
+
+        //但有时也会有不同，如下
+        var name = 'The window';
+        var object = {
+            name:'my object',
+            getName:function(){
+                return this.name;
+            }
+        }
+        console.log(object.getName());   //my object
+        console.log((object.getName)());  //my object  这里在调用它之前给object.getName加上了括号，虽然加括号之后就好像在引用这个函数，但this的值得到了维持
+        console.log((object.getName = object.getName)());   //The window   因为object.getName是一个匿名函数，这里把它赋值给了object.getName，之后调用这个匿名函数，由于这个复制表达式的值是函数本身，this的值不能得到维持，,所以输出The window
+
+     </script>
+</head>
+<body>
+<div id="box">
+    <ul id="ul1">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+
+</html>

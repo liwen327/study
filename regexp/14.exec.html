@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+       var reg = /Java/g;
+        var str = "JavaScript is more fun than Java";
+        var result;
+        while((result = reg.exec(str)) != null)
+        {
+            alert("Matched:" + result[0] + " at position:" + result.index + " lastIndex:" + result.lastIndex);//lastIndex为什么弹出来的两次都是undefined呢？
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

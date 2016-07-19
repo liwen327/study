@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var timer = setInterval('aa()',50);
+        function aa()
+        {
+            var oTxt = document.getElementById("txt");
+            var date = new Date();
+            //alert(date);
+            oTxt.value = date;
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="txt"/>
+
+</body>
+</html>

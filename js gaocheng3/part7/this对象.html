@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>闭包中的this对象</title>
+</head>
+<script type="text/javascript">
+    var name = "the Window";
+    var object = {
+        name: "the object",
+        showFn: function()
+        {
+            return function()
+            {
+                return this.name;
+            }
+        }
+    };
+    //alert(object.showFn()());
+    var obj = new object;
+    alert(obj.showFn());
+</script>
+<body>
+
+</body>
+</html>

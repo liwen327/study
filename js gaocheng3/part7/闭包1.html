@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript">
+    /*function creatFn()
+    {
+        var result = new Array();
+        for(var i=0; i<5; i++)
+        {
+            result[i] = function()
+            {
+                return i;
+            }
+        }
+        return result;
+    }
+    alert(creatFn());*/
+
+    /*function creatFn()
+    {
+        var result = new Array();
+        for(var i=0; i<5; i++)
+        {
+            result[i] = (function(num)
+            {
+                return function()
+                {
+                    return num;
+                }
+            })(i);
+        }
+        return result;
+    }
+    alert(creatFn());*/
+
+    //闭包，当点击单个li的时候，for循环已经执行完了，所以每次点击都会弹出4
+    /*window.onload = function()
+    {
+        var oUl = document.getElementById("ul1");
+        var aLi = oUl.getElementsByTagName("li");
+        for(var i=0; i<aLi.length; i++)
+        {
+            aLi[i].onclick = function()
+            {
+                alert(i);
+            };
+        }
+        alert(i);
+    }*/
+
+    //下面使用闭包使其弹出各自的索引
+    window.onload = function()
+    {
+        var oUl = document.getElementById("ul1");
+        var aLi = oUl.getElementsByTagName("li");
+        for(var i=0; i<aLi.length; i++)
+        {
+            //第一种使用闭包的方法
+            /*aLi[i].onclick = (function(i)
+            {
+                return function()
+                {
+                    alert(i);
+                }
+            })(i);*/
+
+            //第二种使用闭包的方法
+            (function(i)
+            {
+                aLi[i].onclick = function()
+                {
+                    alert(i);
+                }
+            })(i);
+        }
+        //alert(i);  //闭包运行完之后，变量i并没有被销毁，弹出4
+    }
+</script>
+<body>
+<ul id="ul1">
+    <li>1111</li>
+    <li>2222</li>
+    <li>3333</li>
+    <li>4444</li>
+</ul>
+
+</body>
+</html>

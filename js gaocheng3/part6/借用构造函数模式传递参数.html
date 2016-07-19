@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>原型继承</title>
+  <script type="text/javascript">
+      function superType(name)
+      {
+          this.name = name;
+      }
+      function subType(name)
+      {
+          superType.call(this,name);
+
+          this.age = 29;
+      }
+      subType.prototype = new superType();
+
+      var obj1 = new subType("john");
+      alert(obj1.name);     //john
+      alert(obj1.age);   //29
+
+      var obj2 = new subType("lilei");
+      alert(obj2.name);     //lilei
+      alert(obj2.age);   //29
+      alert(obj1.name == obj2.name);   //false
+
+      /*借用构造函数模式的问题：方法都在构造函数中定义，因此函数复用就无从谈起了。而且，在超类型中定义的方法，对子类型而言，也是不可见的，结果所有类型都只能使用构造函数模式， */
+  </script>
+</head>
+<body>
+
+</body>
+</html>

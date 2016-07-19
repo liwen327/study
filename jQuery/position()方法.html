@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>position()方法</title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <style>
+        .aa{ position: relative; width:200px; height:200px; border:solid 1px #ccc; margin: 30px auto;}
+        p{ position: absolute; width:100px; height: 100px; top: 10px; left: 30px; border: solid 1px #ff0000;}
+    </style>
+    <script>
+        $(function()
+        {
+            /*var position = $("p").position();
+         var  left = position.left;
+         var top = position.top;
+         alert(left);
+         alert(top);*/
+            var offset = $("p").offset();
+            var top = offset.top;
+            var left = offset.left;
+            alert(top);
+        });
+    </script>
+</head>
+<body>
+<div class="aa" style="position: relative;">
+    <p>
+        <a href="#">偏移</a>
+    </p>
+</div>
+
+</body>
+</html>

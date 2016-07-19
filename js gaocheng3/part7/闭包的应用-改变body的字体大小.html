@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>闭包中的变量</title>
+    <style>
+        body{font-family: Arail; font-size: 12px;}
+        h1{font-size: 1.5em;}
+        h2{font-size: 1.2em;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            function setFont(size)
+            {
+                return function()
+                {
+                    document.getElementsByTagName("body")[0].style.fontSize = size + "px";
+                }
+            }
+
+            var fontSize14 = setFont(14);
+            var fontSize16 = setFont(16);
+            var fontSize18 = setFont(18);
+
+            document.getElementById("size14").onclick = fontSize14;
+            document.getElementById("size16").onclick = fontSize16;
+            document.getElementById("size18").onclick = fontSize18;
+            console.log(document.getElementById("size14"));
+
+        }
+
+    </script>
+</head>
+
+<body>
+<h1>这里是h1的标签 </h1>
+<h2>这里是h2的标签 </h2>
+
+<a href="javascript:;" id="size14">14</a>
+<a href="javascript:;" id="size16">16</a>
+<a href="javascript:;" id="size18">18</a>
+
+</body>
+</html>

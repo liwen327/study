@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        var supportsDOM2Core = document.implementation.hasFeature("Core","2.0");
+        //alert(supportsDOM2Core);  //ie7及以下浏览器弹出false   标准浏览器弹出true
+
+        var supportsDOM3Core = document.implementation.hasFeature("Core","3.0");
+        //alert(supportsDOM3Core);  //ie9及以下浏览器弹出false   标准浏览器弹出true
+
+        var supportsDOM2HTML = document.implementation.hasFeature("HTML","2.0");
+        //alert(supportsDOM2HTML);  //ie8及以下浏览器弹出false   标准浏览器弹出true
+
+        var supportsDOM2Views = document.implementation.hasFeature("Views","2.0");
+        alert(supportsDOM2Views);  //ie8及以下浏览器弹出false   标准浏览器弹出true
+
+        var supportsDOM2XML = document.implementation.hasFeature("XML","2.0");
+        alert(supportsDOM2XML);  //ie8及以下浏览器弹出false   标准浏览器弹出true
+    </script>
+</head>
+<body>
+
+</body>
+</html>
