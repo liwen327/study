@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var doing = false;
+        function save() {
+            if (doing) return;
+            if (!hasVal('title')) {
+                show('请填写专栏名称。');
+                return false;
+            }
+            if (!hasVal('desc')) {
+                show('简介不能为空。');
+                return false;
+            }
+            if ($('#desc').val().length > 140) {
+                show('简介最多允许140个字符。');
+                return false;
+            }
+            if (!hasVal('alias')) {
+                show('必需填写专栏别名。');
+                return false;
+            }
+            if (!/^[a-z]{1}[a-z0-9\-]{3,19}$/i.test($('#alias').val())) {
+                show('专栏别名不合法。');
+                return false;
+            }
+
+            if (!hasVal('tel')) {
+                show('手机号不能为空。');
+                return false;
+            }
+
+            if (!hasVal('qq')) {
+                show('QQ不能为空。');
+                return false;
+            }
+
+            var articlePanle = $("#articlePanle p");
+
+            if (articlePanle.length <5 ) {
+                //alert("至少添加5篇文章。");
+                show('至少添加5篇文章。');
+                return;
+            }
+
+            doing = true;
+            show('正在提交......');
+            $.get("checkalias.html", { alias: $('#alias').val() }, function (ret) {
+                if (ret.result == 0) {
+                    show(ret.content);
+                } else {
+                    //window.frames["frm_img_2"].document.forms[0].submit();
+                    window.frames["frm_img_2"].document.getElementById('sub1').click();
+                }
+            });
+
+            return false;
+        }
+        function submitForm(img) {
+
+            $('#logo').val(img);
+
+            $.post("savecolumn.html", $('#form1').serialize(), function (ret) {
+                if (ret.result == 0) {
+                    show(ret.content);
+                } else {
+                    location = 'addsuccess.html';
+                }
+            });
+        }
+        function hasVal(id) {
+            return $.trim($('#' + id).val()) != '';
+        }
+        function show(msg) {
+            doing = false;
+            $('#err').html('<font color=red>*' + msg + '</font>');
+        }
+
+
+        $("#submitMoreArticle").click(function () {
+            var inputArticleMore = $("#inputArticleMore");
+            if (inputArticleMore.val() == "") {
+                alert("请输入CSDN博文地址。");
+                return;
+            }
+            else {
+                var reg = /blog\.csdn\.net\/([\w]+)\/article\/details\/(\d+)/i;
+                var mat = reg.exec(inputArticleMore.val());
+                if (!mat) { alert('请输入正确的CSDN博文地址。'); return; }
+            }
+
+            var articlePanle = $("#articlePanle p");
+
+            var articlePanlevalues = $("#articlePanle p span")
+            for (var i = 0; i < articlePanlevalues.length; i++) {
+                if ($($("#articlePanle p span")[i]).html() == inputArticleMore.val()) {
+                    alert("已关联此文章。");
+                    return;
+                }
+            }
+
+            var articleurlsplit = inputArticleMore.val().split('/');
+            var articleid = 0;
+            if (articleurlsplit.length == 7) {
+                articleid = articleurlsplit[6];
+            }
+            if (articleurlsplit.length == 5) {
+                articleid = articleurlsplit[4];
+            }
+
+            $("#articlePanle").append('<p id="articlePanle' + articleid + '"><span>' + inputArticleMore.val() + '</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);"  onclick="delarticlepanle(' + articleid + ')">删除</a></p>');
+            if($("#article").val()!="")
+            {
+                $("#article").val($("#article").val() + "," + articleid);
+            }
+            else
+            {
+                $("#article").val(articleid);
+            }
+            inputArticleMore.val("");
+
+        });
+
+        function delarticlepanle(articlepanleid) {
+            $("#articlePanle" + articlepanleid).remove();
+            var articlePanlevalues = $("#articlePanle p span")
+            var articleids = "";
+            for (var i = 0; i < articlePanlevalues.length; i++) {
+                var url = $($("#articlePanle p span")[i]).html();
+                var articleurlsplit = url.split('/');
+                var articleid = 0;
+                if (articleurlsplit.length == 7) {
+                    articleid = articleurlsplit[6];
+                }
+                if (articleurlsplit.length == 5) {
+                    articleid = articleurlsplit[4];
+                }
+                if (articleids == "")
+                    articleids = articleid;
+                else
+                    articleids =articleids+ "," + articleid;
+            }
+            $("#article").val(articleids);
+        }
+
+    </script>
+    <script>
+
+        var picUrl = 'http://img.blog.csdn.net';
+        function setPath(path) {
+
+            parent.submitForm(picUrl+'/'+path);
+        }
+        function showErr(err){
+            parent.show(err);
+        }
+        function chkForm2() {
+            var f = document.getElementById("file1").value;
+
+            if (!f) {
+                if(location.hash=='#edit' || confirm("确定不上传专栏LOGO？")){
+                    setTimeout(function(){ setPath('column');}, 10);
+                }
+                showErr('');
+                return false;
+            }
+            var ext = f.substr(f.lastIndexOf(".") + 1).toLowerCase();
+            if (".jpg.gif.png.bmp.".indexOf('.' + ext + '.') == -1) {
+                showErr("图片格式不正确。");
+                return false;
+            }
+
+            if(checkfile()==false)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
+        function checkfile() {
+            var maxsize = 2 * 1024 * 1024;//2M
+            var errMsg = "上传的附件文件不能超过2M！";
+            var tipMsg = "您的浏览器暂不支持计算上传文件的大小，确保上传文件不要超过2M，建议使用IE、FireFox、Chrome浏览器。";
+            var browserCfg = {};
+            var ua = window.navigator.userAgent;
+            if (ua.indexOf("MSIE") >= 1) {
+                browserCfg.ie = true;
+            } else if (ua.indexOf("Firefox") >= 1) {
+                browserCfg.firefox = true;
+            } else if (ua.indexOf("Chrome") >= 1) {
+                browserCfg.chrome = true;
+            }
+
+            try {
+                var filesize = 0;
+                if (browserCfg.firefox || browserCfg.chrome) {
+                    var obj_file = document.getElementById("file1");
+                    filesize = obj_file.files[0].size;
+                } else if (browserCfg.ie) {
+                    var obj_img = document.getElementById('file1');
+                    obj_img.dynsrc = obj_img.value;
+                    filesize = obj_img.fileSize;
+                } else {
+                    showErr(tipMsg);
+                    return false;
+                }
+                if (filesize == -1) {
+                    showErr(tipMsg);
+                    return false;
+                } else if (filesize > maxsize) {
+                    showErr(errMsg);
+                    return false;
+                }
+            } catch (e) {
+                showErr(e);
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+</head>
+<body>
+eval() js
+</body>
+
+</html>

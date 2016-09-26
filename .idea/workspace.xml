@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c947fc58-1c1b-4884-9db4-c4fe217280a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/study.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userDefined_scrollbar/RollBar/Rollbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exercise/oil/oil.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exercise/申请专栏.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angularJs/13、ng-change.html" afterPath="$PROJECT_DIR$/angularJs/13、ng-change.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="study.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,30 +29,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="1、2expression表达式和MVC及scope作用域.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularJs/1、2expression表达式和MVC及scope作用域.html">
+      <file leaf-file-name="13、ng-change.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angularJs/13、ng-change.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="38" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1125">
+            <state line="2" column="6" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saveToCode.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://F:/wamp/www/csdn_blog_code/js/saveToCode.js">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://E:/csdn-workspace/csdnimg-cn/rabbit/tracking-ad/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="7500">
-              <folding>
-                <marker date="1467960016354" expanded="false" signature="2594:2617" placeholder="..." />
-              </folding>
+            <state line="18" column="24" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="6050">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog_code.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
+      <file leaf-file-name="popup2.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://E:/csdn-workspace/csdnimg-cn/rabbit/tracking-ad/popup2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="21" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.028604118" vertical-offset="1650" max-vertical-offset="5925">
+            <state line="53" column="31" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="5850">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eval.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/eval.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="31" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="650">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="申请专栏.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/申请专栏.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="197" column="0" selection-start="6406" selection-end="6406" vertical-scroll-proportion="0.0" vertical-offset="4748" max-vertical-offset="5925">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rollbar.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userDefined_scrollbar/RollBar/Rollbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="0" selection-start="19623" selection-end="19623" vertical-scroll-proportion="0.0" vertical-offset="1925" max-vertical-offset="8500">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swapImg_openLayer.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Desktop/swapImg_openLayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="37" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.34246576" vertical-offset="750" max-vertical-offset="6925">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oil.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercise/oil/oil.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="banner.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://E:/csdn-workspace/csdn_eduol_fe/edu_phone/js/banner.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="134" column="42" selection-start="3812" selection-end="3812" vertical-scroll-proportion="0.0" vertical-offset="3026" max-vertical-offset="3900">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="car_json_test.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://E:/csdn-workspace/csdn_eduol_fe/edu_phone/js/car_json_test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="303" column="12" selection-start="10086" selection-end="10086" vertical-scroll-proportion="0.0" vertical-offset="7589" max-vertical-offset="8450">
               <folding />
             </state>
           </provider>
@@ -79,6 +139,12 @@
       <list>
         <option value="F:/wamp/www/csdn_blog_code/js/saveToCode.js" />
         <option value="F:/wamp/www/csdn_blog_code/css/blog_code.css" />
+        <option value="$PROJECT_DIR$/angularJs/13、ng-change.html" />
+        <option value="E:/csdn-workspace/csdn_eduol_fe/edu_phone/js/banner.js" />
+        <option value="$PROJECT_DIR$/exercise/申请专栏.html" />
+        <option value="$USER_HOME$/Desktop/ask_index_A.css" />
+        <option value="$PROJECT_DIR$/userDefined_scrollbar/RollBar/Rollbar.html" />
+        <option value="$PROJECT_DIR$/exercise/oil/oil.html" />
       </list>
     </option>
   </component>
@@ -95,7 +161,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -114,7 +180,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -132,19 +197,67 @@
               <option name="myItemId" value="study" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angularJs" />
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userDefined_scrollbar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RollBar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exercise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exercise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="F:/study1" />
+    <property name="last_opened_file_path" value="E:/csdn-workspace/csdn_jira" />
     <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -157,7 +270,41 @@
       </server>
     </servers>
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\study\exercise" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -170,20 +317,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14994664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16061899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -192,6 +339,26 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14994664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -205,117 +372,102 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="17" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="5925" />
+      </provider>
+    </entry>
+    <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="21" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="5925" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/angularJs/1、2expression表达式和MVC及scope作用域.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+        <state line="12" column="38" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1125" />
+      </provider>
+    </entry>
+    <entry file="file://E:/csdn-workspace/csdn_bi_fe/src/static/js/apps/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="28" selection-start="297" selection-end="297" vertical-scroll-proportion="0.40045768" vertical-offset="0" max-vertical-offset="1700" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularJs/13、ng-change.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/csdn-workspace/csdnimg-cn/rabbit/tracking-ad/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="24" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="6050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/csdn-workspace/csdnimg-cn/rabbit/tracking-ad/popup2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="31" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="5850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercise/eval.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="650">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/csdn-workspace/csdn_eduol_fe/edu_phone/js/edu_common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="21" selection-start="370" selection-end="370" vertical-scroll-proportion="0.34324944" vertical-offset="0" max-vertical-offset="874" />
+      </provider>
+    </entry>
+    <entry file="file://E:/csdn-workspace/csdn_eduol_fe/edu_phone/js/banner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="42" selection-start="3812" selection-end="3812" vertical-scroll-proportion="0.0" vertical-offset="3026" max-vertical-offset="3900">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://F:/wamp/www/csdn_blog_code/js/saveToCode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="7500">
-          <folding>
-            <marker date="1467960016354" expanded="false" signature="2594:2617" placeholder="..." />
-          </folding>
-        </state>
+        <state line="292" column="4" selection-start="11706" selection-end="11706" vertical-scroll-proportion="0.0" vertical-offset="6639" max-vertical-offset="7500" />
       </provider>
     </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
+    <entry file="file://E:/csdn-workspace/csdn_eduol_fe/edu_phone/js/car_json_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="16" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="5925">
+        <state line="303" column="12" selection-start="10086" selection-end="10086" vertical-scroll-proportion="0.0" vertical-offset="7589" max-vertical-offset="8450">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angularJs/1、2expression表达式和MVC及scope作用域.html">
+    <entry file="file://$PROJECT_DIR$/exercise/申请专栏.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1125">
+        <state line="197" column="0" selection-start="6406" selection-end="6406" vertical-scroll-proportion="0.0" vertical-offset="4748" max-vertical-offset="5925">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/js/saveToCode.js">
+    <entry file="file://$PROJECT_DIR$/exercise/oil/oil.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="7500">
-          <folding>
-            <marker date="1467960016354" expanded="false" signature="2594:2617" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="16" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="5925">
+        <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angularJs/1、2expression表达式和MVC及scope作用域.html">
+    <entry file="file://$PROJECT_DIR$/userDefined_scrollbar/RollBar/Rollbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+        <state line="77" column="0" selection-start="19623" selection-end="19623" vertical-scroll-proportion="0.0" vertical-offset="1925" max-vertical-offset="8500">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/js/saveToCode.js">
+    <entry file="file://$USER_HOME$/Desktop/swapImg_openLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="7500">
-          <folding>
-            <marker date="1467960016354" expanded="false" signature="2594:2617" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="11" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="5925">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angularJs/1、2expression表达式和MVC及scope作用域.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/js/saveToCode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="7500">
-          <folding>
-            <marker date="1467960016354" expanded="false" signature="2594:2617" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="17" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="5925">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angularJs/1、2expression表达式和MVC及scope作用域.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/js/saveToCode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="3224" selection-end="3224" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="7500">
-          <folding>
-            <marker date="1467960016354" expanded="false" signature="2594:2617" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/wamp/www/csdn_blog_code/css/blog_code.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="21" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.028604118" vertical-offset="1650" max-vertical-offset="5925">
+        <state line="42" column="37" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.34246576" vertical-offset="750" max-vertical-offset="6925">
           <folding />
         </state>
       </provider>
