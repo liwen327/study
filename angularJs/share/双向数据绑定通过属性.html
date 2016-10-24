@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('clockCtrl',['$scope',function($scope)
+        {
+            $scope.clock = {
+                now:new Date()
+            };
+            var updateClock = function()
+            {
+                $scope.clock.now = new Date();
+                setInterval(function()
+                {
+                    $scope.$apply(updateClock);
+                },1000);
+            };
+            updateClock();
+        }])
+    </script>
+</head>
+<body>
+<div ng-controller="clockCtrl">
+    时钟：{{clock.now | date:'yyyy-mm-dd HH:mm:ss'}}
+</div>
+
+</body>
+</html>
