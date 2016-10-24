@@ -1,0 +1,14 @@
+node_modules/
+
+gulpfile.coffee
+karma.conf.js
+package.json
+
+.idea/
+
+*.txt
+*.docx
+
+*.zip   
+*.rar
+
