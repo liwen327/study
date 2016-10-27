@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script>
+        angular.module("myApp",[])
+                .constant('apiKey','123123123')
+                .config(function(apiKey){
+                    //在这里apiKey将被赋值为123123123
+                    //就像上面设置的那样
+                })
+                .value('FBid','231231')
+                .config(function(FBid){
+                    //这里将抛出一个错误，未知的provider:FBid
+                    //因为在config函数内部无法访问这个值
+                })
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+
+</div>
+
+</body>
+</html>

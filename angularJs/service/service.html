@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script>
+        angular.module('myApp.services',[])
+                .factory("githubService",function($http){
+                    //我们的serviceInstatnce现在可以在函数定义中访问$http服务
+                    /*var serviceInstance = {};
+                    return serviceInstance;*/
+                    var githubUrl = "https://api.github.com";
+                    var runUserRequest = function(username,path){
+                        return $http({
+                            method:'JSONP',
+                            url:githubUrl + '/users/'+username+'/'+path + '?callback=JSON_CALLBACK'
+                        });
+                    };
+                    return{
+                        events:function(username){
+                            return runUserRequest(username,'events');
+                        }
+                    }
+                });
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+
+</div>
+
+</body>
+</html>
