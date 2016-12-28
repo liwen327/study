@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../js/react.js"></script>
+    <script type="text/javascript" src="../js/JSXTransformer.js"></script>
+
+</head>
+<body>
+<div id="container"></div>
+<script type="text/jsx">
+    var Greet = React.createClass({
+        render:function(){
+            return <h1>Hello {this.props.name}</h1>;
+        }
+    });
+    React.render(
+        <Greet name="Jack" />,
+        document.getElementById('container')
+    )
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "3.for_of.js",
+  "sourceRoot": "..\\coffee",
+  "sources": [
+    "3.for_of.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,QAAA,GAAW;IAAA,GAAA,EAAI,EAAJ;IAAO,GAAA,EAAI,CAAX;IAAa,GAAA,EAAI,EAAjB;;;EAEX,IAAA;;AAAO;SAAA,iBAAA;;mBACL,OAAO,CAAC,GAAR,CAAe,KAAD,GAAO,MAAP,GAAa,GAA3B;AADK;;;;EAOP,IAAA;;AAAO;SAAA,iBAAA;;mBACL,OAAO,CAAC,GAAR,CAAe,KAAD,GAAO,MAAP,GAAa,GAA3B;AADK;;;AATP"
+}

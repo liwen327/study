@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../js/react.js"></script>
+    <script type="text/javascript" src="../js/JSXTransformer.js"></script>
+
+</head>
+<body>
+<div id="container"></div>
+<script type="text/jsx">
+
+    var InputState = React.createClass({
+        getInitialState:function(){
+            return {enable:false};
+        },
+        handleClick:function(event){
+            this.setState({enable: !this.state.enable});
+        },
+        render:function(){
+            return(
+            <p>
+                <input type="text" disabled={this.state.enable} />
+                <button onClick = {this.handleClick}>change State</button>
+            </p>
+            );
+        }
+    });
+    React.render(
+        <InputState />,
+        document.getElementById("container")
+    )
+</script>
+
+</body>
+</html>

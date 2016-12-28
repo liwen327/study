@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var module = {
+            exports:{}
+        };
+        (function(module,exports){
+            exports.multiply = function(n){return n*1000};
+        }(module,module.exports));
+        var f = module.exports.multiply;
+        console.log(f(5));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

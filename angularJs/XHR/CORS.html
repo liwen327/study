@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script>
+        angular.module("myApp",[])
+                .config(function($httpProvider){
+                    $httpProvider.defaults.useXDomain = true;
+                    delete $httpProvider.defaults.headers.common['X-Requested-With'];  //从所有的请求中把X-Requested-With头移除掉，现在可以发送CORS请求了。
+                });
+
+        //简单请求：
+        $http.$get("https://api.github.com")
+                .success(function(data){
+                    //数据处理
+                })
+        //angularjs中的非简单请求：
+        $http.delete("https://api.github.com/api/users/1")
+                .success(function(data){
+                    //数据处理
+                })
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "4.while.js",
+  "sourceRoot": "..\\coffee",
+  "sources": [
+    "4.while.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,IAAG,IAAI,CAAC,cAAR;AACQ,WAAM,MAAA,GAAS,MAAf;MAAN,GAAA,CAAA;IAAM;AACC,WAAM,MAAA,GAAS,MAAf;MAAP,IAAA,CAAA;IAAO,CAFT;;;EAMA,GAAA,GAAM;;EACN,MAAA;;AAAS;WAAM,GAAA,IAAO,CAAb;mBACJ,GAAD,GAAK;IADA,CAAA;;;AAPT"
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../js/react.js"></script>
+    <script type="text/javascript" src="../js/JSXTransformer.js"></script>
+
+</head>
+<body>
+<div id="container"></div>
+<script type="text/jsx">
+
+        var names = ['Jack','Mike','Alice'];
+        React.render(
+            <div>
+            {
+                names.map(function(name){
+                    return <div>Hello,{name}!</div>
+                })
+            }
+            </div>,
+            document.getElementById('container')
+        )
+</script>
+
+</body>
+</html>
