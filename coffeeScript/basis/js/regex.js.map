@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "regex.js",
+  "sourceRoot": "..\\..\\..\\es6\\node_modules\\babel-core\\node_modules\\js-tokens",
+  "sources": [
+    "regex.coffee"
+  ],
+  "names": [],
+  "mappings": ";AASA;EAAA,MAAM,CAAC,OAAP,GAAiB;AAAjB"
+}

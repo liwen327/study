@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "mug.js",
+  "sourceRoot": "..\\..\\..\\es6\\node_modules\\resolve\\test\\resolver",
+  "sources": [
+    "mug.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;;AAAA"
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../es6/src/es6/es6.js"],"names":["x"],"mappings":";;AAAA;;;AAGA,CAAC;AAAA,SAAKA,IAAE,CAAP;AAAA,CAAD,EAAW,CAAX","file":"es6.js","sourcesContent":["/**\r\n * Created by liwz on 16-12-28.\r\n */\r\n(x => x*2)(1)\r\n"]}

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "test.js",
+  "sourceRoot": "..\\..\\..\\es6\\node_modules\\glob-watcher\\test\\fixtures",
+  "sources": [
+    "test.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,IAAA,CAAK,IAAL;AAAA"
+}

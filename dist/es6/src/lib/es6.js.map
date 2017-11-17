@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../es6/src/lib/es6.js"],"names":["x"],"mappings":"AAAA;;AAEA;;;;AAGA,CAAC,UAAUA,CAAV,EAAa;AACZ,SAAOA,IAAI,CAAX;AACD,CAFD,EAEG,CAFH","file":"es6.js","sourcesContent":["\"use strict\";\n\n/**\r\n * Created by liwz on 16-12-28.\r\n */\n(function (x) {\n  return x * 2;\n})(1);"]}
