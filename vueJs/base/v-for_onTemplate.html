@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+
+
+</head>
+<body>
+
+<ul id="app1">
+  <template v-for="item in items">
+    <li>{{ item.msg }}</li>
+    <li class="divider"></li>
+  </template>
+</ul>
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+
+var app1 = new Vue({
+    el:'#app1',
+    data:{
+        items:[
+            {msg:'0'},
+            {msg:1},
+            {msg:2}
+        ]
+    }
+});
+
+
+</script>
+</body>
+</html>

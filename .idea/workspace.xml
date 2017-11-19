@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c947fc58-1c1b-4884-9db4-c4fe217280a1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vueJs/base/vue1.html" afterPath="$PROJECT_DIR$/vueJs/base/vue1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/class_style_bind.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="study.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,15 +45,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vue1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vue1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vueJs/base/vue1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7761989">
-              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+            <state vertical-scroll-proportion="22.642857">
+              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
               <folding>
                 <element signature="e#1312#1399#0" expanded="false" />
                 <element signature="e#1426#1541#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_style_bind.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vueJs/base/class_style_bind.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5275311">
+              <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,6 +117,7 @@
         <option value="$PROJECT_DIR$/vueJs/base/js/webpack.config.js" />
         <option value="$PROJECT_DIR$/testNode.js" />
         <option value="$PROJECT_DIR$/vueJs/base/vue1.html" />
+        <option value="$PROJECT_DIR$/vueJs/base/class_style_bind.html" />
       </list>
     </option>
   </component>
@@ -241,16 +253,16 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/vueJs/base/js" />
-      <recent name="F:\study\coffeeScript\basis\coffee" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vueJs/base" />
       <recent name="F:\study\coffeeScript\basis" />
       <recent name="F:\study\coffeeScript\basis\coffee" />
       <recent name="F:\study\reactjs\start_reactjs" />
       <recent name="F:\study\reactjs\browesrify" />
-      <recent name="F:\study\angularJs\angularjs2.0\angular-quickstart\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vueJs/base/js" />
+      <recent name="F:\study\coffeeScript\basis\coffee" />
     </key>
   </component>
   <component name="RunManager">
@@ -375,7 +387,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -657,12 +669,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vueJs/base/vue1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7761989">
-          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+        <state vertical-scroll-proportion="22.642857">
+          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
           <folding>
             <element signature="e#1312#1399#0" expanded="false" />
             <element signature="e#1426#1541#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vueJs/base/class_style_bind.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5275311">
+          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
