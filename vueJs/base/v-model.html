@@ -23,6 +23,15 @@
     <input type="checkbox" id="checkbox" v-model="checked">
     <label for="checkbox">{{ checked }}</label>
 </div>
+
+<select v-model="selected">
+  <option value="abc">ABC</option>
+</select>
+
+<div id="app4">
+    <input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b" />
+    <p>{{a}} + {{b}}</p>
+</div>
 <!--<script src="https://unpkg.com/vue"></script>-->
 <script src="js/vue.js"></script>
 <script>
@@ -42,6 +51,14 @@ var app3 = new Vue({
     el:'#app3',
     data:{
         checked:true
+    }
+});
+var app4 = new Vue({
+    el:'#app4',
+    data:{
+        toggle:'a',
+        a:'true',
+        b:'false'
     }
 });
 
