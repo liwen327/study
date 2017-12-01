@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+
+
+</head>
+<body>
+
+
+
+<div id="app4">
+    <todo-item v-if="todo.isComplete" v-bind:my-message="todo.text"></todo-item>
+</div>
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+
+
+
+/*Vue.component('child',{
+    props:['parentMsg'],
+    template:'<span>{{parentMsg}}</span>'
+});*/
+new Vue({
+    el:'#app4',
+    data:{
+        todo:{
+            text:'learn vue',
+            isComplete:true
+        }
+        
+    },
+    components:{
+        todoItem:{
+            props:['myMessage'],
+            template:'<span>{{myMessage}}</span>'
+        }
+    }
+});
+</script>
+</body>
+</html>

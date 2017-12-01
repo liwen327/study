@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58e14a52-e106-49f8-87fb-66bfb1fff408" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html5/canvas2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testNode.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/js/vue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/js/webpack.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/vue1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/2.component_todo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/3.component.v-on.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/4.currence.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/5.vue_transition.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/class_style_bind.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/component_parent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/filter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-for.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-for_onComponent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-for_onTemplate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-model.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-on.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html5/canvas.html" afterPath="$PROJECT_DIR$/html5/canvas.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/vueJs/base/vue1.html" afterPath="$PROJECT_DIR$/vueJs/base/1.vue1.html" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,15 +68,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/angularJs/angularjs2.0/angular-quickstart/node_modules" />
-    <handled-path value="$PROJECT_DIR$/angularJs/angularjs2.0/angular2_tour_heroes/node_modules" />
-    <handled-path value="$PROJECT_DIR$/dist/es6/node_modules" />
-    <handled-path value="$PROJECT_DIR$/es6/node_modules" />
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-    <handled-path value="$PROJECT_DIR$/webpack/node_modules" />
-    <handled-path value="$PROJECT_DIR$/webpack01/node_modules" />
-  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -79,24 +75,16 @@
     <option name="height" value="1056" />
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="58e14a52-e106-49f8-87fb-66bfb1fff408" name="Default" comment="" />
-      <created>1512091802415</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1512091802415</updated>
-      <workItem from="1512091807107" duration="944000" />
-    </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="944000" />
+    <option name="totallyTimeSpent" value="7000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -120,25 +108,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular-quickstart/app/main.js" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular-quickstart/app/main.js.map" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular-quickstart/app/app.component.js" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular-quickstart/app/app.component.js.map" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular-quickstart/app/app.module.js" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular-quickstart/app/app.module.js.map" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular2_tour_heroes/app/main.js" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular2_tour_heroes/app/main.js.map" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular2_tour_heroes/app/app.component.js" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular2_tour_heroes/app/app.component.js.map" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular2_tour_heroes/app/app.module.js" />
-        <option value="$PROJECT_DIR$/angularJs/angularjs2.0/angular2_tour_heroes/app/app.module.js.map" />
-      </list>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />

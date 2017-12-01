@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class adn style bind</title>
+
+
+</head>
+<body>
+<ul id='example-01'>
+    <li v-for="item in items">
+        {{item.message}}
+    </li>
+</ul>
+
+<ul id='example-02'>
+    <li v-for="(item, index) in items" :key="item.id">
+        {{parentMessage}} -{{index}}- {{item.message}}
+    </li>
+</ul>
+
+<ul id="v-for-object">
+    <li v-for="(item,key,index) in object" :key="item.id">
+        {{index}}. {{key}}: {{item}}
+    </li>
+</ul>
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+
+var app1 = new Vue({
+    el:'#example-01',
+    data:{
+        items:[
+            {message:'foo'},
+            {message:'bar'}
+        ]
+    }
+});
+var app2 = new Vue({
+    el:'#example-02',
+    data:{
+        parentMessage:'parent',
+        items:[
+            {message:'foo'},
+            {message:'bar'}
+        ]
+    }
+});
+var app3 = new Vue({
+    el:'#v-for-object',
+    data:{
+        object:{
+            firstName:'Jhon',
+            lastName:'tim',
+            age:30
+        }
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+
+
+</head>
+<body>
+
+<div id="app1">
+    <button v-on:click="greet">Greet</button>
+</div>
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+    var app1 = new Vue({
+        el:'#app1',
+        data:{
+            name:'vue.js'
+        },
+        methods:{
+            greet:function(event){
+                alert('hello ' + this.name + '!');
+                //event是原生DOM事件
+                if(event){
+                    alert(event.target.tagName);
+                }
+            }
+        }
+    });
+    app1.greet();
+    
+
+
+</script>
+</body>
+</html>

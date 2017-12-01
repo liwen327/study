@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class adn style bind</title>
+
+
+</head>
+<body>
+<!--<div id="appClass" v-bind:class="{active:isActive}"></div>-->
+<div id="app2" v-bind:class="{classObject}">objClass</div>
+<div id="app3" v-bind:style="styleObject">fdsfsdfsd</div>
+
+<template v-if="ok">
+    <h1>title</h1>
+    <p>p1</p>
+    <p>p2</p>
+</template>
+
+<div v-if="Math.random() > 0.5">
+    Now you see me.
+</div>
+<div v-else>
+    Now you cannot see me.
+</div>
+
+<div id="app4">
+    <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username" key="username-input">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address" key="email-input">
+    </template>
+    <button v-on:click="btnToggle">Toggle login type</button>
+</div>
+
+<div v-show="ok">v-show</div>
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+
+/*var appClass = new Vue({
+    el:'#appClass',
+    data:{
+        isActive:true
+    }
+});*/
+/*var app2 = new Vue({
+    el:'#app2',
+    data:{
+        classObject:{
+            active:true,
+            'text-danger':false
+        }
+    }
+ })*/
+
+var app2 = new Vue({
+    el:'#app2',
+    data:{
+        isActive:true,
+        error:null
+    },
+    computed:{
+        classObject:function(){
+            return{
+                active:this.isActive && !this.error,
+                'text-danger':this.error && this.error.type === 'fatal'
+            }
+        }
+    }
+});
+var app3 = new Vue({
+    el:'#app3',
+    data:{
+        styleObject:{
+            fontSize:'20px',
+            color:'red'
+        }
+    }
+})
+var app4 = new Vue({
+    el:'#app4',
+    data:{
+        loginType:'username'
+    },
+    methods:{
+        btnToggle:function(){
+            this.loginType = 'email';
+        }
+    }
+});
+
+</script>
+</body>
+</html>
