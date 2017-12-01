@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58e14a52-e106-49f8-87fb-66bfb1fff408" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/2.component_todo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/3.component.v-on.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/4.currence.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/5.vue_transition.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/class_style_bind.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/component_parent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/filter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-for.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-for_onComponent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-for_onTemplate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-model.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vueJs/base/v-on.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vueJs/base/vue1.html" afterPath="$PROJECT_DIR$/vueJs/base/1.vue1.html" />
-    </list>
+    <list default="true" id="58e14a52-e106-49f8-87fb-66bfb1fff408" name="Default" comment="" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +68,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7000" />
+    <option name="totallyTimeSpent" value="95000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

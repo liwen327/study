@@ -4,7 +4,9 @@ gulpfile.coffee
 karma.conf.js
 package.json
 
-.idea/
+.idea/**.xml  
+
+.idea/**  
 
 *.txt
 *.docx
