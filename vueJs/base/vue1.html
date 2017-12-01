@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue1</title>
+
+
+</head>
+<body>
+
+<div id="app">
+    {{ message }}
+</div>
+<div id="app-2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+
+<div id="app-3">
+    <span v-if="seen">现在你看到了我</span>
+</div>
+
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+
+<div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+
+<div id="app-6">
+    <p>{{message}}</p>
+    <input v-model="message">
+</div>
+
+<!--组件 -->
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    </ol>
+</div>
+<div id="app-8">
+    {{fullName}}
+</div>
+
+<div id="watch-example">
+    <p>
+        ask a yes/no question:
+        <input v-model="question"/>
+
+    </p>
+    <p>{{answer}}</p>
+
+</div>
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<!-- 因为 AJAX 库和通用工具的生态已经相当丰富，Vue 核心代码没有重复 -->
+<!-- 提供这些功能以保持精简。这也可以让你自由选择自己更熟悉的工具。 -->
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    });
+
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            message: '页面加载于 ' + new Date().toLocaleString()
+        }
+    });
+
+    var app3 = new Vue({
+        el:'#app-3',
+        data:{
+            seen:true
+        }
+    });
+
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习 Vue' },
+                { text: '整个牛项目' }
+            ]
+        }
+    });
+
+    var app5 = new Vue({
+        el:'#app-5',
+        data:{
+            message:'hello Vue.js'
+        },
+        methods:{
+            reverseMessage:function(){
+                this.message=this.message.split('').reverse().join('')
+            }
+        }
+    });
+    var app6=new Vue({
+        el:'#app-6',
+        data:{
+            message:'hello'
+        }
+    });
+    Vue.component('todo-item',{
+        props:['todo'],
+        template:'<li>{{todo.text}}</li>'
+    });
+    var app7 = new Vue({
+        el:'#app-7',
+        data:{
+            groceryList:[
+                {id:0,text:'蔬菜'},
+                {id:1,text:'水果'},
+                {id:2,text:'其它的什么都可以'}
+            ]
+        }
+    })
+    /*var app8 = new Vue({
+     el:'#app-8',
+     data:{
+     firstName:'Jhon',
+     lastName:'Tim'
+     },
+     computed:{
+     fullName:function(){
+     return this.firstName + ' ' + this.lastName;
+     }
+     }
+     })*/
+    var app8 = new Vue({
+         el:'#app-8',
+         data:{
+             firstName:'Jhon',
+             lastName:'Tim'
+         },
+         computed:{
+             fullName:{
+                 //getter
+                 get:function(){
+                     return this.firstName + ' ' + this.lastName
+                 },
+                 //setter
+                 set:function(newValue){
+                     var names = newValue.split(' ');
+                     this.firstName = names[0];
+                     this.lastName = names[names.length -1];
+                 }
+
+             }
+         }
+     });
+    var watchExampleVM = new Vue({
+        el: '#watch-example',
+        data: {
+            question: '',
+            answer: 'I cannot give you an answer until you ask a question!'
+        },
+        watch: {
+            // 如果 `question` 发生改变，这个函数就会运行
+            question: function (newQuestion) {
+                this.answer = 'Waiting for you to stop typing...'
+                this.getAnswer()
+            }
+        },
+        methods: {
+            // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
+            // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
+            // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
+            // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
+            // 请参考：https://lodash.com/docs#debounce
+            getAnswer: _.debounce(
+                    function () {
+                        if (this.question.indexOf('?') === -1) {
+                            this.answer = 'Questions usually contain a question mark. ;-)'
+                            return
+                        }
+                        this.answer = 'Thinking...'
+                        var vm = this
+                        axios.get('https://yesno.wtf/api')
+                                .then(function (response) {
+                                    vm.answer = _.capitalize(response.data.answer)
+                                })
+                                .catch(function (error) {
+                                    vm.answer = 'Error! Could not reach the API. ' + error
+                                })
+                    },
+                    // 这是我们为判定用户停止输入等待的毫秒数
+                    500
+            )
+        }
+    });
+
+
+</script>
+</body>
+</html>
