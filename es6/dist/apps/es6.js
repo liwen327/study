@@ -6,4 +6,3 @@
 (function (x) {
   return x * 2;
 })(1);
-//# sourceMappingURL=es6.js.map

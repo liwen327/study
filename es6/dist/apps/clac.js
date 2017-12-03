@@ -8,23 +8,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Created by liwz on 16-12-28.
  */
 //import './Greeter.js';
-var Calc = function () {
-    function Calc() {
-        _classCallCheck(this, Calc);
+var Calc1 = function () {
+    function Calc1() {
+        _classCallCheck(this, Calc1);
 
         console.log("calc constructor");
     }
 
-    _createClass(Calc, [{
+    _createClass(Calc1, [{
         key: "add",
         value: function add(a, b) {
             return a + b;
         }
     }]);
 
-    return Calc;
+    return Calc1;
 }();
 
-var c = new Calc();
+var c = new Calc1();
 console.log(c.add(4, 5));
-//# sourceMappingURL=clac.js.map
