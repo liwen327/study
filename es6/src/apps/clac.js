@@ -10,6 +10,5 @@
                 return a + b;
             }
         }
-
         var c = new Calc1();
         console.log(c.add(4,5));

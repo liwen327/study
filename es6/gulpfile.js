@@ -1,25 +1,48 @@
-'use strict';
-import gulp from 'gulp';
-import babel from 'gulp-babel';
-import autoprefixer from 'gulp-autoprefixer';
-import sourcemaps from 'gulp-sourcemaps';
 
-const dirs = {
-    src:'./src/es6',
-    dest:'./src/lib'
-};
-
-const es6Path = {
-    src:`${dirs.src}/` + '*.js',
-    dest: `${dirs.dest}`
-};
-
-gulp.task('babel',() => {
-    return gulp.src(es6Path.src)
-            .pipe(babel())
-            .pipe(gulp.dest(es6Path.dest));
+var gulp = require('gulp'),
+    watch = require('gulp-watch'),
+    babel = require('gulp-babel');
+var envify = require('gulp-envify');
+var browserify = require('gulp-browserify');
+var SourceMap = require('gulp-sourcemaps');
+var uglify = require('gulp-uglifyjs');
+var SourceMapSupport = require('gulp-sourcemaps-support');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
+gulp.task('js', function(){
+  gulp.src('src/**/*.js')
+    .pipe(SourceMap.init())
+    .pipe(babel({
+        presets: ['es2015', 'es2016', 'es2017', 'react'],
+        //plugins: ['transform-decorators-legacy']
+    }))
+    .pipe(uglify())
+    .pipe(SourceMap.write('.'))
+    .pipe(gulp.dest('build'))
+    .pipe(reload({ stream:true }));
 });
-
-gulp.task('watch',() => {
-    gulp.watch(es6Path.src,['babel']);
+gulp.task('html',function(){
+  gulp.src('src/*.html')
+  .pipe(SourceMap.init())
+  .pipe(gulp.dest('build'))
+  .pipe(reload({ stream:true }));
 });
+//gulp.task('watch',function(){
+  //gulp.watch('src/**/*.js',['js']);
+  //gulp.watch('src/*.html',['html']);
+//});
+gulp.task('serve', ['html','js'], function() {
+  browserSync({
+    server: {
+      baseDir: 'src'
+    }
+  });
+
+  gulp.watch('src/**/*.js', ['js']);
+  gulp.watch('src/*.html',['html']);
+});
+gulp.task('default', ['js','html','serve']);
+
+
+
+
