@@ -10,14 +10,14 @@ var SourceMapSupport = require('gulp-sourcemaps-support');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 gulp.task('js', function(){
-  gulp.src('src/**/*.js')
+  gulp.src('src/**/*.js')    
     .pipe(SourceMap.init())
     .pipe(babel({
         presets: ['es2015', 'es2016', 'es2017', 'react'],
         //plugins: ['transform-decorators-legacy']
-    }))
-    .pipe(uglify())
-    .pipe(SourceMap.write('.'))
+    }))  
+    .pipe(uglify())     //默认把js都压缩到文件的第一个js文件 中
+    //.pipe(SourceMap.write('.'))
     .pipe(gulp.dest('build'))
     .pipe(reload({ stream:true }));
 });
@@ -34,7 +34,7 @@ gulp.task('html',function(){
 gulp.task('serve', ['html','js'], function() {
   browserSync({
     server: {
-      baseDir: 'src'
+      baseDir: './build'
     }
   });
 
