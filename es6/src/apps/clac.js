@@ -15,3 +15,13 @@
         // 
         // 
 console.log("es6");
+//var str = dlUrl || 'download.csdn.net';
+var str = typeof dlUrl == 'undefined' ? 'dwonload.csdn.net' : dlUrl;
+console.log(str);
+
+function log(x,y='world'){
+        console.log(x,y);
+}
+log('hello');  
+log('hello','China');
+log('hello','');

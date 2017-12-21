@@ -1,1 +1,31 @@
-"use strict";console.log("es6"),console.log(11);var REGEX=/a/g;REGEX.lastIndex=2;var match=REGEX.exec("xaya");console.log(match),console.log("na".repeat(3));
+'use strict';
+
+/**
+ * Created by liwz on 16-12-28.
+ */
+//import './Greeter.js';
+// class Calc1{
+//     constructor(){
+//         console.log("calc constructor");
+//     }
+//     add(a,b){
+//         return a + b;
+//     }
+// }
+// var c = new Calc1();
+// console.log(c.add(4,5));
+// 
+// 
+console.log("es6");
+//var str = dlUrl || 'download.csdn.net';
+var str = typeof dlUrl == 'undefined' ? 'dwonload.csdn.net' : dlUrl;
+console.log(str);
+
+function log(x) {
+        var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'world';
+
+        console.log(x, y);
+}
+log('hello');
+log('hello', 'China');
+log('hello', '');
