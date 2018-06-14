@@ -1,0 +1,1 @@
+console.log('na'.repeat(3));      
