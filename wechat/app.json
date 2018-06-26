@@ -13,15 +13,11 @@
   "tabBar": {
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "iconPath",
-      "selectedIconPath": "selectedIconPath"
+      "text": "首页"
     },
     {
       "pagePath": "pages/login/login",
-      "text": "加入",
-      "iconPath": "iconPath",
-      "selectedIconPath": "selectedIconPath"
+      "text": "加入"
     }]
   }
 }
