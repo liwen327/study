@@ -7,13 +7,14 @@
     <meta name="referrer" content="always">
     <title>scroll</title>
     <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/getMore.js"></script>
 
 
 </head>
 <body>
 <div style="height:1000px;">dfdf</div>
 <script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
-<div id="GNKXx7"></div>
+
 
 <div id="album_detail_wrap">
     <dl class="info_box clearfix">
@@ -26,7 +27,7 @@
             <a href="https://blog.csdn.net/dm_vincent/article/details/41593987" target="_blank" class="text_intro">[Elasticsearch] 索引管理 (四) - 动态映射原始数据000000</a>
         </dd>
     </dl>
-    <dl class="info_box clearfix" id="ad1"></dl>
+    <dl class="info_box clearfix info_ad_box" id="ad1"></dl>
     <script>
         //var width = $("div.recommend-box").outerWidth() - 48;
         NEWS_FEED({
@@ -82,7 +83,7 @@
             <a href="https://blog.csdn.net/dm_vincent/article/details/41593987" target="_blank" class="text_intro">[Elasticsearch] 索引管理 (四) - 动态映射原始数据000000</a>
         </dd>
     </dl>
-    <dl class="info_box clearfix" id="ad2"></dl>
+    <dl class="info_box clearfix info_ad_box" id="ad2"></dl>
     <script>
         //var width = $("div.recommend-box").outerWidth() - 48;
         NEWS_FEED({
@@ -137,7 +138,7 @@
             <a href="https://blog.csdn.net/dm_vincent/article/details/41593987" target="_blank" class="text_intro">[Elasticsearch] 索引管理 (四) - 动态映射原始数据000000</a>
         </dd>
     </dl>
-    <dl class="info_box clearfix" id="ad3"></dl>
+    <dl class="info_box clearfix info_ad_box" id="ad3"></dl>
     <script>
         //var width = $("div.recommend-box").outerWidth() - 48;
         NEWS_FEED({
@@ -190,116 +191,6 @@
 
 </div>
 
-    <script>
-        function insertAd(adId){
-            return '<dl class="info_box clearfix" id='+adId+'></dl>'+'<script>
-                NEWS_FEED({
-                    w: 500,
-                    h : 90,
-                    showid : 'GNKXx7',
-                    placeholderId: adId,
-                    inject : 'define',
-                    define : {
-                        imagePosition : 'left',
-                        imageBorderRadius : 0,
-                        imageWidth: 120,
-                        imageHeight: 90,
-                        imageFill : 'clip',
-                        displayImage : true,
-                        displayTitle : true,
-                        titleFontSize: 20,
-                        titleFontColor: '#333',
-                        titleFontFamily : 'Microsoft Yahei',
-                        titleFontWeight: 'bold',
-                        titlePaddingTop : 0,
-                        titlePaddingRight : 0,
-                        titlePaddingBottom : 10,
-                        titlePaddingLeft : 16,
-                        displayDesc : true,
-                        descFontSize: 14,
-                        descPaddingLeft: 14,
-                        descFontColor: '#6b6b6b',
-                        descFontFamily : 'Microsoft Yahei',
-                        paddingTop : 0,
-                        paddingRight : 0,
-                        paddingBottom : 0,
-                        paddingLeft : 0,
-                        backgroundColor: '#fff',
-                        hoverColor: '#ca0c16'
-                    }
-                })
-            </script>'
-
-        }
-        $(function() {
-            var not_loading = true,pageNum = 3,oList = $("#album_detail_wrap");
-            $(window).scroll(function() {
-                var scrollTop = $(this).scrollTop();
-                var scrollHeight = $(document).height() ;
-                var windowHeight = $(this).height();
-                if (scrollTop + windowHeight >= scrollHeight) {
-                    if(not_loading){
-                        refreshMore();
-                        setTimeout(function(){
-                            getMore();
-                        },100);
-                    }else{
-                        $(".dl_more").remove();
-                    }
-                }
-            });
-
-            function getMore(){
-                //console.log("getMore......")
-                $.ajax({
-                    type: 'get',
-                    url: 'data.json',
-                    data:{
-                        sort_by:'',
-                        page:pageNum
-                    },
-                    //async: false,
-                    dataType: 'json',
-                    success: function (resobj) {
-                        var totalNum = resobj.total_pages;
-                        if(pageNum <=totalNum ){
-                            $(".dl_more").remove();
-                            var oHtml = resobj.oHtml;
-                            var htmlLength = oHtml.length;
-                            if(htmlLength%3==0){
-                                oHtml += ''
-
-                            }
-                            oList.append(resobj.oHtml);
-
-                            refreshMore();
-                            not_loading = true;
-                            pageNum++;
-                        }else{
-                            not_loading = false;
-                            noMore();
-                        }
-                    },
-                    error: function (err) {
-                        console.log(err);
-                    }
-                });
-            }
-
-            function noMore(){
-                $(".dl_more").remove();
-                if(oList.find(".dl_no_more").length ==0){
-                    oList.append('<div class="dl_no_more" style="font-size:14px; color:red; text-align:center;padding-top:10px; ">我们是很有底线的</div>');
-                }
-            }
-
-            function refreshMore(){
-                if(oList.find(".dl_more").length ==0){
-                    oList.append('<div class="dl_more" style="font-size:14px; color:red; text-align:center;padding-top:10px;">上滑加载更多</div>');
-                }
-            }
-        });
-    </script>
 
 </body>
 </html>
