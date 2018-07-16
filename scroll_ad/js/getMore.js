@@ -12,7 +12,7 @@ function scrollAdInsert(){
             NEWS_FEED({
                 w: 808,
                 h : 80,
-                showid : '0eD4ke',
+                showid : 'wc4SIC',
                 placeholderId: "info_ad"+i,
                 inject : 'define',
                 define : {
@@ -59,7 +59,6 @@ $(function() {
                     getMore(function(){
                         //在这里插入广告
                         scrollAdInsert();
-
                     });
                 },100);
             }else{
@@ -117,7 +116,7 @@ $(function() {
 
     function refreshMore(){
         if(oList.find(".dl_more").length ==0){
-            oList.append('<div class="dl_more" style="font-size:14px; color:red; text-align:center;padding-top:10px;">上滑加载更多</div>');
+            oList.append('<div class="dl_more" style="font-size:14px; color:red;padding-top:10px;"><img src="images/feedLoading.gif"/></div>');
         }
     }
 });

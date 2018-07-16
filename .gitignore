@@ -24,6 +24,8 @@ webpack/node_modules/
 webpack01/npm-debug.log
 
 
-
+vue/vue/node_modules/
+**/**/node_modules/
+**/node_modules/
 
 
