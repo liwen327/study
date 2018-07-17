@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+
+</head>
+<body>
+
+<div id="app">
+    
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+    Vue.component('alert-box',{
+        template:`
+        <div class="demo-alert-box">
+            <strong>Error!</strong>
+            <slot></slot>    
+        </div>
+        `,
+        props:['title']
+    });
+    new Vue({
+        el: '#app',
+        data: {
+            newTodoText: '',
+            todos:[
+                {
+                    id:1,
+                    title:'Do 1'
+                },
+                {
+                    id:2,
+                    title:'Do 2'
+                },
+                {
+                    id:3,
+                    title:'Do 3'
+                }
+            ],
+            nextTodoId:4
+        },
+        methods:{
+            addNewTodo:function(){
+                this.todos.push({
+                    id:this.nextTodoId++,
+                    title:this.newTodoText
+                })
+                this.newTodoText = ''
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
