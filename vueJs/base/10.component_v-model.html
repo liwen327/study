@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+
+</head>
+<body>
+
+<div id="app">
+    
+    <custom-input
+        v-model='searchText'
+    ></custom-input>
+    <div>{{searchText}}</div>
+    
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+    Vue.component('custom-input',{
+        props:['value'],
+        template:`
+            <input 
+                :value='value'
+                @input="$emit('input',$event.target.value)"
+            />
+        `
+            
+    });
+    new Vue({
+        el: '#app',
+        data:{
+            searchText:'component text'
+        }
+    });
+
+</script>
+</body>
+</html>

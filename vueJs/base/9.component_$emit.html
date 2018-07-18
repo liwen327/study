@@ -13,7 +13,7 @@
         v-for='post in posts'
         :key='post.id'
         :post='post'
-        @enlarg-text='postFontSize +=0.1'
+        v-on:enlarge-text='onEnlargeText'
     ></blog-post>
     
 </div>
@@ -25,11 +25,12 @@
         template:`
         <div>
             <h3>{{post.title}}</h3>
-            <button @click="$emit('enlarge-text')"></button>
+            <button v-on:click="$emit('enlarge-text',0.1)">enlarge_text</button>
             <div v-html="post.content"></div>
             <div>{{post.comments}}</div>
         </div>
         `
+            
     });
     new Vue({
         el: '#app',
@@ -42,7 +43,9 @@
             postFontSize:1
         },
         methods:{
-            
+            onEnlargeText:function(amount){
+                this.postFontSize +=amount;
+            }
         }
     });
 
