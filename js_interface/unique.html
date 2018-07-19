@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quchong</title>
+</head>
+<body>
+
+<script>
+
+var arr = [12,34,53,54,54,null,undefined,53,34];
+function unique1(arr){
+  var obj = {};
+  var newArr = [];
+  for(var i=0,len=arr.length; i<len; i++){
+
+    if(!obj[arr[i]]){
+      obj[arr[i]] =1;
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+//console.log(unique1(arr));
+
+
+function unique2(arr){
+  var newArr = [];
+  var item;
+  for(var i=0,len=arr.length; i<len; i++){
+    item = arr[i];
+    if(newArr.indexOf(arr[i]) == -1){
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+//console.log(unique2(arr));
+
+//方法3：使用ES5的forEach方法
+function unique3(arr){
+  var newArr = [];
+  arr.forEach(function(item){
+    if(newArr.indexOf(item) === -1){
+      newArr.push(item);
+    }
+  })
+  return newArr;
+}
+console.log(unique3(arr));
+
+function unique4(arr){
+  var newArr = [];
+  var obj = {};
+  var type,item;
+  for(var i=0,len=arr.length; i<len; i++){
+    item = arr[i];
+    type = typeof item;
+    if(!obj[item]){
+      obj[item] = [type];
+      newArr.push(item);
+    }else if(obj[item].indexOf(type) === -1){
+      obj[item].push(type);
+      newArr.push(item);
+    }
+  }
+  return newArr;
+}
+  
+var arr = [1,2,3,4,3,4,'1','2'];
+console.log(unique4(arr));
+
+  
+
+</script>
+</body>
+</html>

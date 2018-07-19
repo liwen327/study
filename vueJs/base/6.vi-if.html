@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+
+<style>
+    /* 可以设置不同的进入和离开动画 */
+    
+</style>
+</head>
+<body>
+
+<div id="app">
+  <template v-if="loginType=='username'">
+    <label>user:</label>
+    <input type="text" placeholder="please enter your username!" key='username input'>
+  </template>
+  <template v-else>
+    <label>email:</label>
+    <input type="text" placeholder="please enter your email!" key='email input'>
+  </template>
+  <input type="button" value="切换输入方式" @click='toggleFn' />
+
+
+  <div v-if='Math.random() > 0,5'>
+    now you see me
+  </div>
+  <div v-else>
+    now you can't see me
+  </div>
+
+</div>
+
+
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+  el: '#app',
+  data: {
+    loginType: 'username'
+  },
+  methods:{
+    toggleFn:function(){
+      if(this.loginType == 'username'){
+        this.loginType = 'email';
+      }else{
+        this.loginType = 'username';
+      }
+
+    }
+  }
+})
+
+</script>
+</body>
+</html>

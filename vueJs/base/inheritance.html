@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+</head>
+<body>
+
+<script>
+
+  //下面这个是原型继承方法
+  /*function Super(){
+    this.property = true;
+  }
+  Super.prototype.superValue = function(){
+    return this.property;
+  }
+
+  function Sub(){
+    this.subProperty = false;
+  }
+  Sub.prototype = new Super();
+
+  var instance = new Sub();
+  //console.log(instance.superValue());*/
+
+  //借用构造函数继承方法
+  function Super(name){
+    this.colors = ['red','black','green'];
+    this.name = name;
+    
+  }
+  Super.prototype.sayName = function(){
+    return this.name;
+  }
+
+  function Sub(name){
+    Super.call(this,name);
+  }
+  
+  Sub.prototype = new Super();
+
+
+  var instance1 = new Sub('Jack');
+  instance1.colors.push('blue');
+  console.log(instance1.colors);
+  console.log(instance1.sayName());
+
+  var instance2 = new Sub('Lilei');
+  console.log(instance2.colors);
+  console.log(instance2.sayName());
+
+  console.log(instance1.sayName == instance2.sayName);  //true
+
+
+
+
+
+  //冒泡排序
+  function sortFn(arr){
+    var temp = '';
+    for(var i=0; i<arr.length -1; i++){
+      for(var j=0; j<arr.length - i - 1; j++){
+        if(arr[j] > arr[j+1]){
+          temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+        }
+      }
+    }
+    return arr;
+  }
+
+  var arr = [1,3,4,2,6,9];
+  console.log(sortFn(arr));
+
+
+  
+
+  
+
+</script>
+</body>
+</html>

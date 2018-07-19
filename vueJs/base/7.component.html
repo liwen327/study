@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+
+<style>
+    /* 可以设置不同的进入和离开动画 */
+    
+</style>
+</head>
+<body>
+
+<div id="app">
+  <ol>
+    <todo-item
+      v-for="item in grocery"
+      :todo="item"
+      :key="item.id"
+    ></todo-item>
+  </ol>
+
+</div>
+
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+  Vue.component('todo-item',{
+    props:['todo'],
+    template:'<li>{{todo.text}}</li>'
+  })
+  new Vue({
+    el: '#app',
+    data: {
+      grocery: [
+        {id:1,text:'苹果'},
+        {id:2,text:'梨子'},
+        {id:3,text:'香蕉'}
+      ]
+  }
+})
+
+</script>
+</body>
+</html>

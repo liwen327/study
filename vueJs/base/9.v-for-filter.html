@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+
+<style>
+    /* 可以设置不同的进入和离开动画 */
+    
+</style>
+</head>
+<body>
+
+<div id="app">
+  <ol>
+    <!-- <li v-for='n in evenNumbers'>{{n}}</li> -->
+  </ol>
+
+</div>
+
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data:{
+      numbers: [1,2,3,4,5,6],
+    },
+    // computed:{
+    //   evenNumbers:function(){
+    //     return this.numbers.filter(function(number){
+    //       return number%2 ==0;
+    //     })
+    //   }
+    // }
+    methods:{
+      evenNumbers:function(){
+
+      }
+    }
+  });
+
+  function Foo (){
+    this.id = 'foo origin';
+  }
+  Foo.id = 'foo';
+  Foo.prototype.sayName = function(){
+    console.log(this.id);
+  }
+  Foo.sayName = function(){
+    console.log(this.id);
+  }
+  Foo.sayName(); //foo
+  new Foo().sayName();  //foo origin
+  var func = Foo.sayName;
+  func();  //undefined 运行52行的代码,在那里this指window
+  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJs</title>
+</head>
+<body>
+
+<script>
+
+  //下面这个是原型继承方法
+  /*function Super(){
+    this.property = true;
+  }
+  Super.prototype.superValue = function(){
+    return this.property;
+  }
+
+  function Sub(){
+    this.subProperty = false;
+  }
+  Sub.prototype = new Super();
+
+  var instance = new Sub();
+  //console.log(instance.superValue());*/
+
+  //借用构造函数继承方法
+  /*function Super(name){
+    this.colors = ['red','black','green'];
+    this.name = name;
+    
+  }
+  Super.prototype.sayName = function(){
+    return this.name;
+  }
+
+  function Sub(name){
+    Super.call(this,name);
+  }
+  
+  Sub.prototype = new Super();
+
+
+  var instance1 = new Sub('Jack');
+  instance1.colors.push('blue');
+  console.log(instance1.colors);
+  console.log(instance1.sayName());
+
+  var instance2 = new Sub('Lilei');
+  console.log(instance2.colors);
+  console.log(instance2.sayName());
+
+  console.log(instance1.sayName == instance2.sayName);  //true
+*/
+
+
+var arr = [-1,1,1,-1,1,1,-1,-1];
+//console.log(arr.sort());
+function sortFn(obj1,obj2){
+  if(obj1 > obj2){
+    return 1;
+  }else if(obj1 < obj2){
+    return -1;
+  }else{
+    return 0;
+  }
+}
+var arrNew = [];
+
+for(var i=0; i< arr.length; i++){
+  sortFn(arr[i],arr[i+1]);
+}
+console.log(arr.sort(sortFn));
+
+
+function maopao(Arr){
+  var temp;
+  for(var i=0; i<Arr.length; i++){
+    for(var j=0; j<Arr.length - i -1 ; j++){
+      if(Arr[j] > Arr[j+1]){
+        temp = Arr[j];
+        Arr[j] = Arr[j+1];
+        Arr[j+1]= temp;
+      }
+    }
+  }
+  return Arr;
+}
+
+// function maopao1(arr){
+//   var temp;
+//   for(var i=0; i<arr.length; i++){
+//     if(arr[i] > arr[i+1]){
+//       temp = arr[i];
+//       arr[i] = arr[i+1];
+//       arr[i+1] = temp;
+//     }
+//   }
+//   return arr;
+// }
+
+var newArr = [24,87,49,32,90,78];
+console.log(maopao(newArr));
+//console.log(maopao1(newArr));
+console.log(newArr.sort());
+
+
+
+  
+
+  
+
+</script>
+</body>
+</html>

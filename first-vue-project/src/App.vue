@@ -26,7 +26,7 @@ export default {
     },
     addNewItem:function(){
       this.items.push({
-        label:this.newItem,isFinished:false
+        label:this.newItem,isFinished:true
       });
       this.newItem = '';
     }
