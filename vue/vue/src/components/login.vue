@@ -1,7 +1,7 @@
 <template>
-  <div class="hello">
-    <div>{{ msg }}</div>
-    <h5>foot Links</h5>
+  <div class="login">
+    <span>{{ userName }}</span>
+    <input v-model="username" @keyup='setUser'/>
     
 
   </div>
@@ -9,11 +9,17 @@
 
 <script>
 export default {
-  name: 'foot',
+  name: 'loginDiv',
   data () {
     return {
-      msg: 'this is vue.js footer'
+      username:''
     }
+  },
+  props:['userName'],
+  methods:{
+      setUser:function(){
+          this.$emit('transferUser',this.username);
+      }
   }
 }
 </script>

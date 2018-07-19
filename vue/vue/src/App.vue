@@ -1,20 +1,39 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <HelloWorld/>
+    <!-- <HelloWorld/> -->
+    <headerDiv :logo="logoMsg"></headerDiv>
+    <loginDiv :userName="userName" @transferUser='getUser'></loginDiv>
+    <p>用户名为：{{user}}</p>
     <foot/>
   </div>
-</template>
+</template>  
 
 <script>
-import HelloWorld from './components/HelloWorld'
+//import HelloWorld from './components/HelloWorld'
+import headerDiv from './components/header'
+import loginDiv from './components/login'
 import foot from './components/foot'
 
 export default {
   name: 'App',
+  data(){
+    return {
+      logoMsg:'logo message111',
+      userName:'用户名：',
+      user:''
+    }
+  },
   components: {
-    HelloWorld,
+    //HelloWorld,
+    headerDiv,
+    loginDiv,
     foot
+  },
+  methods:{
+    getUser:function(msg){
+      this.user = msg;
+    }
   }
 }
 </script>

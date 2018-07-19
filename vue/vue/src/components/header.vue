@@ -1,7 +1,9 @@
 <template>
-  <div class="hello">
-    <div>{{ msg }}</div>
-    <h5>foot Links</h5>
+  <div class="header">
+    <div id="logo">{{ logo }}</div>
+    <ul class="nav">
+        <li v-for="nav in navs">{{nav.li}}</li>
+    </ul>
     
 
   </div>
@@ -9,12 +11,18 @@
 
 <script>
 export default {
-  name: 'foot',
+  name: 'headerDiv',
   data () {
     return {
-      msg: 'this is vue.js footer'
+      navs: [
+          {li:'主页'},
+          {li:'日志'},
+          {li:'说说'},
+          {li:'相册'}
+      ]
     }
-  }
+  },
+  props:['logo']
 }
 </script>
 
