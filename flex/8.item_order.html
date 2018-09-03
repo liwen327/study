@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>flex</title>
+<style>
+    #flex-container {
+    display: flex;
+    flex-flow:row wrap;
+    /* align-content: flex-end; */
+    /* align-content: flex-start; */
+    /* align-content: center; */
+    /* align-content: space-between; */
+    /* align-content: space-around; */
+    /* align-content: stretch; */
+    background:orange;
+    height:400px;
+    }
+
+    #flex-container > .flex-item {
+    /* flex: auto; */
+    width:200px;
+    /* height:100px; */
+    background:#ccc;
+    margin:5px;
+    order:1;
+    }
+</style>
+</head>
+
+<body>
+    <div id="flex-container">
+        <div class="flex-item" style="order:10;">Raw 1 </div>
+        <div class="flex-item">Raw box2Raw box2Raw box2Raw box2Raw box2Raw box2Raw box2Raw box2Raw box2Raw box2Raw box2Raw box2</div>
+        <div class="flex-item">Raw box3</div>
+        <div class="flex-item">Raw box4</div>
+        <div class="flex-item">Raw box5</div>
+        <div class="flex-item">Raw box6</div>
+        <div class="flex-item">Raw box4</div>
+        <div class="flex-item">Raw box5</div>
+        <div class="flex-item">Raw box6</div>
+
+        <div class="flex-item" style="width:300px;">Raw box4</div>
+        <div class="flex-item">Raw box5</div>
+        <div class="flex-item">Raw box6</div>
+        <div class="flex-item">Raw box4</div>
+        <div class="flex-item">Raw box5</div>
+        <div class="flex-item">Raw box6</div>
+    </div>
+</body>
+</html>
