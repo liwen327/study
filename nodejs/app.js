@@ -13,7 +13,7 @@ http.createServer(function (req, res) {
     res.writeHead(200, {
         'Content-Type': 'text/html;charset=UTF-8'
     });
-    res.write("这是node.js");
-    res.end('哈哈哈，结束吧');
+    res.write("这是node.js http");
+    res.end('哈哈哈，结束吧11111');
 }).listen(4000)
 console.log("HTTP server is listening at port 4000.");
