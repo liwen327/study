@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 app.get('/', function (req, res, next) {
   console.log('getreq:--', req.query)
-  res.render('form')
+  res.render('./form.ejs')
   next()
 })
 
@@ -22,8 +22,8 @@ app.post('/', function (req, res) {
   /* res.setHeader('Content-Type', 'text/plain')
   res.write('you posted:\n')
   res.end(JSON.stringify(req.body, null, 2)) */
-  res.render('form.ejs')
+  res.render('./form.ejs')
   console.log(req.body)
 })
 
-app.listen(4000)
+app.listen(2000)
