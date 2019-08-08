@@ -28,4 +28,4 @@ vue/vue/node_modules/
 **/**/node_modules/
 **/node_modules/
 
-
+**/.vscode
