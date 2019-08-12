@@ -1,0 +1,11 @@
+import Router from 'koa-router'
+
+const router = new Router({
+  perfix: '/city'
+})
+
+router.get('/list', async (ctx) => {
+  ctx.body = ['北京', '天津']
+})
+
+export default rooter
