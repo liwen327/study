@@ -207,7 +207,7 @@ p4.catch((value) => {
 
 
 
-//promise的resolve后面再抛出错误，不会执行
+/* //promise的resolve后面再抛出错误，不会执行
 const p1 = new Promise((resolve, reject) => {
   resolve(1);
   throw new Error('error')
@@ -216,7 +216,7 @@ p1.then(value => {
   console.log('value:==', value)   //value:== 1
 }).catch(error => {
   console.log("error:==", error)   //这句代码不会执行，因为一旦promise的状态改变了，就不会再变，已经是resolved了就不会变成rejected
-})
+}) */
 
 
 
