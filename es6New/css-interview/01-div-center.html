@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-div-垂直居中</title>
+    <script src="01-div-center.js"></script>
+    <style>
+      *{
+
+        padding:0;
+        margin:0;
+      }
+      /*width:100%和height:100%都是必须的
+      */
+      /*
+      html,body{
+        height:100%;
+        width:100%;
+      }*/
+      /*第1种方法*/
+      /*.center{
+        width:300px;
+        height: 300px;
+        border: solid 1px green;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-150px 0 0 -150px;
+      }*/
+      /*第2种方法*/
+      /*.center{
+        width:300px;
+        height: 300px;
+        border: solid 1px green;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+      }*/
+      /*上面两种方法都需要设置center元素的width:50%和height:50%，但是用css3的弹性布局就不需要，需要在父元素body上设置属性*/
+      /*第3种方法*/
+      body{
+        display: flex;
+        align-items: center;       /*定义body里的元素垂直居中*/
+        justify-content: center;   /*定义body里的元素水平居中*/
+      }
+      .center{
+        width:300px;
+        height: 300px;
+        border: solid 1px green;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <p>01-div-center 垂直居中</p>
+    <div class="center">垂直居中</div>
+
+  </body>
+</html>

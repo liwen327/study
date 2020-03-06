@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visibility</title>
+    <style>
+
+      ol li{
+        height:50px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- visibility:hidden  -->
+    <p>visibility:hidden的计数特性，依然起作用</p>
+    <ol class="visibility">
+      <li>子元素1</li>
+      <li style="visibility: hidden;">子元素2</li>
+      <li>子元素3</li>
+      <li>子元素4</li>
+    </ol>
+
+    <p>display:none的计数特性，不起作用了</p>
+    <ol class="block">
+      <li>子元素1</li>
+      <li style="display: none;">子元素2</li>
+      <li>子元素3</li>
+      <li>子元素4</li>
+    </ol>
+
+
+
+    <p>visibility:hidden的子元素再设置visibility:visible,子元素依然会显示出来</p>
+    <ol style="visibility: hidden;">
+      <li>子元素1</li>
+      <li style="visibility: visible;">子元素2</li>
+      <li>子元素3</li>
+      <li>子元素4</li>
+    </ol>
+
+    <p>display:none的子元素再设置display:block，子元素不会再显示出来了</p>
+    <ol style="display:none;">
+      <li>子元素1</li>
+      <li style="display: block;">子元素2</li>
+      <li>子元素3</li>
+      <li>子元素4</li>
+    </ol>
+
+
+
+  </body>
+</html>
