@@ -102,6 +102,36 @@ instance2.sayAge()   //29
 
 
 
+//Object.create()   原型式继承
+function object(o) {
+  function F() { }
+  F.prototype = o;
+  return new F();
+
+}
+
+var person = {
+  name: "Nicholas",
+  friends: ["Shelby", "Court", "Van"]
+};
+
+var anotherPerson = Object.create(person);
+anotherPerson.name = "Greg";
+anotherPerson.friends.push("Rob");
+
+var yetAnotherPerson = Object.create(person);
+yetAnotherPerson.name = "Linda";
+yetAnotherPerson.friends.push("Barbie");
+
+alert(person.friends); //"Shelby,Court,Van,Rob,Barbie"
+
+
+
+
+
+
+
+
 
 
 

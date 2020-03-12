@@ -174,7 +174,7 @@ var obj1 = {
 console.log('this指向obj: ', obj1.getNameFunc()()); //my Object */
 
 //闭包模仿块级作用域
-function getNumber(count) {
+/* function getNumber(count) {
   for (var i = 0; i < count; i++) {
     console.log('循环内的i:  ', i);
 
@@ -182,7 +182,17 @@ function getNumber(count) {
   console.log('循环外的i: ' + i);  //这里打印出了10，循环结束了变量i并没有销毁，还保存在活动对象中
 
 }
-getNumber(10)
+getNumber(10) */
+
+function getNumber(count) {
+  for (var i = 0; i < count; i++) {
+    alert(i);
+
+  }
+  alert(i);  //这里弹出了3，循环结束了变量i并没有销毁，还保存在活动对象中
+
+}
+getNumber(3)
 
 function getNumber1(count) {
 

@@ -241,7 +241,7 @@ Function.prototype.bind2 = function (context) {
 
 
 //最终代码
-Function.prototype.bind2 = function (context) {
+/* Function.prototype.bind2 = function (context) {
 
   if (typeof this !== 'function') {
     throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
@@ -269,7 +269,24 @@ Function.prototype.bind2 = function (context) {
   fNOP.prototype = this.prototype
   fbound.prototype = new fNOP()
   return fbound;
+} */
+
+
+//调用两遍bind会改变原来函数的this指向吗
+let obj = {
+  name: 'mike'
 }
+let foo = function () {
+  console.log(this);
+}
+
+
+let bind1 = foo.bind(obj);
+bind1()   //obj
+let bind2 = bind1.bind(obj);
+bind2();  //obj
+console.log('bind1:', bind1);
+console.log('bind2:', bind2);
 
 
 
