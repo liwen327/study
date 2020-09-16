@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event-loop </title>
+  </head>
+  <body>
+    <pre id="main"></pre>
+    <script>
+      const main = document.querySelector('#main');
+      const callback = (i,fn)=>()=>{
+        console.log(i);
+        main.innerText += fn(i)
+      }
+
+      let i=1;
+      while(i++ < 5000){
+        setTimeout(callback(i,i=>'\n'+i+'<'))
+      }
+      while(i++ < 10000){
+        Promise.resolve().then(callback(i,i=>i+','))
+      }
+      console.log('最后的：',i);
+      main.innerText+='[end: ' + i + ']\n';
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 //实现浅拷贝与深拷贝的几种方式
 
-/* //Object.assign()是浅拷贝
+//Object.assign()是浅拷贝
 var obj1 = {
   a: {
     b: 1
@@ -16,7 +16,7 @@ var obj2 = {};
 Object.assign(obj2, obj1)
 obj1.a.b = 2;
 console.log('obj1:', obj1);
-console.log('obj2:', obj2); */
+console.log('obj2:', obj2);
 
 
 

@@ -18,3 +18,12 @@ var button = document.getElementById("press");
 button.addEventListener('click', () => {
   this.classList.toggle('on');
 })
+
+
+var obj = {
+  getArrow() {
+    return () => {
+      console.log(this === obj);
+    }
+  }
+}
