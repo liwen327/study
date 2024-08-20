@@ -1,0 +1,49 @@
+<!--
+ * @Author: liwz liwz@yonyou.com
+ * @Date: 2024-01-09 05:49:51
+ * @LastEditors: liwz liwz@yonyou.com
+ * @LastEditTime: 2024-01-09 06:36:08
+ * @FilePath: /reactJs/06-react-ref/0-react-ref.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 1、引入react库 -->
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+</head>
+<body>
+  <div id="test"></div>
+  <script type="text/babel">
+  // 2、 创建类组件
+  class Demo extends React.Component{
+    showData = ()=>{
+      const {input1} = this
+      alert(input1.value)
+    }
+    showData1 = (event)=>{
+      const {input2} = this
+      alert(input2.value)
+
+    }
+    render(){
+      return (
+        <div>
+          <input ref={(currentNode=>this.input1 = currentNode)} type="text" placeholder="点击按钮提示数据" /> <br/>
+          <button onClick={this.showData}>点我提示左侧的数据</button> <br/>
+          <input onBlur={this.showData1}  ref={(currentNode=>this.input2 = currentNode)} type="text" placeholder="失去焦点提示数据" />
+        </div>
+      )
+    }
+  }
+    ReactDOM.render(<Demo/>,document.getElementById('test'))
+  </script>
+
+</body>
+</html>

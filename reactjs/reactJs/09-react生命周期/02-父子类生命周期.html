@@ -1,0 +1,111 @@
+<!--
+ * @Author: liwz liwz@yonyou.com
+ * @Date: 2024-01-09 05:49:51
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-10 15:20:01
+ * @FilePath: /reactJs/09-react生命周期/02-父子类生命周期.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04-CreateRef</title>
+    <!-- 1、引入react库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script type="text/babel">
+      // 2、 创建类组件
+      class Count extends React.Component {
+        constructor(props) {
+          super(props)
+          // this.state = {
+          //   count:0
+          // }
+        }
+        state = {
+          count: 0
+        }
+        add = () => {
+          const { count } = this.state
+          this.setState = {
+            count: count + 1
+          }
+        }
+        // shouldComponentUpdate() {
+        //   console.log('Count---shouldComponentUpdate')
+        // }
+
+        render() {
+          console.log('render')
+          const { count } = this.state
+          return (
+            <div>
+              <div>加数：{count}</div>
+              <button onClick={this.add}>点我加1</button> <br />
+            </div>
+          )
+        }
+      }
+      class A extends React.Component {
+        state = {
+          carName: '奔驰'
+        }
+        changeCar = () => {
+          this.setState({
+            carName: '宝来'
+          })
+        }
+        render() {
+          const { carName } = this.state
+          return (
+            <div>
+              <div>A组件的车：{carName}</div>
+              <button onClick={this.changeCar}>点击换车</button>
+              <B carName={carName} />
+            </div>
+          )
+        }
+      }
+      class B extends React.Component {
+        state = {
+          name: 'car'
+        }
+        componentWillReceiveProps = nextProps => {
+          console.log('B---componentWillReceiveProps')
+        }
+        shouldComponentUpdate = (nextProps, nextState) => {
+          console.log('B---shouldComponentUpdate')
+          return true
+        }
+        componentWillUpdate = (nextProps, nextState) => {
+          console.log('B---componentWillUpdate')
+        }
+        componentDidUpdate = () => {
+          console.log('B---componentDidUpdate')
+        }
+
+        // static getDerivedStateFromProps(props, state) {
+        //   console.log('props:', props, state)
+        //   return null
+        // }
+
+        render() {
+          return (
+            <div>
+              <div>B组件的车：{this.props.carName}</div>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<A />, document.getElementById('test'))
+    </script>
+  </body>
+</html>

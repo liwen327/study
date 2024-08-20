@@ -1,0 +1,48 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-07 06:46:34
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-07 07:24:03
+ * @FilePath: /reactJs/01-render/01-render.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <div id="test"></div>
+    <!-- <script type="text/javascript"> -->
+    <script type="text/babel">
+      // 这里text/babel必须要写，因为要把jsx语法转化为js
+      // const VDom = React.createElement('h1', { id: 'title' }, React.createElement('span', {}, 'hello react.createElement'))
+      // 上面多层嵌套，下面jsx是上面写法的语法糖，写法简单
+      const VDom = (
+        <div>
+          <span>hello React</span>
+          <span>hello jsx!</span>
+          <em>这里是em</em>
+        </div>
+      )
+      ReactDOM.render(VDom, document.getElementById('test'))
+      const TDom = document.getElementById('test')
+      console.log('虚拟dom：', VDom)
+      console.log('真实dom：', TDom)
+      debugger
+      /*
+      1、虚拟Dom本质是一个object类型的对象（一般对象）
+      2、虚拟Dom比较‘轻’,真实Dom比较‘重’，VDOM不需要真实dom上的那么多属性，因为虚拟Dom是react内部在用
+      3、虚拟Dom最终会被 转化成真实dom呈现在页面上。
+      */
+    </script>
+  </body>
+</html>

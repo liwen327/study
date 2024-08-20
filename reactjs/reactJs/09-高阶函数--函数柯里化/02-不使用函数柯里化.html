@@ -1,0 +1,67 @@
+<!--
+ * @Author: liwz liwz@yonyou.com
+ * @Date: 2024-01-09 05:49:51
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-09 15:46:15
+ * @FilePath: /reactJs/09-高阶函数--函数柯里化/01-不使用函数柯里化.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 1、引入react库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script type="text/babel">
+      // 2、 创建类组件
+      class Login extends React.Component {
+        state = {
+          userName: '',
+          passWord: ''
+        }
+        handleSubmit = event => {
+          event.preventDefault() //阻止表单提交
+          let { userName, passWord } = this.state
+          console.log(`输入的用户名是：${userName} ,密码是：${passWord}`)
+        }
+        // 使用柯里化
+        /* saveFormData = dataType => {
+          return event => {
+            console.log(dataType, event.target.value)
+            this.setState({
+              [dataType]: event.target.value
+            })
+          }
+        } */
+        // 不使用柯里化
+        saveFormData = (dataType, event) => {
+          console.log(dataType, event.target.value)
+          this.setState({
+            [dataType]: event.target.value
+          })
+        }
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              用户名：
+              <input onChange={event => this.saveFormData('userName', event)} type="text" name="userName" />
+              密码：
+              <input onChange={event => this.saveFormData('passWord', event)} type="password" name="password" /> <br />
+              <br />
+              <button onClick={this.login}>登录</button>
+            </form>
+          )
+        }
+      }
+      ReactDOM.render(<Login />, document.getElementById('test'))
+    </script>
+  </body>
+</html>

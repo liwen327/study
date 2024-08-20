@@ -1,0 +1,60 @@
+<!--
+ * @Author: liwz liwz@yonyou.com
+ * @Date: 2024-01-09 05:49:51
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-09 14:49:17
+ * @FilePath: /reactJs/08-form表单/非受控组件.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 1、引入react库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script type="text/babel">
+      // 2、 创建类组件
+      class Login extends React.Component {
+        handleSubmit = event => {
+          event.preventDefault() //阻止表单提交
+
+          console.log(`输入的用户名是：${this.userName.value} ,密码是：${this.password.value}`)
+        }
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              用户名：
+              <input
+                ref={c => {
+                  this.userName = c
+                }}
+                type="text"
+                name="userName"
+              />
+              密码：
+              <input
+                ref={c => {
+                  this.password = c
+                }}
+                type="password"
+                name="password"
+              />{' '}
+              <br />
+              <br />
+              <button onClick={this.login}>登录</button>
+            </form>
+          )
+        }
+      }
+      ReactDOM.render(<Login />, document.getElementById('test'))
+    </script>
+  </body>
+</html>

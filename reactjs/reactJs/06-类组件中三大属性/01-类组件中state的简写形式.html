@@ -1,0 +1,67 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-07 06:46:34
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-08 06:35:16
+ * @FilePath: /reactJs/06-类组件中三大属性/01-类组件中state的简写形式.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <div id="test"></div>
+    <!-- <script type="text/javascript"> -->
+    <script type="text/babel">
+      // 这里text/babel必须要写，因为要把jsx语法转化为js
+      // 1、创建类组件
+      class MyComponent extends React.Component {
+        state = {
+          isHot: false
+        }
+        // 这相当于给组件实例添加属性，每个原型上都有changeWeather方法，箭头函数没有自己的this，它会去外层函数找，找到就找到了实例对象的this
+        changeWeather = () => {
+          const isHot = this.state.isHot
+          this.setState({ isHot: !isHot })
+        }
+        /*
+        render()是放在哪里的？是放在MyComponent的原型对象上的，供实例使用
+        render中的this是谁，是MyComponent的实例对象 === MyComponent的组件实例对象
+         */
+        render() {
+          // render调用几次  1+ n次    1是初始化那次，先渲染到界面中真实dom，然后状态更改几次再调用几次
+          let { isHot } = this.state
+          return (
+            <div>
+              <em>我是一个类组件</em>
+
+              <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
+            </div>
+          )
+        }
+      }
+
+      //2、把虚拟Dom渲染到页面上
+      ReactDOM.render(<MyComponent />, document.getElementById('test'))
+      /*
+      执行了ReactDOM.render(<MyComponent />。。。之后，发生了什么？
+      1、React解析组件标签，找到了MyComponent组件。
+      2、发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用原型对象上的render方法
+      3、将render()返回的虚拟DOM转化为真实DOM，渲染到界面上。
+      */
+    </script>
+    <!--
+
+     -->
+  </body>
+</html>

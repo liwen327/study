@@ -1,0 +1,31 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-25 11:31:59
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-26 10:33:46
+ * @FilePath: /react-staging/src/obj-解构赋值.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 链式解构赋值
+      let obj = { a: { b: { c: 1 } } }
+      let {
+        a: {
+          b: { c }
+        }
+      } = obj
+      console.log('c:', c)
+    </script>
+  </body>
+</html>

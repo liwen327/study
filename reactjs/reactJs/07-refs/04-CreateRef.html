@@ -1,0 +1,49 @@
+<!--
+ * @Author: liwz liwz@yonyou.com
+ * @Date: 2024-01-09 05:49:51
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-09 13:55:22
+ * @FilePath: /reactJs/07-refs/04-CreateRef.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04-CreateRef</title>
+    <!-- 1、引入react库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script type="text/babel">
+      // 2、 创建类组件
+      class Demo extends React.Component {
+        myRef = React.createRef()
+        myRef1 = React.createRef()
+        showData = () => {
+          alert(this.myRef.current.value)
+        }
+        showData1 = event => {
+          alert(this.myRef1.current.value)
+        }
+        render() {
+          return (
+            <div>
+              <input ref={this.myRef} type="text" placeholder="点击按钮提示数据" /> <br />
+              <br />
+              <br />
+              <button onClick={this.showData}>点我提示左侧的数据</button> <br />
+              <input ref={this.myRef1} onBlur={this.showData1} type="text" placeholder="点击按钮提示数据" /> <br />
+            </div>
+          )
+        }
+      }
+      ReactDOM.render(<Demo />, document.getElementById('test'))
+    </script>
+  </body>
+</html>

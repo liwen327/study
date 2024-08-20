@@ -1,0 +1,7 @@
+.footerWrap {
+  display: flex;
+  align-content: space-around;
+}
+.clear-btn {
+  margin-left: 30px;
+}

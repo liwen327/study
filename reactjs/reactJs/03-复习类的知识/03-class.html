@@ -1,0 +1,51 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-07 06:46:34
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-07-21 21:51:57
+ * @FilePath: /reactJs/03-复习类的知识/03-class.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <div id="test"></div>
+    <script type="text/javascript">
+      class Person {
+        constructor(name, age) {
+          this.name = name
+          this.age = age
+        }
+        speak() {
+          console.log('我的名字是' + this.name + '我的年龄是：' + this.age)
+        }
+      }
+      class Student extends Person {
+        constructor(name, age, grade) {
+          super(name, age)
+          this.grade = grade
+        }
+        grade() {
+          console.log('我的名字是' + this.name + '我的年龄是：' + this.age + '年级：' + this.grade)
+        }
+      }
+      const p1 = new Person('张三', 15)
+      const p2 = new Person('李四', 16)
+      const p3 = new Student('王五', 17, '一年级')
+      console.log(p1)
+      console.log(p2)
+      console.log(p3)
+    </script>
+  </body>
+</html>

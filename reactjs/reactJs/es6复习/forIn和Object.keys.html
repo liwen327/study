@@ -1,0 +1,38 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-08 10:59:20
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-08 11:17:40
+ * @FilePath: /reactJs/es6复习/forIn和Object.keys.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      Object.prototype.clone = function () {
+        let o = this.constructor === Array ? [] : {}
+        for (let e in this) {
+          o[e] = typeof this[e] === 'object' ? this[e].clone : this[e]
+        }
+        return o
+      }
+      let obj = {
+        a: 1,
+        b: {
+          c: 2
+        }
+      }
+      let obj2 = obj.clone()
+      console.log(obj2)
+    </script>
+  </body>
+</html>

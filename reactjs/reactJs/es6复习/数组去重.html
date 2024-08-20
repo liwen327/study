@@ -1,0 +1,35 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-08 10:59:20
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-08 11:02:46
+ * @FilePath: /reactJs/es6复习/数组去重.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var arr = [1, 1, 2, 3, 4, 4, 5]
+      function unique(arr) {
+        for (var i = 0; i < arr.length; i++) {
+          for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) arr.splice(j, 1)
+            else j++
+          }
+        }
+        return arr
+      }
+      let arr1 = unique(arr)
+      console.log('arr1: ', arr1)
+    </script>
+  </body>
+</html>

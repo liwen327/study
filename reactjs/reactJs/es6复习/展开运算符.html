@@ -1,0 +1,45 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-08 06:55:53
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-01-08 07:08:49
+ * @FilePath: /reactJs/es6复习/展开运算符.html
+ * @Description:
+
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let arr1 = [1, 3, 5, 7, 9]
+      let arr2 = [2, 4, 6, 8, 10]
+      console.log(...arr1)
+      let arr3 = [...arr1, ...arr2]
+      console.log(arr3)
+      function sum(...args) {
+        return args.reduce((preValue, currentValue) => {
+          return preValue + currentValue
+        })
+      }
+      console.log('sum: ', sum(1, 2, 3, 4))
+
+      let person = { name: 'Jack', age: 18 }
+      // console.log(...person) // 报错： 扩展运算符不能展开对象。  展开运算符.html:35 Uncaught TypeError: Spread syntax requires ...iterable[Symbol.iterator] to be a function at 展开运算符.html:35:15
+      let person1 = { ...person } //复制一个对象
+      person.name = 'John' // person改变不影响person1  这相当于深拷贝
+      console.log('person1: ', person1)
+      console.log('person: ', person)
+
+      let person3 = { ...person, name: '老李', address: '地球' } //合并，而不是覆盖person
+      console.log(person3)
+    </script>
+  </body>
+</html>

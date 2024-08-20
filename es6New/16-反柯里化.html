@@ -1,0 +1,38 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-08-19 14:18:31
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-08-19 14:41:19
+ * @FilePath: /reactJs/Users/liwenzhi/study/study/es6New/16-反柯里化.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      Function.prototype.uncurring = function () {
+        var self = this
+        return function () {
+          console.log('arguments1111 : ', arguments)
+          var obj = Array.prototype.shift.call(arguments)
+          console.log('obj: ', obj, arguments)
+          return self.apply(obj, arguments)
+        }
+      }
+
+      var push = Array.prototype.push.uncurring()
+      ;(function () {
+        push(arguments, 4)
+        console.log(arguments) //[1,2,3,4]
+      })(1, 2, 3)
+    </script>
+  </head>
+  <body>
+    <h4>反柯里化</h4>
+  </body>
+</html>

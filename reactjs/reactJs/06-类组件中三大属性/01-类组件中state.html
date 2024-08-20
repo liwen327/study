@@ -1,0 +1,78 @@
+<!--
+ * @Author: liwz
+ * @Date: 2024-01-07 06:46:34
+ * @LastEditors: liwz
+ * @LastEditTime: 2024-07-22 17:50:09
+ * @FilePath: /reactJs/06-类组件中三大属性/01-类组件中state.html
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <div id="test"></div>
+    <!-- <script type="text/javascript"> -->
+    <script type="text/babel">
+      // 这里text/babel必须要写，因为要把jsx语法转化为js
+      // 1、创建类组件
+      class MyComponent extends React.Component {
+        // 构造器调用了几次？ 1次，一个组件只构造一次
+        constructor(props) {
+          super(props)
+          this.state = {
+            isHot: false
+          }
+          this.changeWeather = this.changeWeather.bind(this) //利用bind解决MyComponent组件实例的changeWeather的指向问题，指向了组件实例的原型对象
+        }
+        changeWeather() {
+          // changeWeather放在哪里？----  MyComponent的原型对象上，供实例使用
+          // 由于changeWeather是作为onClick的回调调用的，因此，是直接调用
+          // 类中的方法默认开启了严格模式，所以changeWeather中的this为undefined,(严格模式下不指向window，而是undefined)
+
+          // changeWeather调用几次？ ----- 点几次调用几次
+
+          console.log('weather')
+          console.log(this)
+          const isHot = this.state.isHot
+          this.setState({ isHot: !isHot })
+        }
+        /*
+        render()是放在哪里的？是放在MyComponent的原型对象上的，供实例使用
+        render中的this是谁，是MyComponent的实例对象 === MyComponent的组件实例对象
+         */
+        render() {
+          // render调用几次  1+ n次    1是初始化那次，先渲染到界面中真实dom，然后状态更改几次再调用几次
+          let { isHot } = this.state
+          return (
+            <div>
+              <em>我是一个类组件</em>
+              <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
+            </div>
+          )
+        }
+      }
+
+      //2、把虚拟Dom渲染到页面上
+      ReactDOM.render(<MyComponent />, document.getElementById('test'))
+      /*
+      执行了ReactDOM.render(<MyComponent />。。。之后，发生了什么？
+      1、React解析组件标签，找到了MyComponent组件。
+      2、发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用原型对象上的render方法
+      3、将render()返回的虚拟DOM转化为真实DOM，渲染到界面上。
+      */
+    </script>
+    <!--
+
+     -->
+  </body>
+</html>
